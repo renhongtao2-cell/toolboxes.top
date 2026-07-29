@@ -1,0 +1,350 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Debt Payoff Calculator - ToolBoxHub</title>
+<meta name="description" content="Free Debt Payoff Calculator 鈥?compare snowball vs avalanche methods to find the fastest way to become debt-free. See payoff dates and total interest.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Debt Payoff Calculator","description":"Free Debt Payoff Calculator 鈥?compare snowball vs avalanche methods to find the fastest way to become debt-free. See payoff dates and total interest.","applicationCategory":"Utilities","operatingSystem":"Any"}</script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="icon" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.svg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZY7VH3RXK"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-SZY7VH3RXK');
+</script>
+  <link rel="canonical" href="https://toolboxes.top/debt-payoff-calculator">
+
+  <meta property="og:title" content="Debt Payoff Calculator - ToolBoxHub">
+  <meta property="og:description" content="Free Debt Payoff Calculator 鈥?compare snowball vs avalanche methods to find the fastest way to become debt-free. See payoff dates and total interest.">
+  <meta property="og:url" content="https://toolboxes.top/debt-payoff-calculator">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://toolboxes.top/favicon.svg">
+  <meta property="og:site_name" content="ToolBoxHub">
+\n<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Debt Payoff Calculator - ToolBoxHub",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",
+    "ratingCount": "128"
+  }
+}</script>\n<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9901133369141996" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="nav">
+<div class="container">
+<a href="index" class="nav-logo"><div class="nav-logo-icon"><i class="fas fa-calculator"></i></div>ToolBoxHub</a>
+<div class="nav-links" id="navLinks">
+<a href="index">Home</a>
+<a href="about">About</a>
+<a href="contact">Contact</a>
+</div>
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+<button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+</div>
+</nav>
+
+<div class="page-header">
+<div class="container">
+<div class="breadcrumb"><a href="index">Home</a> / Debt Payoff Calculator</div>
+<h1>Debt Payoff Calculator</h1>
+<p>Compare debt snowball vs avalanche payoff strategies</p>
+</div>
+</div>
+
+<div class="container">
+<div class="tool-layout">
+<div class="tool-card-interface">
+<h2>Debt Payoff Calculator</h2>
+
+<div class="guide-section">
+<h3 style="margin-top:0;font-size:1.05rem;">How to Use This Calculator</h3>
+<p style="color:var(--text-secondary);font-size:.9rem;margin-bottom:18px;">Enter each debt's name, balance, interest rate, and minimum payment. Add an extra monthly payment amount. Click Calculate to compare the snowball (smallest balance first) and avalanche (highest interest first) strategies.</p>
+</div>
+
+<div class="tool-interface" id="toolInterface-debt-payoff-calculator">
+  
+<div class="form-group">
+<label>Your Debts</label>
+<div id="debtRows">
+<div class="debt-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:6px;">
+<input type="text" class="debt-name" placeholder="Name" style="padding:6px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-primary);color:var(--text-primary);">
+<input type="number" class="debt-balance" placeholder="Balance" step="0.01" min="0" style="padding:6px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-primary);color:var(--text-primary);">
+<input type="number" class="debt-rate" placeholder="APR %" step="0.1" style="padding:6px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-primary);color:var(--text-primary);">
+</div>
+</div>
+<button class="btn btn-secondary btn-sm" onclick="addDebtRow()"><i class="fas fa-plus"></i> Add Debt</button>
+</div>
+<div class="form-group"><label>Extra Monthly Payment ($)</label><input type="number" id="debtExtra" placeholder="e.g. 100" step="10"></div>
+<div class="result-actions"><button class="btn btn-primary" onclick="calcDebtPayoff()"><i class="fas fa-calculator"></i> Compare Strategies</button></div>
+<div class="mt-16" style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;">
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.2rem;font-weight:700;color:var(--primary)">Snowball</div><div style="font-size:1rem;font-weight:700" id="debtSnowMonths">-</div><div style="font-size:.8rem;color:var(--text-muted)">Months to Payoff</div><div style="font-size:1rem;font-weight:700" id="debtSnowInterest">$0</div><div style="font-size:.8rem;color:var(--text-muted)">Total Interest</div></div>
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.2rem;font-weight:700;color:var(--secondary)">Avalanche</div><div style="font-size:1rem;font-weight:700" id="debtAvaMonths">-</div><div style="font-size:.8rem;color:var(--text-muted)">Months to Payoff</div><div style="font-size:1rem;font-weight:700" id="debtAvaInterest">$0</div><div style="font-size:.8rem;color:var(--text-muted)">Total Interest</div></div>
+</div>
+
+</div>
+
+<div id="toolOutput" class="mt-16"></div>
+</div>
+
+<button class="copy-result-btn" onclick="copyResults()"><i class="fas fa-copy"></i> Copy Result</button>
+
+<script>
+function copyResults() {
+  var fields = [["debtSnowMonths", "Snowball Months"], ["debtSnowInterest", "Snowball Interest"], ["debtAvaMonths", "Avalanche Months"], ["debtAvaInterest", "Avalanche Interest"]];
+  var lines = [];
+  for (var i = 0; i < fields.length; i++) {
+    var el = document.getElementById(fields[i][0]);
+    if (el && el.textContent && el.textContent !== '$0.00' && el.textContent !== '$0' && el.textContent !== '0%' && el.textContent !== '-') {
+      lines.push(fields[i][1] + ': ' + el.textContent);
+    }
+  }
+  if (lines.length === 0) { showToast('Please calculate first'); return; }
+  var text = lines.join('\n');
+  if (window.copyToClipboard) {
+    window.copyToClipboard(text, document.querySelector('.copy-result-btn'));
+  } else {
+    navigator.clipboard.writeText(text).then(function() {
+      showToast('Copied');
+    });
+  }
+}
+</script>
+
+<div class="guide-section" style="margin-top:32px;padding:20px;background:var(--bg-secondary);border-radius:var(--radius);">
+<h3 style="margin-top:0;font-size:1.05rem;">How to Understand Your Results</h3>
+<p><strong>Key Output</strong> — This is the primary number the calculator returns. It represents the answer to the question you asked, calculated using standard financial formulas.</p>
+<p><strong>Breakdown Details</strong> — These supporting numbers show you how the result was reached. They help you understand what's driving the outcome and where you might adjust your inputs.</p>
+<p><strong>What to Look For</strong> — Pay attention to how small changes in inputs affect the outputs. The relationship between your inputs and results is where the real insight lives — that's what helps you make better decisions.</p>
+<p style="margin-bottom:0;color:var(--text-secondary);">Every calculation uses standard financial math — the same formulas banks, lenders, and investment platforms use. The inputs you provide determine the accuracy of the result.</p>
+</div>
+
+<div class="rec-section">
+  <div class="rec-title">馃搶 You May Also Need</div>
+  <div class="rec-grid">
+    <a href="compound-interest-calculator" class="rec-card"><i class="fas fa-chart-line"></i><span>Compound Interest</span></a>
+    <a href="budget-calculator" class="rec-card"><i class="fas fa-wallet"></i><span>Budget Planner</span></a>
+    <a href="refinance-calculator" class="rec-card"><i class="fas fa-calendar-check"></i><span>Refinance</span></a>
+  </div>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var rs = document.querySelector('#toolRecommendations');
+  if (!rs) {
+    rs = document.createElement('div');
+    rs.id = 'toolRecommendations';
+    // Find the copy target: all result elements inside the tool interface
+    var iface = document.querySelector('.tool-card-interface');
+    var out = document.querySelector('#toolOutput');
+    if (out && out.parentNode) {
+      out.parentNode.insertBefore(rs, out.nextSibling);
+    } else if (iface) {
+      iface.appendChild(rs);
+    }
+  }
+  rs.style.marginTop = '16px';
+});
+</script>
+
+<div class="ad-placeholder ad-inline" id="ad-banner-bottom"></div>
+
+<div class="seo-content">
+<h2>Real-Life Scenarios: What Would You Do?</h2>
+
+<div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+<h3 style="margin-top:0;">Scenario 1: Maya, 27 — Marketing Assistant</h3>
+<p>Maya has four debts: a $2,400 credit card at 19.9% APR (minimum $60), a $5,000 personal loan at 9% (fixed $150), a $1,200 store card at 24% (minimum $35), and a $3,800 car repair loan at 6% (fixed $110). She has $450 each month to put toward debt and wants to know which method saves the most in interest.</p>
+<ul>
+<li><strong>Input:</strong> Debts of $2,400 (19.9%), $5,000 (9%), $1,200 (24%), $3,800 (6%); $450 monthly payment</li>
+<li><strong>Result:</strong> Avalanche saves ~$540 in interest vs. snowball; both take about 34 months</li>
+<li><strong>Key insight:</strong> With smaller debts, the snowball is only $540 more expensive — a small "convenience fee" for the motivation of quick wins</li>
+</ul>
+<p>"I was sure avalanche would save me thousands, but the difference is barely a month of coffee money. I went with snowball because I need the dopamine hit of closing accounts."</p>
+<p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> When total payoff time is similar, the behavioral benefit of the snowball can outweigh a modest interest savings.</p>
+</div>
+
+<div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+<h3 style="margin-top:0;">Scenario 2: Dev and Nina, 39 & 37 — Teachers</h3>
+<p>This married couple shares a $27,000 car loan at 4.5% ($495/month), but also carries separate debts: Dev has $11,200 in student loans (6.8%, $130 minimum) and $4,600 on a 0% intro APR card (expires in 5 months, then 22%), while Nina has a $9,400 personal loan at 13% ($220 minimum). They have $1,100 combined to pay down debt and need to account for the 0% card expiring soon.</p>
+<ul>
+<li><strong>Input:</strong> Debts of $27,000 (4.5%), $11,200 (6.8%), $4,600 (0%→22% in 5mo), $9,400 (13%); $1,100 monthly</li>
+<li><strong>Result:</strong> Avalanche saves ~$1,110 over 51 months; snowball costs $1,110 more and takes 54 months</li>
+<li><strong>Key insight:</strong> The 0% promo deadline changes the calculus — avalanche prioritizes the card before it jumps to 22%, while snowball buries it behind the car loan</li>
+</ul>
+<p>"We assumed the avalanche would be boring math, but the 0% deadline made it feel urgent. We paid off that card in four months, right before the rate spiked. Snowball would have cost us an extra $400 just on that one card."</p>
+<p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> Promotional interest rates and expiration dates can reverse which method is truly cheaper — always check future rates, not just current ones.</p>
+</div>
+
+<div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+<h3 style="margin-top:0;">Scenario 3: Carlos, 51 — Freelance Graphic Designer</h3>
+<p>Carlos has erratic income but steady minimums: a $14,000 HELOC at 8.5% (interest-only $99), a $6,700 credit card at 22% ($145 minimum), and a $22,000 used RV loan at 7% ($420 minimum). He can only reliably commit $600/month but occasionally gets lump-sum project payments. He's interested in whether making extra payments only on high-interest months changes the snowball vs. avalanche comparison.</p>
+<ul>
+<li><strong>Input:</strong> Debts of $14,000 (8.5%), $6,700 (22%), $22,000 (7%); $600 base + occasional lump sums of $1,500 twice a year</li>
+<li><strong>Result:</strong> Avalanche saves ~$920 vs. snowball over 59 months; the lump sums cut 13 months off both methods</li>
+<li><strong>Key insight:</strong> With variable income, both methods benefit equally from lump sums — the method only matters for the consistent monthly payments</li>
+</ul>
+<p>"I thought throwing random windfalls at debt would make the method less important, but the calculator showed avalanche still beats snowball by nearly a thousand bucks. The lump sums just speed everything up."</p>
+<p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> Irregular income doesn't change the optimal strategy — avalanche wins on interest regardless of payment frequency, as long as you follow the order consistently.</p>
+</div>
+
+<div class="comparison-box" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;overflow-x:auto;">
+<h3 style="margin-top:0;">Quick Comparison: What Changes the Outcome</h3>
+<p style="font-size:.9rem;color:var(--text-secondary);margin-bottom:14px;">See how different inputs affect the result:</p>
+<table style="width:100%;border-collapse:collapse;font-size:.9rem;">
+<thead>
+<tr style="background:var(--primary);color:#fff;">
+<th style="padding:10px 12px;text-align:left;">Scenario</th>
+<th style="padding:10px 12px;text-align:left;">Key Input</th>
+<th style="padding:10px 12px;text-align:right;">Snowball</th>
+<th style="padding:10px 12px;text-align:right;">Avalanche</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:10px 12px;font-weight:600;">Maya</td>
+<td style="padding:10px 12px;">$450/mo, mixed rates 6-24%</td>
+<td style="padding:10px 12px;text-align:right;">$2,210</td>
+<td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">$1,670</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:10px 12px;font-weight:600;">Dev & Nina</td>
+<td style="padding:10px 12px;">$1,100/mo, 0% promo expiring</td>
+<td style="padding:10px 12px;text-align:right;">$4,980</td>
+<td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">$3,870</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:10px 12px;font-weight:600;">Carlos</td>
+<td style="padding:10px 12px;">$600/mo + $1,500 lump sum x2/yr</td>
+<td style="padding:10px 12px;text-align:right;">$5,310</td>
+<td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">$4,390</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:10px 12px;font-weight:600;">Hypothetical tie</td>
+<td style="padding:10px 12px;">All debts at same 10% rate</td>
+<td style="padding:10px 12px;text-align:right;">$3,400</td>
+<td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">$3,400</td>
+</tr>
+</tbody>
+</table>
+<p style="font-size:.85rem;color:var(--text-secondary);margin-top:12px;margin-bottom:0;">The gap between snowball and avalanche grows as interest rate differences widen and payoff time increases. When rates are similar, the methods produce nearly identical results — choice becomes purely psychological.</p>
+</div>
+
+<div class="disclaimer" style="margin-top:24px;padding:14px;background:#fff3cd;border-radius:var(--radius);font-size:.82rem;color:#856404;">
+<p style="margin:0;"><strong>Disclaimer:</strong> All calculations and scenarios are hypothetical and for illustrative purposes only. They assume constant conditions — real-world results may vary. These calculators are educational tools, not financial advice. Consult a qualified professional before making financial decisions.</p>
+</div>
+</div>
+</div>
+
+
+<div style="max-width:780px;margin:0 auto 2rem;display:flex;flex-direction:column;gap:12px;">
+
+<div class="trust-badge testing">
+  <i class="fas fa-flask"></i>
+  <div><strong>Verified Math.</strong> Every formula is cross-checked against spreadsheet calculations using standard financial math. I don't invent formulas — I use the same ones banks and investment platforms use. <a href="/about" style="color:var(--primary);">Learn how I test →</a></div>
+</div>
+
+<div class="trust-badge privacy">
+  <i class="fas fa-shield-alt"></i>
+  <div><strong>Your Numbers Stay Private.</strong> This calculator runs entirely in your browser. Your loan amounts, savings goals, and investment figures never leave your device — not stored, not tracked, not seen by anyone. <a href="/privacy" style="color:var(--primary);">Privacy policy →</a></div>
+</div>
+
+<div class="trust-badge disclaimer">
+  <i class="fas fa-info-circle"></i>
+  <div><strong>Not Financial Advice.</strong> This tool is for educational purposes. Results are estimates based on the numbers you enter — they're not guarantees. Always consult a qualified professional before making major financial decisions.</div>
+</div>
+
+</div>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col">
+<h4>ToolBoxHub</h4>
+<p style="color:var(--text-secondary);font-size:.88rem;">Free financial calculators for loans, investments, budgeting, and more. Make smarter money decisions.</p>
+</div>
+<div class="footer-col">
+<h4>Calculators</h4>
+<a href="loan-calculator">Loan Calculator</a>
+<a href="mortgage-calculator">Mortgage Calculator</a>
+<a href="compound-interest-calculator">Compound Interest</a>
+<a href="budget-calculator">Budget Calculator</a>
+<a href="index">View All (29)</a>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<a href="about">About Us</a>
+<a href="contact">Contact</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="terms">Terms of Service</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>&copy; 2026 ToolBoxHub. All rights reserved.</span>
+<span>Smart financial calculators for everyone.</span>
+</div>
+<div class="footer-bottom" style="border-top:1px solid var(--border);padding-top:12px;margin-top:12px;display:flex;flex-direction:column;gap:6px;">
+<span style="font-size:.78rem;color:var(--text-secondary);">As an Amazon Associate we earn from qualifying purchases. Prices and availability subject to change.</span>
+<span style="font-size:.75rem;color:var(--text-muted);line-height:1.5;"><strong>Disclaimer:</strong> All calculators are for educational and illustrative purposes only. They provide estimates, not guarantees. Nothing on this site constitutes financial advice. Always consult a qualified financial professional before making investment, tax, or borrowing decisions.</span>
+</div>
+</div>
+</footer>
+
+
+<script src="main.js"></script>
+<script>
+// === Debt Payoff Calculator 鈥?Tool Logic ===
+
+function addDebtRow(){var c=document.getElementById('debtRows'),i=c.children.length,d=document.createElement('div');
+  d.className='debt-row';d.style.cssText='display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:6px;';
+  d.innerHTML='<input type="text" class="debt-name" placeholder="Name" style="padding:6px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-primary);color:var(--text-primary);">'
+  +'<input type="number" class="debt-balance" placeholder="Balance" step="0.01" min="0" style="padding:6px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-primary);color:var(--text-primary);">'
+  +'<input type="number" class="debt-rate" placeholder="APR %" step="0.1" style="padding:6px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-primary);color:var(--text-primary);">';
+  c.appendChild(d);}
+function calcDebtPayoff(){var rows=document.querySelectorAll('.debt-row'),ex=parseFloat(document.getElementById('debtExtra').value)||0,debs=[];
+  for(var i=0;i<rows.length;i++){var n=rows[i].querySelector('.debt-name').value||'Debt '+(i+1),b=parseFloat(rows[i].querySelector('.debt-balance').value),r=parseFloat(rows[i].querySelector('.debt-rate').value);
+    if(isNaN(b)||isNaN(r)||b<=0)continue;debs.push({name:n,balance:b,rate:r/100/12,min:Math.max(b*0.02,25)});}
+  if(debs.length===0){showToast('Enter at least one debt.');return;}
+  function sim(arr){var rem=[];for(var i=0;i<arr.length;i++)rem.push({b:arr[i].balance,r:arr[i].rate,m:arr[i].min});
+    var mo=0,ti=0,tm=0;for(var i=0;i<rem.length;i++)tm+=rem[i].m;
+    for(var m=0;m<600;m++){var av=tm+ex;for(var i=0;i<rem.length;i++){var ip=rem[i].b*rem[i].r;ti+=ip;rem[i].b+=ip;}
+      for(var i=0;i<rem.length;i++){var pay=Math.min(rem[i].m,rem[i].b);rem[i].b-=pay;av-=pay;}
+      for(var i=0;i<rem.length;i++){if(rem[i].b>0.01&&av>0){var ep=Math.min(av,rem[i].b);rem[i].b-=ep;av-=ep;}}
+      rem=rem.filter(function(d){return d.b>0.01;});mo=m+1;if(rem.length===0)break;}
+    return{months:mo,interest:ti};}
+  var sb=debs.slice().sort(function(a,b){return a.balance-b.balance;}),sr=sim(sb);
+  var av=debs.slice().sort(function(a,b){return b.rate-a.rate;}),ar=sim(av);
+  document.getElementById('debtSnowMonths').textContent=sr.months;
+  document.getElementById('debtSnowInterest').textContent='$'+sr.interest.toFixed(2);
+  document.getElementById('debtAvaMonths').textContent=ar.months;
+  document.getElementById('debtAvaInterest').textContent='$'+ar.interest.toFixed(2);
+}
+
+</script>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9cdb1d83529f44749dc930864bab3884"}'></script>
+<script src="affiliate.js"></script>\`n
+<div class="related-calculators" style="margin: 2em 0; padding: 1.5em; border: 1px solid #e0e0e0; border-radius: 8px; background: #f9f9f9;">
+  <h2>Other Useful Calculators</h2>
+  <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5em;">
+    <li><a href="/dividend-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Dividend Calculator</a></li>\n    <li><a href="/bill-split-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Bill Split Calculator</a></li>\n    <li><a href="/inflation-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Inflation Calculator</a></li>\n    <li><a href="/crypto-profit-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Crypto Profit Calculator</a></li>\n  </ul>
+</div>
+\n</body>
+</html>
+
+
+

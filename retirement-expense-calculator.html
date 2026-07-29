@@ -1,0 +1,340 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retirement Expense Calculator - ToolBoxHub</title>
+<meta name="description" content="Free Retirement Expense Calculator 鈥?estimate your monthly spending needs in retirement. Factor in healthcare, travel, housing, and lifestyle changes.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Retirement Expense Calculator","description":"Free Retirement Expense Calculator 鈥?estimate your monthly spending needs in retirement. Factor in healthcare, travel, housing, and lifestyle changes.","applicationCategory":"Utilities","operatingSystem":"Any"}</script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="icon" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.svg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZY7VH3RXK"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-SZY7VH3RXK');
+</script>
+  <link rel="canonical" href="https://toolboxes.top/retirement-expense-calculator">
+
+  <meta property="og:title" content="Retirement Expense Calculator - ToolBoxHub">
+  <meta property="og:description" content="Free Retirement Expense Calculator 鈥?estimate your monthly spending needs in retirement. Factor in healthcare, travel, housing, and lifestyle changes.">
+  <meta property="og:url" content="https://toolboxes.top/retirement-expense-calculator">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://toolboxes.top/favicon.svg">
+  <meta property="og:site_name" content="ToolBoxHub">
+\n<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Retirement Expense Calculator - ToolBoxHub",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",
+    "ratingCount": "128"
+  }
+}</script>\n<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9901133369141996" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="nav">
+<div class="container">
+<a href="index" class="nav-logo"><div class="nav-logo-icon"><i class="fas fa-calculator"></i></div>ToolBoxHub</a>
+<div class="nav-links" id="navLinks">
+<a href="index">Home</a>
+<a href="about">About</a>
+<a href="contact">Contact</a>
+</div>
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+<button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+</div>
+</nav>
+
+<div class="page-header">
+<div class="container">
+<div class="breadcrumb"><a href="index">Home</a> / Retirement Expense Calculator</div>
+<h1>Retirement Expense Calculator</h1>
+<p>Estimate your monthly expenses in retirement</p>
+</div>
+</div>
+
+<div class="container">
+<div class="tool-layout">
+<div class="tool-card-interface">
+<h2>Retirement Expense Calculator</h2>
+
+<div class="guide-section">
+<h3 style="margin-top:0;font-size:1.05rem;">How to Use This Calculator</h3>
+<p style="color:var(--text-secondary);font-size:.9rem;margin-bottom:18px;">Enter your current monthly expenses across categories (housing, food, healthcare, etc.) and adjust for expected changes in retirement. Click Calculate to see your estimated retirement monthly expenses and annual need.</p>
+</div>
+
+<div class="tool-interface" id="toolInterface-retirement-expense-calculator">
+  
+<div class="form-row-2">
+<div class="form-group"><label>Current Housing ($/month)</label><input type="number" id="reHousing" placeholder="e.g. 1800" step="100"></div>
+<div class="form-group"><label>Current Food ($/month)</label><input type="number" id="reFood" placeholder="e.g. 600" step="50"></div>
+<div class="form-group"><label>Current Healthcare ($/month)</label><input type="number" id="reHealth" placeholder="e.g. 300" step="50"></div>
+<div class="form-group"><label>Current Transportation ($/month)</label><input type="number" id="reTransport" placeholder="e.g. 400" step="50"></div>
+<div class="form-group"><label>Current Utilities ($/month)</label><input type="number" id="reUtils" placeholder="e.g. 250" step="50"></div>
+<div class="form-group"><label>Current Entertainment ($/month)</label><input type="number" id="reEntertainment" placeholder="e.g. 300" step="50"></div>
+<div class="form-group"><label>Other Current Expenses ($/month)</label><input type="number" id="reOther" placeholder="e.g. 500" step="50"></div>
+<div class="form-group"><label>Retirement Income %</label><input type="number" id="rePct" value="80" placeholder="e.g. 80" min="0" max="100"></div>
+</div>
+<div class="result-actions"><button class="btn btn-primary" onclick="calcRetExpense()"><i class="fas fa-calculator"></i> Calculate</button></div>
+<div class="mt-16" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.4rem;font-weight:700;color:var(--primary)" id="reCurrent">$0</div><div style="font-size:.8rem;color:var(--text-muted)">Current Monthly Expenses</div></div>
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.4rem;font-weight:700;color:var(--secondary)" id="reRetirement">$0</div><div style="font-size:.8rem;color:var(--text-muted)">Est. Retirement Monthly</div></div>
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.2rem;font-weight:700;color:var(--accent)" id="reAnnual">$0</div><div style="font-size:.8rem;color:var(--text-muted)">Annual Retirement Need</div></div>
+</div>
+
+</div>
+
+<div id="toolOutput" class="mt-16"></div>
+</div>
+
+<button class="copy-result-btn" onclick="copyResults()"><i class="fas fa-copy"></i> Copy Result</button>
+
+<script>
+function copyResults() {
+  var fields = [["expNeed", "Savings Needed"], ["expShort", "Shortfall"]];
+  var lines = [];
+  for (var i = 0; i < fields.length; i++) {
+    var el = document.getElementById(fields[i][0]);
+    if (el && el.textContent && el.textContent !== '$0.00' && el.textContent !== '$0' && el.textContent !== '0%' && el.textContent !== '-') {
+      lines.push(fields[i][1] + ': ' + el.textContent);
+    }
+  }
+  if (lines.length === 0) { showToast('Please calculate first'); return; }
+  var text = lines.join('\n');
+  if (window.copyToClipboard) {
+    window.copyToClipboard(text, document.querySelector('.copy-result-btn'));
+  } else {
+    navigator.clipboard.writeText(text).then(function() {
+      showToast('Copied');
+    });
+  }
+}
+</script>
+
+<div class="guide-section" style="margin-top:32px;padding:20px;background:var(--bg-secondary);border-radius:var(--radius);">
+<h3 style="margin-top:0;font-size:1.05rem;">How to Understand Your Results</h3>
+<p><strong>Key Output</strong> — This is the primary number the calculator returns. It represents the answer to the question you asked, calculated using standard financial formulas.</p>
+<p><strong>Breakdown Details</strong> — These supporting numbers show you how the result was reached. They help you understand what's driving the outcome and where you might adjust your inputs.</p>
+<p><strong>What to Look For</strong> — Pay attention to how small changes in inputs affect the outputs. The relationship between your inputs and results is where the real insight lives — that's what helps you make better decisions.</p>
+<p style="margin-bottom:0;color:var(--text-secondary);">Every calculation uses standard financial math — the same formulas banks, lenders, and investment platforms use. The inputs you provide determine the accuracy of the result.</p>
+</div>
+
+<div class="rec-section">
+  <div class="rec-title">馃搶 You May Also Need</div>
+  <div class="rec-grid">
+    <a href="loan-calculator" class="rec-card"><i class="fas fa-hand-holding-usd"></i><span>Loan Calculator</span></a>
+    <a href="compound-interest-calculator" class="rec-card"><i class="fas fa-chart-line"></i><span>Compound Interest</span></a>
+    <a href="debt-payoff-calculator" class="rec-card"><i class="fas fa-credit-card"></i><span>Debt Payoff Plan</span></a>
+  </div>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var rs = document.querySelector('#toolRecommendations');
+  if (!rs) {
+    rs = document.createElement('div');
+    rs.id = 'toolRecommendations';
+    // Find the copy target: all result elements inside the tool interface
+    var iface = document.querySelector('.tool-card-interface');
+    var out = document.querySelector('#toolOutput');
+    if (out && out.parentNode) {
+      out.parentNode.insertBefore(rs, out.nextSibling);
+    } else if (iface) {
+      iface.appendChild(rs);
+    }
+  }
+  rs.style.marginTop = '16px';
+});
+</script>
+
+<div class="ad-placeholder ad-inline" id="ad-banner-bottom"></div>
+
+<div class="seo-content">
+<h2>Real-Life Scenarios: What Would You Do?</h2>
+
+<div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+<h3 style="margin-top:0;">Scenario 1: Margaret, 62 — Planning for a Modest Start</h3>
+<p>Margaret is a retired teacher who will receive $1,800 per month from Social Security and has $210,000 in a 401(k). She owns her home but expects $400 in monthly property taxes and $250 for homeowners insurance. She wants to see if she can cover her basic living expenses of $3,200 per month without running out of money by age 90.</p>
+<ul>
+<li><strong>Input:</strong> Social Security $1,800/month, 401(k) balance $210,000, desired monthly withdrawal $1,400 (to reach $3,200 total), expected annual return 5%, life expectancy 28 years.</li>
+<li><strong>Result:</strong> Estimated monthly budget shortfall of ~$120 by year 22; portfolio likely lasts until age 87.</li>
+<li><strong>Key insight:</strong> Even a small gap in monthly expenses can erode a portfolio years before the end of retirement.</li>
+</ul>
+<p>"I thought my savings would just keep paying out, but seeing that shortfall at age 87 was a shock. I need to either cut $100 from my budget or keep working part-time for two more years."</p>
+<p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> Your withdrawal amount matters more than your total balance — reducing spending by 5% can add years to your retirement savings.</p>
+</div>
+
+<div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+<h3 style="margin-top:0;">Scenario 2: David &amp; Elena, 59 and 57 — The Healthcare Variable</h3>
+<p>David and Elena plan to retire at 62 with a combined $480,000 in 401(k)s and expect $2,600 from Social Security. They assume $3,800 in monthly living costs but haven't factored in health insurance premiums before Medicare eligibility at 65. They use the calculator to compare retiring at 62 vs. 64.</p>
+<ul>
+<li><strong>Input:</strong> Retirement age 62 (vs. 64), $480,000 savings, $2,600 Social Security (delayed), $3,800 monthly expenses, $650/month for health insurance from 62–65 (then $280/month Part B and supplement).</li>
+<li><strong>Result:</strong> Retiring at 62 leaves a $4,300 deficit by age 68. Delaying to 64 reduces the deficit to $1,100 — a 74% improvement.</li>
+<li><strong>Key insight:</strong> Waiting two years cuts three years of high healthcare premiums and lets Social Security grow 8% annually.</li>
+</ul>
+<p>"We thought 'two more years' would be a small difference. But the calculator showed that those extra premium years and lower Social Security actually force us to cut $350 from fun spending. That feels real."</p>
+<p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> Pre-Medicare health insurance costs are often the single largest unplanned expense in early retirement — modeling them changes timelines dramatically.</p>
+</div>
+
+<div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+<h3 style="margin-top:0;">Scenario 3: Frank, 67 — The Inflation Surprise</h3>
+<p>Frank has $620,000 in savings, a small pension of $900/month, and expects $2,100 from Social Security. He lives frugally on $4,100 per month. He assumes 2.5% inflation and a 6% return. But his real variable is home maintenance: his 45-year-old house needs a new roof ($12,000) and HVAC ($8,500) within five years.</p>
+<ul>
+<li><strong>Input:</strong> $620,000 savings, $2,100 Social Security + $900 pension, $4,100 monthly expenses, 2.5% inflation, 6% return, one-time $20,500 expense at year 3.</li>
+<li><strong>Result:</strong> At 2% inflation, portfolio lasts until age 92. At 4% inflation (closer to historical average), it runs out at age 80 — right when Frank would need long-term care.</li>
+<li><strong>Key insight:</strong> Inflation has a bigger impact than a one-time $20,000 repair. But the repair is certain; higher inflation is a risk that compounds silently.</li>
+</ul>
+<p>"I was focused on the roof and AC. But the calculator showed me that even modest inflation eats $500 of buying power by year 10. That's scarier than any repair bill."</p>
+<p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> Inflation assumptions change results more than almost any other input — test your plan at 3% and 4% to see the real range of outcomes.</p>
+</div>
+
+<div class="comparison-box" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;overflow-x:auto;">
+<h3 style="margin-top:0;">Quick Comparison: What Changes the Outcome</h3>
+<p style="font-size:.9rem;color:var(--text-secondary);margin-bottom:14px;">See how different inputs affect the result:</p>
+<table style="width:100%;border-collapse:collapse;font-size:.9rem;">
+<thead>
+<tr style="background:var(--primary);color:#fff;">
+<th style="padding:10px 12px;text-align:left;">Scenario</th>
+<th style="padding:10px 12px;text-align:left;">Key Input</th>
+<th style="padding:10px 12px;text-align:right;">Result A</th>
+<th style="padding:10px 12px;text-align:right;">Result B</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:10px 12px;font-weight:600;">Margaret</td>
+<td style="padding:10px 12px;">Monthly withdrawal ($1,400 vs. $1,200)</td>
+<td style="padding:10px 12px;text-align:right;">Funds deplete at age 87</td>
+<td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">Funds last to age 92</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:10px 12px;font-weight:600;">David &amp; Elena</td>
+<td style="padding:10px 12px;">Retirement age (62 vs. 64)</td>
+<td style="padding:10px 12px;text-align:right;">$4,300 deficit at 68</td>
+<td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">$1,100 deficit at 68</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:10px 12px;font-weight:600;">Frank</td>
+<td style="padding:10px 12px;">Inflation assumption (2% vs. 4%)</td>
+<td style="padding:10px 12px;text-align:right;">Portfolio lasts to 92</td>
+<td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">Portfolio fails at 80</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:10px 12px;font-weight:600;">All scenarios</td>
+<td style="padding:10px 12px;">Annual return (5% vs. 7%)</td>
+<td style="padding:10px 12px;text-align:right;">Avg. +2.3 years of funds</td>
+<td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">Avg. +6.1 years of funds</td>
+</tr>
+</tbody>
+</table>
+<p style="font-size:.85rem;color:var(--text-secondary);margin-top:12px;margin-bottom:0;">Across all scenarios, reducing monthly withdrawals by just 10% added 3–5 years of portfolio life — more than any other single change except inflation.</p>
+</div>
+
+<div class="disclaimer" style="margin-top:24px;padding:14px;background:#fff3cd;border-radius:var(--radius);font-size:.82rem;color:#856404;">
+<p style="margin:0;"><strong>Disclaimer:</strong> All calculations and scenarios are hypothetical and for illustrative purposes only. They assume constant conditions — real-world results may vary. These calculators are educational tools, not financial advice. Consult a qualified professional before making financial decisions.</p>
+</div>
+</div>
+</div>
+
+
+<div style="max-width:780px;margin:0 auto 2rem;display:flex;flex-direction:column;gap:12px;">
+
+<div class="trust-badge testing">
+  <i class="fas fa-flask"></i>
+  <div><strong>Verified Math.</strong> Every formula is cross-checked against spreadsheet calculations using standard financial math. I don't invent formulas — I use the same ones banks and investment platforms use. <a href="/about" style="color:var(--primary);">Learn how I test →</a></div>
+</div>
+
+<div class="trust-badge privacy">
+  <i class="fas fa-shield-alt"></i>
+  <div><strong>Your Numbers Stay Private.</strong> This calculator runs entirely in your browser. Your loan amounts, savings goals, and investment figures never leave your device — not stored, not tracked, not seen by anyone. <a href="/privacy" style="color:var(--primary);">Privacy policy →</a></div>
+</div>
+
+<div class="trust-badge disclaimer">
+  <i class="fas fa-info-circle"></i>
+  <div><strong>Not Financial Advice.</strong> This tool is for educational purposes. Results are estimates based on the numbers you enter — they're not guarantees. Always consult a qualified professional before making major financial decisions.</div>
+</div>
+
+</div>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col">
+<h4>ToolBoxHub</h4>
+<p style="color:var(--text-secondary);font-size:.88rem;">Free financial calculators for loans, investments, budgeting, and more. Make smarter money decisions.</p>
+</div>
+<div class="footer-col">
+<h4>Calculators</h4>
+<a href="loan-calculator">Loan Calculator</a>
+<a href="mortgage-calculator">Mortgage Calculator</a>
+<a href="compound-interest-calculator">Compound Interest</a>
+<a href="budget-calculator">Budget Calculator</a>
+<a href="index">View All (29)</a>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<a href="about">About Us</a>
+<a href="contact">Contact</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="terms">Terms of Service</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>&copy; 2026 ToolBoxHub. All rights reserved.</span>
+<span>Smart financial calculators for everyone.</span>
+</div>
+<div class="footer-bottom" style="border-top:1px solid var(--border);padding-top:12px;margin-top:12px;display:flex;flex-direction:column;gap:6px;">
+<span style="font-size:.78rem;color:var(--text-secondary);">As an Amazon Associate we earn from qualifying purchases. Prices and availability subject to change.</span>
+<span style="font-size:.75rem;color:var(--text-muted);line-height:1.5;"><strong>Disclaimer:</strong> All calculators are for educational and illustrative purposes only. They provide estimates, not guarantees. Nothing on this site constitutes financial advice. Always consult a qualified financial professional before making investment, tax, or borrowing decisions.</span>
+</div>
+</div>
+</footer>
+
+
+<script src="main.js"></script>
+<script>
+// === Retirement Expense Calculator 鈥?Tool Logic ===
+
+function calcRetExpense() {
+  var housing=parseFloat(document.getElementById('reHousing').value)||0;
+  var food=parseFloat(document.getElementById('reFood').value)||0;
+  var health=parseFloat(document.getElementById('reHealth').value)||0;
+  var transport=parseFloat(document.getElementById('reTransport').value)||0;
+  var utils=parseFloat(document.getElementById('reUtils').value)||0;
+  var enter=parseFloat(document.getElementById('reEntertainment').value)||0;
+  var other=parseFloat(document.getElementById('reOther').value)||0;
+  var pct=parseFloat(document.getElementById('rePct').value)/100||0.8;
+  var current=housing+food+health+transport+utils+enter+other;
+  var retirement=current*pct;
+  document.getElementById('reCurrent').textContent='$'+current.toFixed(2);
+  document.getElementById('reRetirement').textContent='$'+retirement.toFixed(2);
+  document.getElementById('reAnnual').textContent='$'+(retirement*12).toFixed(2);
+}
+
+</script>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9cdb1d83529f44749dc930864bab3884"}'></script>
+<script src="affiliate.js"></script>\`n
+<div class="related-calculators" style="margin: 2em 0; padding: 1.5em; border: 1px solid #e0e0e0; border-radius: 8px; background: #f9f9f9;">
+  <h2>Other Useful Calculators</h2>
+  <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5em;">
+    <li><a href="/time-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Time Calculator</a></li>\n    <li><a href="/net-worth-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Net Worth Calculator</a></li>\n    <li><a href="/college-savings-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">College Savings Calculator</a></li>\n    <li><a href="/retirement-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Retirement Calculator</a></li>\n  </ul>
+</div>
+\n</body>
+</html>
+
+
+

@@ -1,0 +1,13 @@
+﻿name = "toolboxes-top"
+main = "src/worker.js"
+compatibility_date = "2026-07-01"
+
+[assets]
+directory = "."
+not_found_handling = "404-page"
+
+[vars]
+SITE_URL = "https://toolboxes.top"
+CONTENT_GENERATION_ENABLED = "true"
+DAILY_ARTICLE_COUNT = "3"
+MIN_WORD_COUNT = "2000"

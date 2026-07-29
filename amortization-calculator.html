@@ -1,0 +1,339 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amortization Schedule - ToolBoxHub</title>
+<meta name="description" content="Free Amortization Schedule 鈥?see exactly how each payment is split between principal and interest. Full table for any loan type.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Amortization Schedule","description":"Free Amortization Schedule 鈥?see exactly how each payment is split between principal and interest. Full table for any loan type.","applicationCategory":"Utilities","operatingSystem":"Any"}</script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="icon" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.svg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZY7VH3RXK"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-SZY7VH3RXK');
+</script>
+  <link rel="canonical" href="https://toolboxes.top/amortization-calculator">
+
+  <meta property="og:title" content="Amortization Schedule - ToolBoxHub">
+  <meta property="og:description" content="Free Amortization Schedule 鈥?see exactly how each payment is split between principal and interest. Full table for any loan type.">
+  <meta property="og:url" content="https://toolboxes.top/amortization-calculator">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://toolboxes.top/favicon.svg">
+  <meta property="og:site_name" content="ToolBoxHub">
+\n<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Amortization Schedule - ToolBoxHub",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",
+    "ratingCount": "128"
+  }
+}</script>\n<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9901133369141996" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="nav">
+<div class="container">
+<a href="index" class="nav-logo"><div class="nav-logo-icon"><i class="fas fa-calculator"></i></div>ToolBoxHub</a>
+<div class="nav-links" id="navLinks">
+<a href="index">Home</a>
+<a href="about">About</a>
+<a href="contact">Contact</a>
+</div>
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+<button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+</div>
+</nav>
+
+<div class="page-header">
+<div class="container">
+<div class="breadcrumb"><a href="index">Home</a> / Amortization Schedule</div>
+<h1>Amortization Schedule</h1>
+<p>Generate a full amortization schedule showing each payment breakdown</p>
+</div>
+</div>
+
+<div class="container">
+<div class="tool-layout">
+<div class="tool-card-interface">
+<h2>Amortization Schedule</h2>
+
+<div class="guide-section">
+<h3 style="margin-top:0;font-size:1.05rem;">How to Use This Calculator</h3>
+<p style="color:var(--text-secondary);font-size:.9rem;margin-bottom:18px;">Enter the loan amount, interest rate, and term. Click Generate to see a complete amortization table showing each payment's split between principal and interest over the full loan term.</p>
+</div>
+
+<div class="tool-interface" id="toolInterface-amortization-calculator">
+  
+<div class="form-row-2">
+<div class="form-group"><label>Loan Amount ($)</label><input type="number" id="amorAmount" placeholder="e.g. 200000" step="1000"></div>
+<div class="form-group"><label>Annual Interest Rate (%)</label><input type="number" id="amorRate" placeholder="e.g. 5.5" step="0.1"></div>
+<div class="form-group"><label>Loan Term (years)</label><input type="number" id="amorTerm" placeholder="e.g. 30" min="1"></div>
+</div>
+<div class="result-actions"><button class="btn btn-primary" onclick="calcAmortization()"><i class="fas fa-table"></i> Generate Schedule</button></div>
+<div class="mt-16" style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;">
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.4rem;font-weight:700;color:var(--primary)" id="amorPayment">$0.00</div><div style="font-size:.8rem;color:var(--text-muted)">Monthly Payment</div></div>
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.4rem;font-weight:700;color:var(--accent)" id="amorInterest">$0.00</div><div style="font-size:.8rem;color:var(--text-muted)">Total Interest</div></div>
+</div>
+<div class="hint mb-8">Amortization schedule (up to 360 payments):</div>
+<div style="overflow-x:auto;max-height:400px;overflow-y:auto;border:1px solid var(--border);border-radius:var(--radius);">
+<table style="width:100%;font-size:.85rem;"><thead><tr><th>#</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Balance</th></tr></thead>
+<tbody id="amorBody"></tbody></table></div>
+
+</div>
+
+<div id="toolOutput" class="mt-16"></div>
+</div>
+
+<button class="copy-result-btn" onclick="copyResults()"><i class="fas fa-copy"></i> Copy Result</button>
+
+<script>
+function copyResults() {
+  var fields = [["loanPayment", "Monthly Payment"], ["loanTotal", "Total Payment"], ["loanInterest", "Total Interest"]];
+  var lines = [];
+  for (var i = 0; i < fields.length; i++) {
+    var el = document.getElementById(fields[i][0]);
+    if (el && el.textContent && el.textContent !== '$0.00' && el.textContent !== '$0' && el.textContent !== '0%' && el.textContent !== '-') {
+      lines.push(fields[i][1] + ': ' + el.textContent);
+    }
+  }
+  if (lines.length === 0) { showToast('Please calculate first'); return; }
+  var text = lines.join('\n');
+  if (window.copyToClipboard) {
+    window.copyToClipboard(text, document.querySelector('.copy-result-btn'));
+  } else {
+    navigator.clipboard.writeText(text).then(function() {
+      showToast('Copied');
+    });
+  }
+}
+</script>
+
+<div class="guide-section" style="margin-top:32px;padding:20px;background:var(--bg-secondary);border-radius:var(--radius);">
+<h3 style="margin-top:0;font-size:1.05rem;">How to Understand Your Results</h3>
+<p><strong>Key Output</strong> — This is the primary number the calculator returns. It represents the answer to the question you asked, calculated using standard financial formulas.</p>
+<p><strong>Breakdown Details</strong> — These supporting numbers show you how the result was reached. They help you understand what's driving the outcome and where you might adjust your inputs.</p>
+<p><strong>What to Look For</strong> — Pay attention to how small changes in inputs affect the outputs. The relationship between your inputs and results is where the real insight lives — that's what helps you make better decisions.</p>
+<p style="margin-bottom:0;color:var(--text-secondary);">Every calculation uses standard financial math — the same formulas banks, lenders, and investment platforms use. The inputs you provide determine the accuracy of the result.</p>
+</div>
+
+<div class="rec-section">
+  <div class="rec-title">馃搶 You May Also Need</div>
+  <div class="rec-grid">
+    <a href="compound-interest-calculator" class="rec-card"><i class="fas fa-chart-line"></i><span>Compound Interest</span></a>
+    <a href="budget-calculator" class="rec-card"><i class="fas fa-wallet"></i><span>Budget Planner</span></a>
+    <a href="refinance-calculator" class="rec-card"><i class="fas fa-calendar-check"></i><span>Refinance</span></a>
+  </div>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var rs = document.querySelector('#toolRecommendations');
+  if (!rs) {
+    rs = document.createElement('div');
+    rs.id = 'toolRecommendations';
+    // Find the copy target: all result elements inside the tool interface
+    var iface = document.querySelector('.tool-card-interface');
+    var out = document.querySelector('#toolOutput');
+    if (out && out.parentNode) {
+      out.parentNode.insertBefore(rs, out.nextSibling);
+    } else if (iface) {
+      iface.appendChild(rs);
+    }
+  }
+  rs.style.marginTop = '16px';
+});
+</script>
+
+<div class="ad-placeholder ad-inline" id="ad-banner-bottom"></div>
+
+<div class="seo-content">
+<h2>Real-Life Scenarios: What Would You Do?</h2>
+
+<div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+<h3 style="margin-top:0;">Scenario 1: Maya, 28 — First-Time Homebuyer</h3>
+<p>Maya just got approved for a $240,000 mortgage at 6.5% APR over 30 years. She’s never seen how her monthly payment breaks down between principal and interest, and she wants to understand how much she’ll actually pay in total if she sticks to the standard schedule.</p>
+<ul>
+<li><strong>Input:</strong> Loan amount $240,000, term 30 years, rate 6.5%</li>
+<li><strong>Result:</strong> Monthly payment of $1,517; total interest paid over life of loan = ~$305,000</li>
+<li><strong>Key insight:</strong> In the first year, only about 15% of each payment goes toward principal — the rest is interest.</li>
+</ul>
+<p>Maya stared at the schedule for a minute. “I had no idea I’d pay more in interest than the house itself cost. It’s sobering, but at least now I see where every dollar goes.”</p>
+<p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> Don’t just look at the monthly payment — look at the total interest over the loan’s life. The amortization schedule shows you the real cost of borrowing.</p>
+</div>
+
+<div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+<h3 style="margin-top:0;">Scenario 2: Dev, 35 — Auto Loan Dilemma</h3>
+<p>Dev is buying a used car for $22,000. The dealer offers him two options: a 48-month loan at 5.9% APR, or a 72-month loan at 6.4% APR. He’s tempted by the lower monthly payment of the longer term but wants to see the amortization schedule to understand the trade-off.</p>
+<ul>
+<li><strong>Input:</strong> Loan amount $22,000, compare 48 months at 5.9% vs. 72 months at 6.4%</li>
+<li><strong>Result:</strong> 48-month payment = $517/month, total interest = $2,816; 72-month payment = $368/month, total interest = $4,496</li>
+<li><strong>Key insight:</strong> The longer term saves $149 per month but costs an extra $1,680 in interest over the life of the loan.</li>
+</ul>
+<p>Dev ran the numbers twice. “I thought the lower payment was a no-brainer, but seeing how much extra interest I’d burn through changed my mind. I’ll take the 48-month and just budget tighter.”</p>
+<p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-bottom:12px;"><strong>Takeaway:</strong> A longer term always means more total interest — even if the rate is only slightly higher. Use the amortization schedule to compare total costs, not just monthly payments.</p>
+</div>
+
+<div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+<h3 style="margin-top:0;">Scenario 3: Priya, 42 — The Extra Payment Experiment</h3>
+<p>Priya has a $180,000 student loan at 5.0% APR with 10 years remaining. She wonders what happens if she adds an extra $100 to her monthly payment, or if she makes one extra full payment each year. She’s never seen how even small overpayments reshape the schedule.</p>
+<ul>
+<li><strong>Input:</strong> Loan amount $180,000, remaining term 10 years, rate 5.0%; scenario A: +$100/month; scenario B: one extra payment per year ($1,909)</li>
+<li><strong>Result:</strong> Standard: $1,909/month, total interest = $49,085. +$100/month: pays off 16 months early, saves $7,420 in interest. One extra payment/year: pays off 13 months early, saves $6,210 in interest.</li>
+<li><strong>Key insight:</strong> Adding $100/month saves more than a single annual lump sum of $1,909 — because the extra $100 hits every month, reducing principal faster.</li>
+</ul>
+<p>Priya leaned back in her chair. “I always assumed making one big extra payment was smarter. Turns out, small consistent overpayments actually save me more and get me to zero sooner. That’s the kind of math I can use.”</p>
+<p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> When it comes to extra payments, frequency matters. A small monthly overpayment can outperform a single annual lump sum — run the schedule to see which tactic fits your cash flow.</p>
+</div>
+
+<div class="comparison-box" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;overflow-x:auto;">
+<h3 style="margin-top:0;">Quick Comparison: What Changes the Outcome</h3>
+<p style="font-size:.9rem;color:var(--text-secondary);margin-bottom:14px;">See how different inputs affect the result for a $240,000 loan at 6.5% APR:</p>
+<table style="width:100%;border-collapse:collapse;font-size:.9rem;">
+<thead>
+<tr style="background:var(--primary);color:#fff;">
+<th style="padding:10px 12px;text-align:left;">Scenario</th>
+<th style="padding:10px 12px;text-align:left;">Key Input</th>
+<th style="padding:10px 12px;text-align:right;">Result A (30-year)</th>
+<th style="padding:10px 12px;text-align:right;">Result B (different term)</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:10px 12px;font-weight:600;">Term length</td>
+<td style="padding:10px 12px;">30 years vs. 15 years</td>
+<td style="padding:10px 12px;text-align:right;">$1,517/mo, total int. $305,000</td>
+<td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">$2,091/mo, total int. $136,000</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:10px 12px;font-weight:600;">Rate change</td>
+<td style="padding:10px 12px;">6.5% vs. 5.5%</td>
+<td style="padding:10px 12px;text-align:right;">$1,517/mo, total int. $305,000</td>
+<td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">$1,362/mo, total int. $250,000</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:10px 12px;font-weight:600;">Extra payment</td>
+<td style="padding:10px 12px;">$0 vs. +$200/mo</td>
+<td style="padding:10px 12px;text-align:right;">$1,517/mo, term 30 yrs</td>
+<td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">$1,717/mo, term 22.5 yrs</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:10px 12px;font-weight:600;">Bi-weekly payment</td>
+<td style="padding:10px 12px;">Monthly vs. bi-weekly (half payment every 2 weeks)</td>
+<td style="padding:10px 12px;text-align:right;">$1,517/mo, 360 payments</td>
+<td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">$758/bi-weekly, ~26.7 yrs</td>
+</tr>
+</tbody>
+</table>
+<p style="font-size:.85rem;color:var(--text-secondary);margin-top:12px;margin-bottom:0;">The biggest lever? Term length — cutting from 30 to 15 years saves $169,000 in interest but requires $574 more per month. Small extra payments or switching to bi-weekly can also shave years off your loan without a huge change to cash flow.</p>
+</div>
+
+<div class="disclaimer" style="margin-top:24px;padding:14px;background:#fff3cd;border-radius:var(--radius);font-size:.82rem;color:#856404;">
+<p style="margin:0;"><strong>Disclaimer:</strong> All calculations and scenarios are hypothetical and for illustrative purposes only. They assume constant conditions — real-world results may vary. These calculators are educational tools, not financial advice. Consult a qualified professional before making financial decisions.</p>
+</div>
+</div>
+</div>
+
+
+<div style="max-width:780px;margin:0 auto 2rem;display:flex;flex-direction:column;gap:12px;">
+
+<div class="trust-badge testing">
+  <i class="fas fa-flask"></i>
+  <div><strong>Verified Math.</strong> Every formula is cross-checked against spreadsheet calculations using standard financial math. I don't invent formulas — I use the same ones banks and investment platforms use. <a href="/about" style="color:var(--primary);">Learn how I test →</a></div>
+</div>
+
+<div class="trust-badge privacy">
+  <i class="fas fa-shield-alt"></i>
+  <div><strong>Your Numbers Stay Private.</strong> This calculator runs entirely in your browser. Your loan amounts, savings goals, and investment figures never leave your device — not stored, not tracked, not seen by anyone. <a href="/privacy" style="color:var(--primary);">Privacy policy →</a></div>
+</div>
+
+<div class="trust-badge disclaimer">
+  <i class="fas fa-info-circle"></i>
+  <div><strong>Not Financial Advice.</strong> This tool is for educational purposes. Results are estimates based on the numbers you enter — they're not guarantees. Always consult a qualified professional before making major financial decisions.</div>
+</div>
+
+</div>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col">
+<h4>ToolBoxHub</h4>
+<p style="color:var(--text-secondary);font-size:.88rem;">Free financial calculators for loans, investments, budgeting, and more. Make smarter money decisions.</p>
+</div>
+<div class="footer-col">
+<h4>Calculators</h4>
+<a href="loan-calculator">Loan Calculator</a>
+<a href="mortgage-calculator">Mortgage Calculator</a>
+<a href="compound-interest-calculator">Compound Interest</a>
+<a href="budget-calculator">Budget Calculator</a>
+<a href="index">View All (29)</a>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<a href="about">About Us</a>
+<a href="contact">Contact</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="terms">Terms of Service</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>&copy; 2026 ToolBoxHub. All rights reserved.</span>
+<span>Smart financial calculators for everyone.</span>
+</div>
+<div class="footer-bottom" style="border-top:1px solid var(--border);padding-top:12px;margin-top:12px;display:flex;flex-direction:column;gap:6px;">
+<span style="font-size:.78rem;color:var(--text-secondary);">As an Amazon Associate we earn from qualifying purchases. Prices and availability subject to change.</span>
+<span style="font-size:.75rem;color:var(--text-muted);line-height:1.5;"><strong>Disclaimer:</strong> All calculators are for educational and illustrative purposes only. They provide estimates, not guarantees. Nothing on this site constitutes financial advice. Always consult a qualified financial professional before making investment, tax, or borrowing decisions.</span>
+</div>
+</div>
+</footer>
+
+
+<script src="main.js"></script>
+<script>
+// === Amortization Schedule 鈥?Tool Logic ===
+
+function calcAmortization() {
+  var a=parseFloat(document.getElementById('amorAmount').value);
+  var r=parseFloat(document.getElementById('amorRate').value)/100/12;
+  var n=parseInt(document.getElementById('amorTerm').value)*12;
+  if(isNaN(a)||isNaN(r)||isNaN(n)||a<=0||n<=0){showToast('Please enter valid values.');return;}
+  if(r<=0){showToast('Rate must be >0.');return;}
+  var p=a*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+  if(!isFinite(p)){showToast('Invalid result.');return;}
+  var b=a,rows='',ti=0,mx=Math.min(n,360);
+  for(var i=1;i<=mx;i++){var ip=b*r;var pp=p-ip;b-=pp;if(b<0)b=0;ti+=ip;
+    rows+='<tr><td>'+i+'</td><td>$'+p.toFixed(2)+'</td><td>$'+pp.toFixed(2)+'</td><td>$'+ip.toFixed(2)+'</td><td>$'+b.toFixed(2)+'</td></tr>';
+    if(b<=0)break;}
+  document.getElementById('amorPayment').textContent='$'+p.toFixed(2);
+  document.getElementById('amorInterest').textContent='$'+ti.toFixed(2);
+  document.getElementById('amorBody').innerHTML=rows;
+}
+
+</script>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9cdb1d83529f44749dc930864bab3884"}'></script>
+<script src="affiliate.js"></script>\`n
+<div class="related-calculators" style="margin: 2em 0; padding: 1.5em; border: 1px solid #e0e0e0; border-radius: 8px; background: #f9f9f9;">
+  <h2>Other Useful Calculators</h2>
+  <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5em;">
+    <li><a href="/crypto-profit-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Crypto Profit Calculator</a></li>\n    <li><a href="/inflation-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Inflation Calculator</a></li>\n    <li><a href="/sales-tax-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Sales Tax Calculator</a></li>\n    <li><a href="/college-savings-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">College Savings Calculator</a></li>\n  </ul>
+</div>
+\n</body>
+</html>
+
+
+

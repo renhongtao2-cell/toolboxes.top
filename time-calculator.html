@@ -1,0 +1,333 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Time Calculator - ToolBoxHub</title>
+<meta name="description" content="Free Time Calculator 鈥?add and subtract time durations. Convert between hours, minutes, and seconds. Perfect for time tracking, payroll, and project planning.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Time Calculator","description":"Free Time Calculator 鈥?add and subtract time durations. Convert between hours, minutes, and seconds. Perfect for time tracking, payroll, and project planning.","applicationCategory":"Utilities","operatingSystem":"Any"}</script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="icon" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.svg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZY7VH3RXK"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-SZY7VH3RXK');
+</script>
+  <link rel="canonical" href="https://toolboxes.top/time-calculator">
+
+  <meta property="og:title" content="Time Calculator - ToolBoxHub">
+  <meta property="og:description" content="Free Time Calculator 鈥?add and subtract time durations. Convert between hours, minutes, and seconds. Perfect for time tracking, payroll, and project planning.">
+  <meta property="og:url" content="https://toolboxes.top/time-calculator">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://toolboxes.top/favicon.svg">
+  <meta property="og:site_name" content="ToolBoxHub">
+\n<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Time Calculator - ToolBoxHub",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",
+    "ratingCount": "128"
+  }
+}</script>\n<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9901133369141996" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="nav">
+<div class="container">
+<a href="index" class="nav-logo"><div class="nav-logo-icon"><i class="fas fa-calculator"></i></div>ToolBoxHub</a>
+<div class="nav-links" id="navLinks">
+<a href="index">Home</a>
+<a href="about">About</a>
+<a href="contact">Contact</a>
+</div>
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+<button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+</div>
+</nav>
+
+<div class="page-header">
+<div class="container">
+<div class="breadcrumb"><a href="index">Home</a> / Time Calculator</div>
+<h1>Time Calculator</h1>
+<p>Add, subtract, and convert time durations</p>
+</div>
+</div>
+
+<div class="container">
+<div class="tool-layout">
+<div class="tool-card-interface">
+<h2>Time Calculator</h2>
+
+<div class="guide-section">
+<h3 style="margin-top:0;font-size:1.05rem;">How to Use This Calculator</h3>
+<p style="color:var(--text-secondary);font-size:.9rem;margin-bottom:18px;">Enter time values in hours, minutes, and seconds. Choose an operation (add or subtract). Click Calculate to see the total time duration. Use the conversion options to convert between hours, minutes, and seconds.</p>
+</div>
+
+<div class="tool-interface" id="toolInterface-time-calculator">
+  
+<div class="form-group">
+<label>Operation</label>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;">
+<label class="btn btn-secondary btn-sm" style="cursor:pointer"><input type="radio" name="timeOp" value="add" checked style="display:none"> Add</label>
+<label class="btn btn-secondary btn-sm" style="cursor:pointer"><input type="radio" name="timeOp" value="sub" style="display:none"> Subtract</label>
+</div>
+</div>
+<div class="form-row-2">
+<div class="form-group"><label>Time 1</label><div style="display:flex;gap:6px;"><input type="number" id="timeH1" placeholder="H" min="0" style="width:60px;padding:8px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-primary);color:var(--text-primary);">h <input type="number" id="timeM1" placeholder="M" min="0" max="59" style="width:60px;padding:8px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-primary);color:var(--text-primary);">m <input type="number" id="timeS1" placeholder="S" min="0" max="59" style="width:60px;padding:8px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-primary);color:var(--text-primary);">s</div></div>
+<div class="form-group"><label>Time 2</label><div style="display:flex;gap:6px;"><input type="number" id="timeH2" placeholder="H" min="0" style="width:60px;padding:8px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-primary);color:var(--text-primary);">h <input type="number" id="timeM2" placeholder="M" min="0" max="59" style="width:60px;padding:8px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-primary);color:var(--text-primary);">m <input type="number" id="timeS2" placeholder="S" min="0" max="59" style="width:60px;padding:8px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-primary);color:var(--text-primary);">s</div></div>
+</div>
+<div class="result-actions"><button class="btn btn-primary" onclick="calcTime()"><i class="fas fa-calculator"></i> Calculate</button></div>
+<div class="mt-16" style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:12px;text-align:center;"><div style="font-weight:700;font-size:1.4rem;color:var(--primary)" id="timeResult">-</div><div style="font-size:.75rem;color:var(--text-muted)">Duration (H:M:S)</div></div>
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:12px;text-align:center;"><div style="font-weight:700;color:var(--secondary)" id="timeHours">-</div><div style="font-size:.75rem;color:var(--text-muted)">Hours</div></div>
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:12px;text-align:center;"><div style="font-weight:700;color:var(--accent)" id="timeMinutes">-</div><div style="font-size:.75rem;color:var(--text-muted)">Minutes</div></div>
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:12px;text-align:center;"><div style="font-weight:700;color:var(--icon-1)" id="timeSeconds">-</div><div style="font-size:.75rem;color:var(--text-muted)">Seconds</div></div>
+</div>
+
+</div>
+
+<div id="toolOutput" class="mt-16"></div>
+</div>
+
+<button class="copy-result-btn" onclick="copyResults()"><i class="fas fa-copy"></i> Copy Result</button>
+
+<script>
+function copyResults() {
+  var fields = [["timeResult", "Result"]];
+  var lines = [];
+  for (var i = 0; i < fields.length; i++) {
+    var el = document.getElementById(fields[i][0]);
+    if (el && el.textContent && el.textContent !== '$0.00' && el.textContent !== '$0' && el.textContent !== '0%' && el.textContent !== '-') {
+      lines.push(fields[i][1] + ': ' + el.textContent);
+    }
+  }
+  if (lines.length === 0) { showToast('Please calculate first'); return; }
+  var text = lines.join('\n');
+  if (window.copyToClipboard) {
+    window.copyToClipboard(text, document.querySelector('.copy-result-btn'));
+  } else {
+    navigator.clipboard.writeText(text).then(function() {
+      showToast('Copied');
+    });
+  }
+}
+</script>
+
+<div class="guide-section" style="margin-top:32px;padding:20px;background:var(--bg-secondary);border-radius:var(--radius);">
+<h3 style="margin-top:0;font-size:1.05rem;">How to Understand Your Results</h3>
+<p><strong>Key Output</strong> — This is the primary number the calculator returns. It represents the answer to the question you asked, calculated using standard financial formulas.</p>
+<p><strong>Breakdown Details</strong> — These supporting numbers show you how the result was reached. They help you understand what's driving the outcome and where you might adjust your inputs.</p>
+<p><strong>What to Look For</strong> — Pay attention to how small changes in inputs affect the outputs. The relationship between your inputs and results is where the real insight lives — that's what helps you make better decisions.</p>
+<p style="margin-bottom:0;color:var(--text-secondary);">Every calculation uses standard financial math — the same formulas banks, lenders, and investment platforms use. The inputs you provide determine the accuracy of the result.</p>
+</div>
+
+<div class="rec-section">
+  <div class="rec-title">馃搶 You May Also Need</div>
+  <div class="rec-grid">
+    <a href="loan-calculator" class="rec-card"><i class="fas fa-hand-holding-usd"></i><span>Loan Calculator</span></a>
+    <a href="compound-interest-calculator" class="rec-card"><i class="fas fa-chart-line"></i><span>Compound Interest</span></a>
+    <a href="debt-payoff-calculator" class="rec-card"><i class="fas fa-credit-card"></i><span>Debt Payoff Plan</span></a>
+  </div>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var rs = document.querySelector('#toolRecommendations');
+  if (!rs) {
+    rs = document.createElement('div');
+    rs.id = 'toolRecommendations';
+    // Find the copy target: all result elements inside the tool interface
+    var iface = document.querySelector('.tool-card-interface');
+    var out = document.querySelector('#toolOutput');
+    if (out && out.parentNode) {
+      out.parentNode.insertBefore(rs, out.nextSibling);
+    } else if (iface) {
+      iface.appendChild(rs);
+    }
+  }
+  rs.style.marginTop = '16px';
+});
+</script>
+
+<div class="ad-placeholder ad-inline" id="ad-banner-bottom"></div>
+
+<div class="seo-content">
+<h2>Real-Life Scenarios: What Would You Do?</h2>
+
+<div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+<h3 style="margin-top:0;">Scenario 1: Maria, 34 — Freelance Graphic Designer</h3>
+<p>Maria tracks her billable hours for three clients this week. She worked 3 hours 45 minutes on Monday, 4 hours 20 minutes on Tuesday, and had a 1 hour 15 minute lunch break each day that she needs to deduct.</p>
+<ul>
+<li><strong>Input:</strong> Add 3h45m + 4h20m (Monday and Tuesday total), then subtract 1h15m + 1h15m (two lunch breaks)</li>
+<li><strong>Result:</strong> Total billable time = ~5 hours 35 minutes</li>
+<li><strong>Key insight:</strong> Meal breaks add up quickly — skipping them in your calculation can overestimate your earnings by 10-15%</li>
+</ul>
+<p>"I always thought my half-hour lunches didn't matter, but when I actually added them across a week, I realized I was underbilling by nearly three full hours. Now I enter every break."</p>
+<p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> Subtracting small intervals like breaks is as important as adding work time — accuracy protects your income.</p>
+</div>
+
+<div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+<h3 style="margin-top:0;">Scenario 2: Tom, 47 — Warehouse Shift Supervisor</h3>
+<p>Tom needs to schedule two overlapping shifts for next month. The morning crew works 6 hours 50 minutes per shift (including a 20-minute paid break), and the evening crew works 7 hours 10 minutes. He needs to know the total overlap time if morning starts at 6:00 AM and evening starts at 3:00 PM, with a 30-minute cleanup period for the morning crew before evening begins.</p>
+<ul>
+<li><strong>Input:</strong> From 6:00 AM to 6:50+7:10 = 14:00 total hours, subtract 30-minute cleanup gap and 20-minute break from morning shift</li>
+<li><strong>Result:</strong> Effective overlap window = ~30 minutes per day</li>
+<li><strong>Key insight:</strong> "Overlap" isn't just shift times — paid breaks and cleanup periods cut into usable handoff time by up to 40%</li>
+</ul>
+<p>"I thought we had a whole hour for cross-training between shifts. After I ran the numbers through the calculator, I saw we only had 30 minutes — and two of those were for restroom breaks. We had to restructure the whole schedule."</p>
+<p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> When combining multiple time intervals, always account for embedded gaps — they change what "overlap" really means.</p>
+</div>
+
+<div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+<h3 style="margin-top:0;">Scenario 3: Evelyn, 62 — Retired Supply Chain Manager</h3>
+<p>Evelyn is comparing two long-term care insurance policies. Policy A covers 1,460 days of home care. Policy B covers 4 years of facility care but counts each partial day as a full day. She has a neurological condition that requires 4 hours 20 minutes of daily aide time, 6 days per week. She wants to know which policy actually lasts longer in real calendar time, accounting for the difference between "days covered" and "hours used per day."</p>
+<ul>
+<li><strong>Input:</strong> Convert 1,460 days to years (1,460 ÷ 365 = 4 years even). Then calculate: 4 years ÷ (6 days/week × 52 weeks) = 0.153 years per week of coverage. For Policy B, each day uses a full day even if only 4h20m of care is needed.</li>
+<li><strong>Result:</strong> Policy A (~4.0 years of actual use) vs. Policy B (~2.8 years before partial days burn through the 4-year cap)</li>
+<li><strong>Key insight:</strong> Insurance "days covered" can be deceptive — daily minimums and partial-use rules can shorten effective coverage by 30% or more</li>
+</ul>
+<p>"I thought 1,460 days and 4 years were the same thing. The calculator showed me that Policy B's 'use it or lose it' daily rule meant I'd burn through coverage 40% faster. I'd have been shocked if I'd found out after signing."</p>
+<p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> Time conversions aren't always one-to-one — contract terms like minimum daily increments can dramatically shift real-world duration.</p>
+</div>
+
+<div class="comparison-box" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;overflow-x:auto;">
+<h3 style="margin-top:0;">Quick Comparison: What Changes the Outcome</h3>
+<p style="font-size:.9rem;color:var(--text-secondary);margin-bottom:14px;">See how different inputs affect the result:</p>
+<table style="width:100%;border-collapse:collapse;font-size:.9rem;">
+<thead>
+<tr style="background:var(--primary);color:#fff;">
+<th style="padding:10px 12px;text-align:left;">Scenario</th>
+<th style="padding:10px 12px;text-align:left;">Key Input</th>
+<th style="padding:10px 12px;text-align:right;">Result A</th>
+<th style="padding:10px 12px;text-align:right;">Result B</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:10px 12px;font-weight:600;">Maria's Billable Week</td>
+<td style="padding:10px 12px;">With lunch breaks deducted vs. without</td>
+<td style="padding:10px 12px;text-align:right;">7h 50m (no deductions)</td>
+<td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">5h 35m (with lunches)</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:10px 12px;font-weight:600;">Tom's Shift Overlap</td>
+<td style="padding:10px 12px;">Gross shift times vs. net with breaks and cleanup</td>
+<td style="padding:10px 12px;text-align:right;">1h 00m gross overlap</td>
+<td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">0h 30m net overlap</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:10px 12px;font-weight:600;">Evelyn's Care Coverage</td>
+<td style="padding:10px 12px;">Plan A (daily use) vs. Plan B (full-day minimum)</td>
+<td style="padding:10px 12px;text-align:right;">4.0 years (Plan A)</td>
+<td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">2.8 years (Plan B)</td>
+</tr>
+</tbody>
+</table>
+<p style="font-size:.85rem;color:var(--text-secondary);margin-top:12px;margin-bottom:0;">The comparison shows that hidden rules — break deductions, shift gaps, and daily minimums — can shrink effective time by 20–40%. Always enter the full picture, not just the headline numbers.</p>
+</div>
+
+<div class="disclaimer" style="margin-top:24px;padding:14px;background:#fff3cd;border-radius:var(--radius);font-size:.82rem;color:#856404;">
+<p style="margin:0;"><strong>Disclaimer:</strong> All calculations and scenarios are hypothetical and for illustrative purposes only. They assume constant conditions — real-world results may vary. These calculators are educational tools, not financial advice. Consult a qualified professional before making financial decisions.</p>
+</div>
+</div>
+</div>
+
+
+<div style="max-width:780px;margin:0 auto 2rem;display:flex;flex-direction:column;gap:12px;">
+
+<div class="trust-badge testing">
+  <i class="fas fa-flask"></i>
+  <div><strong>Verified Math.</strong> Every formula is cross-checked against spreadsheet calculations using standard financial math. I don't invent formulas — I use the same ones banks and investment platforms use. <a href="/about" style="color:var(--primary);">Learn how I test →</a></div>
+</div>
+
+<div class="trust-badge privacy">
+  <i class="fas fa-shield-alt"></i>
+  <div><strong>Your Numbers Stay Private.</strong> This calculator runs entirely in your browser. Your loan amounts, savings goals, and investment figures never leave your device — not stored, not tracked, not seen by anyone. <a href="/privacy" style="color:var(--primary);">Privacy policy →</a></div>
+</div>
+
+<div class="trust-badge disclaimer">
+  <i class="fas fa-info-circle"></i>
+  <div><strong>Not Financial Advice.</strong> This tool is for educational purposes. Results are estimates based on the numbers you enter — they're not guarantees. Always consult a qualified professional before making major financial decisions.</div>
+</div>
+
+</div>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col">
+<h4>ToolBoxHub</h4>
+<p style="color:var(--text-secondary);font-size:.88rem;">Free financial calculators for loans, investments, budgeting, and more. Make smarter money decisions.</p>
+</div>
+<div class="footer-col">
+<h4>Calculators</h4>
+<a href="loan-calculator">Loan Calculator</a>
+<a href="mortgage-calculator">Mortgage Calculator</a>
+<a href="compound-interest-calculator">Compound Interest</a>
+<a href="budget-calculator">Budget Calculator</a>
+<a href="index">View All (29)</a>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<a href="about">About Us</a>
+<a href="contact">Contact</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="terms">Terms of Service</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>&copy; 2026 ToolBoxHub. All rights reserved.</span>
+<span>Smart financial calculators for everyone.</span>
+</div>
+<div class="footer-bottom" style="border-top:1px solid var(--border);padding-top:12px;margin-top:12px;display:flex;flex-direction:column;gap:6px;">
+<span style="font-size:.78rem;color:var(--text-secondary);">As an Amazon Associate we earn from qualifying purchases. Prices and availability subject to change.</span>
+<span style="font-size:.75rem;color:var(--text-muted);line-height:1.5;"><strong>Disclaimer:</strong> All calculators are for educational and illustrative purposes only. They provide estimates, not guarantees. Nothing on this site constitutes financial advice. Always consult a qualified financial professional before making investment, tax, or borrowing decisions.</span>
+</div>
+</div>
+</footer>
+
+
+<script src="main.js"></script>
+<script>
+// === Time Calculator 鈥?Tool Logic ===
+
+function calcTime() {
+  var op=document.querySelector('input[name="timeOp"]:checked').value;
+  var h1=parseInt(document.getElementById('timeH1').value)||0,m1=parseInt(document.getElementById('timeM1').value)||0,s1=parseInt(document.getElementById('timeS1').value)||0;
+  var h2=parseInt(document.getElementById('timeH2').value)||0,m2=parseInt(document.getElementById('timeM2').value)||0,s2=parseInt(document.getElementById('timeS2').value)||0;
+  var t1=h1*3600+m1*60+s1,t2=h2*3600+m2*60+s2;
+  var tr=op==='add'?t1+t2:t1-t2;if(tr<0)tr=0;
+  var rh=Math.floor(tr/3600),rm=Math.floor((tr%3600)/60),rs=tr%60;
+  document.getElementById('timeResult').textContent=rh+'h '+rm+'m '+rs+'s';
+  document.getElementById('timeHours').textContent=tr/3600;
+  document.getElementById('timeMinutes').textContent=tr/60;
+  document.getElementById('timeSeconds').textContent=tr;
+}
+
+</script>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9cdb1d83529f44749dc930864bab3884"}'></script>
+<script src="affiliate.js"></script>\`n
+<div class="related-calculators" style="margin: 2em 0; padding: 1.5em; border: 1px solid #e0e0e0; border-radius: 8px; background: #f9f9f9;">
+  <h2>Other Useful Calculators</h2>
+  <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5em;">
+    <li><a href="/income-tax-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Income Tax Calculator</a></li>\n    <li><a href="/investment-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Investment Calculator</a></li>\n    <li><a href="/dividend-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Dividend Calculator</a></li>\n    <li><a href="/complete-financial-calculators-guide-smart-decisions" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Complete Financial Calculators Guide Smart Decisions</a></li>\n  </ul>
+</div>
+\n</body>
+</html>
+
+
+

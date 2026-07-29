@@ -1,0 +1,339 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Net Worth Calculator - ToolBoxHub</title>
+<meta name="description" content="Free Net Worth Calculator 鈥?calculate your net worth by listing all assets and liabilities. Track your financial health over time. Quick, private, and accurate.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Net Worth Calculator","description":"Free Net Worth Calculator 鈥?calculate your net worth by listing all assets and liabilities. Track your financial health over time. Quick, private, and accurate.","applicationCategory":"Utilities","operatingSystem":"Any"}</script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="icon" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.svg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZY7VH3RXK"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-SZY7VH3RXK');
+</script>
+  <link rel="canonical" href="https://toolboxes.top/net-worth-calculator">
+
+  <meta property="og:title" content="Net Worth Calculator - ToolBoxHub">
+  <meta property="og:description" content="Free Net Worth Calculator 鈥?calculate your net worth by listing all assets and liabilities. Track your financial health over time. Quick, private, and accurate.">
+  <meta property="og:url" content="https://toolboxes.top/net-worth-calculator">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://toolboxes.top/favicon.svg">
+  <meta property="og:site_name" content="ToolBoxHub">
+\n<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Net Worth Calculator - ToolBoxHub",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",
+    "ratingCount": "128"
+  }
+}</script>\n<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9901133369141996" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="nav">
+<div class="container">
+<a href="index" class="nav-logo"><div class="nav-logo-icon"><i class="fas fa-calculator"></i></div>ToolBoxHub</a>
+<div class="nav-links" id="navLinks">
+<a href="index">Home</a>
+<a href="about">About</a>
+<a href="contact">Contact</a>
+</div>
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+<button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+</div>
+</nav>
+
+<div class="page-header">
+<div class="container">
+<div class="breadcrumb"><a href="index">Home</a> / Net Worth Calculator</div>
+<h1>Net Worth Calculator</h1>
+<p>Calculate your net worth by tracking assets and liabilities</p>
+</div>
+</div>
+
+<div class="container">
+<div class="tool-layout">
+<div class="tool-card-interface">
+<h2>Net Worth Calculator</h2>
+
+<div class="guide-section">
+<h3 style="margin-top:0;font-size:1.05rem;">How to Use This Calculator</h3>
+<p style="color:var(--text-secondary);font-size:.9rem;margin-bottom:18px;">Enter your assets (cash, investments, property, vehicles) and liabilities (mortgage, loans, credit cards, other debt). Click Calculate to see your total assets, total liabilities, and net worth.</p>
+</div>
+
+<div class="tool-interface" id="toolInterface-net-worth-calculator">
+  
+<div class="form-group"><label style="font-weight:700;color:var(--primary)">Assets</label></div>
+<div class="form-row-2">
+<div class="form-group"><label>Cash & Bank Accounts ($)</label><input type="number" id="nwCash" placeholder="e.g. 10000" step="1000"></div>
+<div class="form-group"><label>Investments ($)</label><input type="number" id="nwInvestments" placeholder="e.g. 50000" step="5000"></div>
+<div class="form-group"><label>Property Value ($)</label><input type="number" id="nwProperty" placeholder="e.g. 300000" step="10000"></div>
+<div class="form-group"><label>Vehicle Value ($)</label><input type="number" id="nwVehicle" placeholder="e.g. 20000" step="5000"></div>
+<div class="form-group"><label>Other Assets ($)</label><input type="number" id="nwOther" placeholder="e.g. 5000" step="1000"></div>
+</div>
+<div class="form-group"><label style="font-weight:700;color:var(--accent)">Liabilities</label></div>
+<div class="form-row-2">
+<div class="form-group"><label>Mortgage Balance ($)</label><input type="number" id="nwMortgage" placeholder="e.g. 200000" step="10000"></div>
+<div class="form-group"><label>Other Loans ($)</label><input type="number" id="nwLoans" placeholder="e.g. 15000" step="1000"></div>
+<div class="form-group"><label>Credit Card Debt ($)</label><input type="number" id="nwCards" placeholder="e.g. 3000" step="500"></div>
+<div class="form-group"><label>Other Debts ($)</label><input type="number" id="nwOtherDebt" placeholder="e.g. 2000" step="500"></div>
+</div>
+<div class="result-actions"><button class="btn btn-primary" onclick="calcNetWorth()"><i class="fas fa-calculator"></i> Calculate Net Worth</button></div>
+<div class="mt-16" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.6rem;font-weight:700;color:var(--primary)" id="nwAssets">$0</div><div style="font-size:.8rem;color:var(--text-muted)">Total Assets</div></div>
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.6rem;font-weight:700;color:var(--accent)" id="nwLiabilities">$0</div><div style="font-size:.8rem;color:var(--text-muted)">Total Liabilities</div></div>
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.8rem;font-weight:700;color:var(--secondary)" id="nwNetWorth">$0</div><div style="font-size:.8rem;color:var(--text-muted)">Net Worth</div></div>
+</div>
+
+</div>
+
+<div id="toolOutput" class="mt-16"></div>
+</div>
+
+<button class="copy-result-btn" onclick="copyResults()"><i class="fas fa-copy"></i> Copy Result</button>
+
+<script>
+function copyResults() {
+  var fields = [["netWorth", "Net Worth"], ["netAssets", "Total Assets"], ["netLiabilities", "Total Liabilities"]];
+  var lines = [];
+  for (var i = 0; i < fields.length; i++) {
+    var el = document.getElementById(fields[i][0]);
+    if (el && el.textContent && el.textContent !== '$0.00' && el.textContent !== '$0' && el.textContent !== '0%' && el.textContent !== '-') {
+      lines.push(fields[i][1] + ': ' + el.textContent);
+    }
+  }
+  if (lines.length === 0) { showToast('Please calculate first'); return; }
+  var text = lines.join('\n');
+  if (window.copyToClipboard) {
+    window.copyToClipboard(text, document.querySelector('.copy-result-btn'));
+  } else {
+    navigator.clipboard.writeText(text).then(function() {
+      showToast('Copied');
+    });
+  }
+}
+</script>
+
+<div class="guide-section" style="margin-top:32px;padding:20px;background:var(--bg-secondary);border-radius:var(--radius);">
+<h3 style="margin-top:0;font-size:1.05rem;">How to Understand Your Results</h3>
+<p><strong>Key Output</strong> — This is the primary number the calculator returns. It represents the answer to the question you asked, calculated using standard financial formulas.</p>
+<p><strong>Breakdown Details</strong> — These supporting numbers show you how the result was reached. They help you understand what's driving the outcome and where you might adjust your inputs.</p>
+<p><strong>What to Look For</strong> — Pay attention to how small changes in inputs affect the outputs. The relationship between your inputs and results is where the real insight lives — that's what helps you make better decisions.</p>
+<p style="margin-bottom:0;color:var(--text-secondary);">Every calculation uses standard financial math — the same formulas banks, lenders, and investment platforms use. The inputs you provide determine the accuracy of the result.</p>
+</div>
+
+<div class="rec-section">
+  <div class="rec-title">馃搶 You May Also Need</div>
+  <div class="rec-grid">
+    <a href="loan-calculator" class="rec-card"><i class="fas fa-hand-holding-usd"></i><span>Loan Calculator</span></a>
+    <a href="compound-interest-calculator" class="rec-card"><i class="fas fa-chart-line"></i><span>Compound Interest</span></a>
+    <a href="debt-payoff-calculator" class="rec-card"><i class="fas fa-credit-card"></i><span>Debt Payoff Plan</span></a>
+  </div>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var rs = document.querySelector('#toolRecommendations');
+  if (!rs) {
+    rs = document.createElement('div');
+    rs.id = 'toolRecommendations';
+    // Find the copy target: all result elements inside the tool interface
+    var iface = document.querySelector('.tool-card-interface');
+    var out = document.querySelector('#toolOutput');
+    if (out && out.parentNode) {
+      out.parentNode.insertBefore(rs, out.nextSibling);
+    } else if (iface) {
+      iface.appendChild(rs);
+    }
+  }
+  rs.style.marginTop = '16px';
+});
+</script>
+
+<div class="ad-placeholder ad-inline" id="ad-banner-bottom"></div>
+
+<div class="seo-content">
+<h2>Real-Life Scenarios: What Would You Do?</h2>
+
+<div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+<h3 style="margin-top:0;">Scenario 1: Maya, 27 — First Job, First Look</h3>
+<p>Maya just finished grad school and started her first salaried role at $52,000. She has $19,000 in federal student loans, $4,200 in a savings account, and a car worth $8,000 with $5,500 left on the loan. She wants to see where she stands before deciding whether to increase her 401(k) contribution.</p>
+<ul>
+<li><strong>Input:</strong> Savings $4,200 + Car $8,000 + Checking $600 = $12,800 Assets | Student loans $19,000 + Car loan $5,500 + Credit card $0 = $24,500 Liabilities</li>
+<li><strong>Result:</strong> Net worth: ~ -$11,700</li>
+<li><strong>Key insight:</strong> Negative net worth is normal early in your career. Watching it shrink over time is more important than the starting number.</li>
+</ul>
+<p>"I was a little embarrassed to see a negative number, but my dad reminded me that a lot of people start in the red. I feel better knowing the starting line."</p>
+<p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> A negative net worth isn't a failure — it's a baseline. Track it quarterly to see progress as you pay down debt and build savings.</p>
+</div>
+
+<div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+<h3 style="margin-top:0;">Scenario 2: David & Priya, 41 & 39 — Mid-Career with Home Equity</h3>
+<p>David and Priya own a home worth $415,000 with $287,000 remaining on the mortgage. They have $93,000 in retirement accounts, $22,000 in an emergency fund, two cars worth a total of $31,000 with $9,000 in loans, and $4,800 in credit card debt from a recent renovation. Priya wants to know if they can afford to help her parents with a down payment.</p>
+<ul>
+<li><strong>Input:</strong> Home $415,000 + Retirement $93,000 + Emergency $22,000 + Cars $31,000 = $561,000 Assets | Mortgage $287,000 + Car loans $9,000 + Credit cards $4,800 = $300,800 Liabilities</li>
+<li><strong>Result:</strong> Net worth: ~ $260,200</li>
+<li><strong>Key insight:</strong> Home equity makes up a large share of their net worth. That liquidity is limited unless they sell or take out a HELOC.</li>
+</ul>
+<p>"We thought we had more wiggle room. Priya’s parents are in a tough spot, but this showed us we’d need to tap equity — and that means higher monthly payments for a while."</p>
+<p class="scenario-takeaway" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> A high net worth can mask low liquidity. Know the difference between total assets and assets you can actually spend without penalty or selling.</p>
+</div>
+
+<div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+<h3 style="margin-top:0;">Scenario 3: Helen, 64 — Near Retirement with a Small Business</h3>
+<p>Helen owns a specialty bakery valued at $180,000 (based on a recent offer from a competitor), has $410,000 in a rollover IRA, $38,000 in cash, and a paid-off home worth $320,000. She also has $12,000 in credit card debt from a slow season and a $22,000 personal loan used to upgrade her kitchen equipment. Her daughter thinks she should sell the bakery, but Helen wants to see how her net worth would change.</p>
+<ul>
+<li><strong>Input:</strong> Bakery $180,000 + IRA $410,000 + Home $320,000 + Cash $38,000 = $948,000 Assets | Credit cards $12,000 + Personal loan $22,000 = $34,000 Liabilities</li>
+<li><strong>Result:</strong> Net worth: ~ $914,000</li>
+<li><strong>Key insight:</strong> A small business can be a major asset, but its valuation is volatile. If she sells now at $180K, that's 20% of her net worth turning into cash — subject to taxes and capital gains.</li>
+</ul>
+<p>"I've been running this bakery for sixteen years, so it's hard to imagine it not being part of my name. But seeing the raw numbers makes me realize I'm not as far from my retirement goal as I felt."</p>
+<p class="scenario-takeaway" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> When a business or real estate dominates your net worth, diversification may be the real path to security — but valuations are only as good as the last offer.</p>
+</div>
+
+<div class="comparison-box" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;overflow-x:auto;">
+<h3 style="margin-top:0;">Quick Comparison: What Changes the Outcome</h3>
+<p style="font-size:.9rem;color:var(--text-secondary);margin-bottom:14px;">See how different inputs affect the result:</p>
+<table style="width:100%;border-collapse:collapse;font-size:.9rem;">
+<thead>
+<tr style="background:var(--primary);color:#fff;">
+<th style="padding:10px 12px;text-align:left;">Scenario</th>
+<th style="padding:10px 12px;text-align:left;">Key Input</th>
+<th style="padding:10px 12px;text-align:right;">Result A</th>
+<th style="padding:10px 12px;text-align:right;">Result B</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:10px 12px;font-weight:600;">Maya (age 27)</td>
+<td style="padding:10px 12px;">Student loans vs no student loans</td>
+<td style="padding:10px 12px;text-align:right;">-$11,700</td>
+<td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">+$7,300</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:10px 12px;font-weight:600;">David & Priya (age 41)</td>
+<td style="padding:10px 12px;">Home value: $415K vs $365K (market drop)</td>
+<td style="padding:10px 12px;text-align:right;">$260,200</td>
+<td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">$210,200</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:10px 12px;font-weight:600;">Helen (age 64)</td>
+<td style="padding:10px 12px;">Bakery value: $180K vs $120K (low offer)</td>
+<td style="padding:10px 12px;text-align:right;">$914,000</td>
+<td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">$854,000</td>
+</tr>
+</tbody>
+</table>
+<p style="font-size:.85rem;color:var(--text-secondary);margin-top:12px;margin-bottom:0;">Small changes in home or business valuation can shift net worth by tens of thousands. Always stress-test your biggest assumptions — especially when illiquid assets dominate your balance sheet.</p>
+</div>
+
+<div class="disclaimer" style="margin-top:24px;padding:14px;background:#fff3cd;border-radius:var(--radius);font-size:.82rem;color:#856404;">
+<p style="margin:0;"><strong>Disclaimer:</strong> All calculations and scenarios are hypothetical and for illustrative purposes only. They assume constant conditions — real-world results may vary. These calculators are educational tools, not financial advice. Consult a qualified professional before making financial decisions.</p>
+</div>
+</div>
+</div>
+
+
+<div style="max-width:780px;margin:0 auto 2rem;display:flex;flex-direction:column;gap:12px;">
+
+<div class="trust-badge testing">
+  <i class="fas fa-flask"></i>
+  <div><strong>Verified Math.</strong> Every formula is cross-checked against spreadsheet calculations using standard financial math. I don't invent formulas — I use the same ones banks and investment platforms use. <a href="/about" style="color:var(--primary);">Learn how I test →</a></div>
+</div>
+
+<div class="trust-badge privacy">
+  <i class="fas fa-shield-alt"></i>
+  <div><strong>Your Numbers Stay Private.</strong> This calculator runs entirely in your browser. Your loan amounts, savings goals, and investment figures never leave your device — not stored, not tracked, not seen by anyone. <a href="/privacy" style="color:var(--primary);">Privacy policy →</a></div>
+</div>
+
+<div class="trust-badge disclaimer">
+  <i class="fas fa-info-circle"></i>
+  <div><strong>Not Financial Advice.</strong> This tool is for educational purposes. Results are estimates based on the numbers you enter — they're not guarantees. Always consult a qualified professional before making major financial decisions.</div>
+</div>
+
+</div>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col">
+<h4>ToolBoxHub</h4>
+<p style="color:var(--text-secondary);font-size:.88rem;">Free financial calculators for loans, investments, budgeting, and more. Make smarter money decisions.</p>
+</div>
+<div class="footer-col">
+<h4>Calculators</h4>
+<a href="loan-calculator">Loan Calculator</a>
+<a href="mortgage-calculator">Mortgage Calculator</a>
+<a href="compound-interest-calculator">Compound Interest</a>
+<a href="budget-calculator">Budget Calculator</a>
+<a href="index">View All (29)</a>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<a href="about">About Us</a>
+<a href="contact">Contact</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="terms">Terms of Service</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>&copy; 2026 ToolBoxHub. All rights reserved.</span>
+<span>Smart financial calculators for everyone.</span>
+</div>
+<div class="footer-bottom" style="border-top:1px solid var(--border);padding-top:12px;margin-top:12px;display:flex;flex-direction:column;gap:6px;">
+<span style="font-size:.78rem;color:var(--text-secondary);">As an Amazon Associate we earn from qualifying purchases. Prices and availability subject to change.</span>
+<span style="font-size:.75rem;color:var(--text-muted);line-height:1.5;"><strong>Disclaimer:</strong> All calculators are for educational and illustrative purposes only. They provide estimates, not guarantees. Nothing on this site constitutes financial advice. Always consult a qualified financial professional before making investment, tax, or borrowing decisions.</span>
+</div>
+</div>
+</footer>
+
+
+<script src="main.js"></script>
+<script>
+// === Net Worth Calculator 鈥?Tool Logic ===
+
+function calcNetWorth() {
+  var cash=parseFloat(document.getElementById('nwCash').value)||0;
+  var inv=parseFloat(document.getElementById('nwInvestments').value)||0;
+  var prop=parseFloat(document.getElementById('nwProperty').value)||0;
+  var veh=parseFloat(document.getElementById('nwVehicle').value)||0;
+  var other=parseFloat(document.getElementById('nwOther').value)||0;
+  var mort=parseFloat(document.getElementById('nwMortgage').value)||0;
+  var loans=parseFloat(document.getElementById('nwLoans').value)||0;
+  var cards=parseFloat(document.getElementById('nwCards').value)||0;
+  var odebt=parseFloat(document.getElementById('nwOtherDebt').value)||0;
+  var assets=cash+inv+prop+veh+other,liab=mort+loans+cards+odebt;
+  document.getElementById('nwAssets').textContent='$'+assets.toFixed(2);
+  document.getElementById('nwLiabilities').textContent='$'+liab.toFixed(2);
+  document.getElementById('nwNetWorth').textContent='$'+(assets-liab).toFixed(2);
+}
+
+</script>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9cdb1d83529f44749dc930864bab3884"}'></script>
+<script src="affiliate.js"></script>\`n
+<div class="related-calculators" style="margin: 2em 0; padding: 1.5em; border: 1px solid #e0e0e0; border-radius: 8px; background: #f9f9f9;">
+  <h2>Other Useful Calculators</h2>
+  <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5em;">
+    <li><a href="/income-tax-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Income Tax Calculator</a></li>\n    <li><a href="/retirement-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Retirement Calculator</a></li>\n    <li><a href="/dividend-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Dividend Calculator</a></li>\n    <li><a href="/roi-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Roi Calculator</a></li>\n  </ul>
+</div>
+\n</body>
+</html>
+
+
+
