@@ -1,336 +1,599 @@
 ﻿<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Compound Interest Calculator - ToolBoxHub</title>
-<meta name="description" content="Free Compound Interest Calculator 鈥?see how your money grows over time with compounding. Project investment returns with regular contributions and any compounding frequency.">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Compound Interest Calculator","description":"Free Compound Interest Calculator 鈥?see how your money grows over time with compounding. Project investment returns with regular contributions and any compounding frequency.","applicationCategory":"Utilities","operatingSystem":"Any"}</script>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="icon" href="favicon.svg">
-<link rel="apple-touch-icon" href="apple-touch-icon.svg">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZY7VH3RXK"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-SZY7VH3RXK');
-</script>
-  <link rel="canonical" href="https://toolboxes.top/compound-interest-calculator">
 
-  <meta property="og:title" content="Compound Interest Calculator - ToolBoxHub">
-  <meta property="og:description" content="Free Compound Interest Calculator 鈥?see how your money grows over time with compounding. Project investment returns with regular contributions and any compounding frequency.">
-  <meta property="og:url" content="https://toolboxes.top/compound-interest-calculator">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://toolboxes.top/favicon.svg">
-  <meta property="og:site_name" content="ToolBoxHub">
-\n<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Compound Interest Calculator - ToolBoxHub",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "Any",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.5",
-    "ratingCount": "128"
-  }
-}</script>\n<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9901133369141996" crossorigin="anonymous"></script>
+<html lang="en" data-theme="light">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Compound Interest Calculator - ToolBoxHub</title>
+
+<meta name="description" content="Free Compound Interest Calculator —see how your money grows over time with compounding. Project investment returns with regular contributions and any compounding frequency.">
+
+\n<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9901133369141996" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
+
+
 <nav class="nav">
+
 <div class="container">
+
 <a href="index" class="nav-logo"><div class="nav-logo-icon"><i class="fas fa-calculator"></i></div>ToolBoxHub</a>
+
 <div class="nav-links" id="navLinks">
+
 <a href="index">Home</a>
+
 <a href="about">About</a>
+
 <a href="contact">Contact</a>
+
 </div>
+
 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+
 <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
 </div>
+
 </nav>
 
+
+
 <div class="page-header">
-<div class="container">
-<div class="breadcrumb"><a href="index">Home</a> / Compound Interest Calculator</div>
-<h1>Compound Interest Calculator</h1>
-<p>Calculate investment growth with compound interest over time</p>
-</div>
-</div>
 
 <div class="container">
+
+<div class="breadcrumb"><a href="index">Home</a> / Compound Interest Calculator</div>
+
+<h1>Compound Interest Calculator</h1>
+
+<p>Calculate investment growth with compound interest over time</p>
+
+</div>
+
+</div>
+
+
+
+<div class="container">
+
 <div class="tool-layout">
+
 <div class="tool-card-interface">
+
 <h2>Compound Interest Calculator</h2>
 
+
+
 <div class="guide-section">
+
 <h3 style="margin-top:0;font-size:1.05rem;">How to Use This Calculator</h3>
+
 <p style="color:var(--text-secondary);font-size:.9rem;margin-bottom:18px;">Enter your starting amount, how much you plan to add each month, your expected annual return, and how many years you'll invest. Choose how often interest compounds — daily, monthly, quarterly, or yearly — and hit Calculate. The tool shows your future balance, total money you put in, and the earnings your money generated. Try different scenarios: increase your monthly contribution, extend the time period, or adjust the rate to see how each factor changes your outcome.</p>
+
 </div>
+
+
 
 <div class="tool-interface" id="toolInterface-compound-interest-calculator">
+
   
+
 <div class="form-row-2">
+
 <div class="form-group"><label>Initial Investment ($)</label><input type="number" id="compPrincipal" placeholder="e.g. 10000" step="1000"></div>
+
 <div class="form-group"><label>Monthly Contribution ($)</label><input type="number" id="compMonthly" placeholder="e.g. 500" step="50"></div>
+
 <div class="form-group"><label>Annual Return Rate (%)</label><input type="number" id="compRate" placeholder="e.g. 8" step="0.5"></div>
+
 <div class="form-group"><label>Time Period (years)</label><input type="number" id="compYears" placeholder="e.g. 20" min="1"></div>
+
 <div class="form-group"><label>Compound Frequency</label><select id="compFreq" style="padding:8px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-primary);color:var(--text-primary);width:100%;">
+
 <option value="monthly">Monthly</option><option value="quarterly">Quarterly</option><option value="yearly">Yearly</option><option value="daily">Daily</option></select></div>
-</div>
-<div class="result-actions"><button class="btn btn-primary" onclick="calcCompound()"><i class="fas fa-calculator"></i> Calculate</button></div>
-<div class="mt-16" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
-<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.6rem;font-weight:700;color:var(--primary)" id="compTotal">$0.00</div><div style="font-size:.8rem;color:var(--text-muted)">Future Value</div></div>
-<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.2rem;font-weight:700;color:var(--secondary)" id="compContrib">$0.00</div><div style="font-size:.8rem;color:var(--text-muted)">Total Contributions</div></div>
-<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.2rem;font-weight:700;color:var(--accent)" id="compEarnings">$0.00</div><div style="font-size:.8rem;color:var(--text-muted)">Total Earnings</div></div>
-</div>
 
 </div>
+
+<div class="result-actions"><button class="btn btn-primary" onclick="calcCompound()"><i class="fas fa-calculator"></i> Calculate</button></div>
+
+<div class="mt-16" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.6rem;font-weight:700;color:var(--primary)" id="compTotal">$0.00</div><div style="font-size:.8rem;color:var(--text-muted)">Future Value</div></div>
+
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.2rem;font-weight:700;color:var(--secondary)" id="compContrib">$0.00</div><div style="font-size:.8rem;color:var(--text-muted)">Total Contributions</div></div>
+
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.2rem;font-weight:700;color:var(--accent)" id="compEarnings">$0.00</div><div style="font-size:.8rem;color:var(--text-muted)">Total Earnings</div></div>
+
+</div>
+
+
+
+</div>
+
+
 
 <div id="toolOutput" class="mt-16"></div>
+
 </div>
+
+
 
 <button class="copy-result-btn" onclick="copyResults()"><i class="fas fa-copy"></i> Copy Result</button>
 
+
+
 <script>
+
 function copyResults() {
+
   var fields = [["compTotal", "Future Value"], ["compContrib", "Total Contributions"], ["compEarnings", "Total Earnings"]];
+
   var lines = [];
+
   for (var i = 0; i < fields.length; i++) {
+
     var el = document.getElementById(fields[i][0]);
+
     if (el && el.textContent && el.textContent !== '$0.00' && el.textContent !== '$0' && el.textContent !== '0%' && el.textContent !== '-') {
+
       lines.push(fields[i][1] + ': ' + el.textContent);
+
     }
+
   }
+
   if (lines.length === 0) { showToast('Please calculate first'); return; }
+
   var text = lines.join('\n');
+
   if (window.copyToClipboard) {
+
     window.copyToClipboard(text, document.querySelector('.copy-result-btn'));
+
   } else {
+
     navigator.clipboard.writeText(text).then(function() {
+
       showToast('Copied');
+
     });
+
   }
+
 }
+
 </script>
+
+
 
 <div class="rec-section">
-  <div class="rec-title">馃搶 You May Also Need</div>
+
+  <div class="rec-title">🔥 You May Also Need</div>
+
   <div class="rec-grid">
+
     <a href="loan-calculator" class="rec-card"><i class="fas fa-hand-holding-usd"></i><span>Loan Calculator</span></a>
+
     <a href="income-tax-calculator" class="rec-card"><i class="fas fa-file-invoice-dollar"></i><span>Tax Estimator</span></a>
+
     <a href="retirement-calculator" class="rec-card"><i class="fas fa-piggy-bank"></i><span>Retirement Planning</span></a>
+
   </div>
+
 </div>
+
+
 
 <div class="guide-section" style="margin-top:32px;padding:20px;background:var(--bg-secondary);border-radius:var(--radius);">
+
 <h3 style="margin-top:0;font-size:1.05rem;">How to Understand Your Results</h3>
+
 <p><strong>Future Value</strong> — This is your estimated total balance at the end of the investment period. It includes everything: your initial deposit, every contribution you made, and all the compounded earnings on top.</p>
+
 <p><strong>Total Contributions</strong> — The actual cash you put in from your pocket. If you invest $500/month for 20 years, that's $120,000 out of your own bank account. This number keeps expectations grounded — it separates what you contributed from what the market did for you.</p>
+
 <p><strong>Total Interest Earned</strong> — This is the magic number. It's the gap between what you put in and what you end up with. The longer your time horizon, the bigger this gap gets. That's why <em>starting early matters more than investing large amounts</em>.</p>
+
 <p style="margin-bottom:0;color:var(--text-secondary);">The real takeaway: time is the most powerful variable in this calculator. Even modest returns, given enough years, can produce surprising outcomes. Play with the Time Period number — that single input matters more than any other.</p>
+
 </div>
 
+
+
 <script>
+
 document.addEventListener('DOMContentLoaded', function() {
+
   var rs = document.querySelector('#toolRecommendations');
+
   if (!rs) {
+
     rs = document.createElement('div');
+
     rs.id = 'toolRecommendations';
+
     // Find the copy target: all result elements inside the tool interface
+
     var iface = document.querySelector('.tool-card-interface');
+
     var out = document.querySelector('#toolOutput');
+
     if (out && out.parentNode) {
+
       out.parentNode.insertBefore(rs, out.nextSibling);
+
     } else if (iface) {
+
       iface.appendChild(rs);
+
     }
+
   }
+
   rs.style.marginTop = '16px';
+
 });
+
 </script>
+
+
 
 <div class="ad-placeholder ad-inline" id="ad-banner-bottom"></div>
 
+
+
 <div class="seo-content">
+
 <h2>Real-Life Scenarios: What Would You Do?</h2>
 
+
+
 <div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+
 <h3 style="margin-top:0;">Scenario 1: Sarah, 25 — The Early Starter</h3>
+
 <p>Sarah just landed her first job out of college. She doesn't have much, but she commits to investing <strong>$200/month</strong> into a broad market fund. Starting from $0, assuming an average <strong>8% annual return</strong> compounded monthly, here's what happens by the time she turns <strong>60</strong> (35 years of investing):</p>
+
 <ul>
+
 <li><strong>Total contributions:</strong> $84,000</li>
+
 <li><strong>Future value at 60:</strong> ~$458,000</li>
+
 <li><strong>Interest earned:</strong> ~$374,000</li>
+
 </ul>
+
 <p>Sarah's reaction: <em>"Wait — I only put in $84,000 of my own money, and it turns into nearly half a million? That's not a trick, that's just time doing the heavy lifting."</em></p>
+
 <p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> Sarah's secret weapon wasn't a high income or a brilliant stock pick. It was starting at 25 instead of 35. Those extra 10 years nearly double her final number.</p>
+
 </div>
 
+
+
 <div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+
 <h3 style="margin-top:0;">Scenario 2: Marcus, 40 — Playing Catch-Up</h3>
+
 <p>Marcus is 40 and realizes he hasn't saved much for retirement. He has <strong>$10,000</strong> saved and decides to invest <strong>$500/month</strong> from now on. With the same <strong>8% annual return</strong> compounded monthly, investing until <strong>65</strong> (25 years):</p>
+
 <ul>
+
 <li><strong>Total contributions:</strong> $160,000 ($10,000 + $150,000)</li>
+
 <li><strong>Future value at 65:</strong> ~$549,000</li>
+
 <li><strong>Interest earned:</strong> ~$389,000</li>
+
 </ul>
+
 <p>Marcus's reaction: <em>"I was afraid it was too late. It's not ideal starting at 40, but $549k is still a solid nest egg. I just have to be more aggressive about the monthly amount than Sarah needs to be."</em></p>
+
 <p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> Starting at 40 means you need to contribute more than twice what Sarah contributes per month to get a similar outcome. It's still worth doing — but the price of waiting is higher monthly payments.</p>
+
 </div>
 
+
+
 <div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+
 <h3 style="margin-top:0;">Scenario 3: Emma, 55 — The Late But Determined Starter</h3>
+
 <p>Emma is 55, has <strong>$50,000</strong> saved from a previous 401(k) rollover, and can contribute <strong>$1,000/month</strong> in her final working years. Planning to retire at <strong>65</strong> (10 years), same <strong>8%</strong> return compounded monthly:</p>
+
 <ul>
+
 <li><strong>Total contributions:</strong> $170,000 ($50,000 + $120,000)</li>
+
 <li><strong>Future value at 65:</strong> ~$294,000</li>
+
 <li><strong>Interest earned:</strong> ~$124,000</li>
+
 </ul>
+
 <p>Emma's reaction: <em>"$294k isn't a fortune, but paired with Social Security it makes a real difference. And I can see that most of my final balance comes from what I contributed — compounding just didn't have enough time to work its full magic."</em></p>
+
 <p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> Even at 55, investing beats not investing. But Emma's story shows clearly: the later you start, the more you have to save and the less compounding helps. Time really is the multiplier.</p>
+
 </div>
+
+
 
 <div class="comparison-box" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;overflow-x:auto;">
+
 <h3 style="margin-top:0;">Early vs. Late: The Cost of Waiting</h3>
+
 <p style="font-size:.9rem;color:var(--text-secondary);margin-bottom:14px;">Same monthly investment ($200), same return (8%), same retirement age (65). The only difference is when you start:</p>
+
 <table style="width:100%;border-collapse:collapse;font-size:.9rem;">
+
 <thead>
+
 <tr style="background:var(--primary);color:#fff;">
+
 <th style="padding:10px 12px;text-align:left;">Starting Age</th>
+
 <th style="padding:10px 12px;text-align:left;">Monthly</th>
+
 <th style="padding:10px 12px;text-align:right;">Total Invested</th>
+
 <th style="padding:10px 12px;text-align:right;">Value at 65</th>
+
 </tr>
+
 </thead>
+
 <tbody>
+
 <tr style="border-bottom:1px solid var(--border);">
+
 <td style="padding:10px 12px;font-weight:600;">25</td>
+
 <td style="padding:10px 12px;">$200</td>
+
 <td style="padding:10px 12px;text-align:right;">$96,000</td>
+
 <td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">~$545,000</td>
+
 </tr>
+
 <tr style="border-bottom:1px solid var(--border);">
+
 <td style="padding:10px 12px;font-weight:600;">35</td>
+
 <td style="padding:10px 12px;">$200</td>
+
 <td style="padding:10px 12px;text-align:right;">$72,000</td>
+
 <td style="padding:10px 12px;text-align:right;">~$223,000</td>
+
 </tr>
+
 <tr style="border-bottom:1px solid var(--border);">
+
 <td style="padding:10px 12px;font-weight:600;">45</td>
+
 <td style="padding:10px 12px;">$200</td>
+
 <td style="padding:10px 12px;text-align:right;">$48,000</td>
+
 <td style="padding:10px 12px;text-align:right;">~$85,000</td>
+
 </tr>
+
 <tr>
+
 <td style="padding:10px 12px;font-weight:600;">55</td>
+
 <td style="padding:10px 12px;">$200</td>
+
 <td style="padding:10px 12px;text-align:right;">$24,000</td>
+
 <td style="padding:10px 12px;text-align:right;">~$35,000</td>
+
 </tr>
+
 </tbody>
+
 </table>
+
 <p style="font-size:.85rem;color:var(--text-secondary);margin-top:12px;margin-bottom:0;">Notice: Sarah (starting at 25) invests $96,000 total and ends with ~$545,000. Emma (starting at 55) invests only $24,000 — less total cash — but ends with a fraction of Sarah's result. The difference isn't effort or intelligence. It's 30 years of compounding that Sarah's money had and Emma's didn't. <strong>This is why "I'll start next year" is the most expensive sentence in personal finance.</strong></p>
+
 </div>
+
+
 
 <div class="disclaimer" style="margin-top:24px;padding:14px;background:#fff3cd;border-radius:var(--radius);font-size:.82rem;color:#856404;">
+
 <p style="margin:0;"><strong>Disclaimer:</strong> All calculations and scenarios are hypothetical and for illustrative purposes only. They assume a constant rate of return — real markets fluctuate. Past performance does not guarantee future results. These calculators are educational tools, not financial advice. Consult a qualified financial advisor before making investment decisions.</p>
-</div>
 
 </div>
+
+
+
+</div>
+
+
 
 <div style="max-width:780px;margin:0 auto 2rem;display:flex;flex-direction:column;gap:12px;">
 
+
+
 <div class="trust-badge testing">
+
   <i class="fas fa-flask"></i>
+
   <div><strong>Verified Math.</strong> Every formula is cross-checked against spreadsheet calculations using standard financial math. I don't invent formulas — I use the same ones banks and investment platforms use. <a href="/about" style="color:var(--primary);">Learn how I test →</a></div>
+
 </div>
+
+
 
 <div class="trust-badge privacy">
+
   <i class="fas fa-shield-alt"></i>
+
   <div><strong>Your Numbers Stay Private.</strong> This calculator runs entirely in your browser. Your loan amounts, savings goals, and investment figures never leave your device — not stored, not tracked, not seen by anyone. <a href="/privacy" style="color:var(--primary);">Privacy policy →</a></div>
+
 </div>
+
+
 
 <div class="trust-badge disclaimer">
+
   <i class="fas fa-info-circle"></i>
+
   <div><strong>Not Financial Advice.</strong> This tool is for educational purposes. Results are estimates based on the numbers you enter — they're not guarantees. Always consult a qualified professional before making major financial decisions.</div>
-</div>
 
 </div>
 
+
+
 </div>
+
+
+
+</div>
+
+
 
 <footer class="footer">
+
 <div class="container">
+
 <div class="footer-grid">
+
 <div class="footer-col">
+
 <h4>ToolBoxHub</h4>
+
 <p style="color:var(--text-secondary);font-size:.88rem;">Free financial calculators for loans, investments, budgeting, and more. Make smarter money decisions.</p>
+
 </div>
+
 <div class="footer-col">
+
 <h4>Calculators</h4>
+
 <a href="loan-calculator">Loan Calculator</a>
+
 <a href="mortgage-calculator">Mortgage Calculator</a>
+
 <a href="compound-interest-calculator">Compound Interest</a>
+
 <a href="budget-calculator">Budget Calculator</a>
+
 <a href="index">View All (29)</a>
+
 </div>
+
 <div class="footer-col">
+
 <h4>Company</h4>
+
 <a href="about">About Us</a>
+
 <a href="contact">Contact</a>
+
 <a href="privacy-policy.html">Privacy Policy</a>
+
 <a href="terms">Terms of Service</a>
+
 </div>
+
 </div>
+
 <div class="footer-bottom">
+
 <span>&copy; 2026 ToolBoxHub. All rights reserved.</span>
+
 <span>Smart financial calculators for everyone.</span>
+
 </div>
+
 <div class="footer-bottom" style="border-top:1px solid var(--border);padding-top:12px;margin-top:12px;display:flex;flex-direction:column;gap:6px;">
+
 <span style="font-size:.78rem;color:var(--text-secondary);">As an Amazon Associate we earn from qualifying purchases. Prices and availability subject to change.</span>
+
 <span style="font-size:.75rem;color:var(--text-muted);line-height:1.5;"><strong>Disclaimer:</strong> All calculators are for educational and illustrative purposes only. They provide estimates, not guarantees. Nothing on this site constitutes financial advice. Always consult a qualified financial professional before making investment, tax, or borrowing decisions.</span>
+
 </div>
+
 </footer>
 
 
+
+
+
 <script src="main.js"></script>
+
 <script>
-// === Compound Interest Calculator 鈥?Tool Logic ===
+
+// === Compound Interest Calculator —Tool Logic ===
+
+
 
 function calcCompound() {
+
   var p=parseFloat(document.getElementById('compPrincipal').value);
+
   var m=parseFloat(document.getElementById('compMonthly').value)||0;
+
   var r=parseFloat(document.getElementById('compRate').value)/100;
+
   var y=parseInt(document.getElementById('compYears').value);
+
   var f=document.getElementById('compFreq').value;
+
   if(isNaN(p)||isNaN(r)||isNaN(y)||y<=0){showToast('Please enter valid values.');return;}
+
   var n=f==='daily'?365:f==='monthly'?12:f==='quarterly'?4:1;
+
   var t=p,tc=p;
+
   for(var i=0;i<y*n;i++){t+=m*(12/n);tc+=m*(12/n);t*=(1+r/n);}
+
   document.getElementById('compTotal').textContent='$'+t.toFixed(2);
+
   document.getElementById('compContrib').textContent='$'+tc.toFixed(2);
+
   document.getElementById('compEarnings').textContent='$'+(t-tc).toFixed(2);
+
 }
 
+
+
 </script>
+
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9cdb1d83529f44749dc930864bab3884"}'></script>
+
 <script src="affiliate.js"></script>\`n
+
 <div class="related-calculators" style="margin: 2em 0; padding: 1.5em; border: 1px solid #e0e0e0; border-radius: 8px; background: #f9f9f9;">
+
   <h2>Other Useful Calculators</h2>
+
   <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5em;">
+
     <li><a href="/loan-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Loan Calculator</a></li>\n    <li><a href="/savings-goal-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Savings Goal Calculator</a></li>\n    <li><a href="/amortization-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Amortization Calculator</a></li>\n    <li><a href="/time-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Time Calculator</a></li>\n  </ul>
+
 </div>
+
 \n</body>
+
 </html>
+
+
+
+
 
 
 

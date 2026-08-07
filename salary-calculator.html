@@ -1,340 +1,607 @@
 ﻿<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salary Calculator - ToolBoxHub</title>
-<meta name="description" content="Free Salary Calculator 鈥?convert between hourly, daily, weekly, monthly, and annual salary. Compare job offers and understand your true earnings.">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Salary Calculator","description":"Free Salary Calculator 鈥?convert between hourly, daily, weekly, monthly, and annual salary. Compare job offers and understand your true earnings.","applicationCategory":"Utilities","operatingSystem":"Any"}</script>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="icon" href="favicon.svg">
-<link rel="apple-touch-icon" href="apple-touch-icon.svg">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZY7VH3RXK"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-SZY7VH3RXK');
-</script>
-  <link rel="canonical" href="https://toolboxes.top/salary-calculator">
 
-  <meta property="og:title" content="Salary Calculator - ToolBoxHub">
-  <meta property="og:description" content="Free Salary Calculator 鈥?convert between hourly, daily, weekly, monthly, and annual salary. Compare job offers and understand your true earnings.">
-  <meta property="og:url" content="https://toolboxes.top/salary-calculator">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://toolboxes.top/favicon.svg">
-  <meta property="og:site_name" content="ToolBoxHub">
-\n<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Salary Calculator - ToolBoxHub",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "Any",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.5",
-    "ratingCount": "128"
-  }
-}</script>\n<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9901133369141996" crossorigin="anonymous"></script>
+<html lang="en" data-theme="light">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Salary Calculator - ToolBoxHub</title>
+
+<meta name="description" content="Free Salary Calculator —convert between hourly, daily, weekly, monthly, and annual salary. Compare job offers and understand your true earnings.">
+
+\n<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9901133369141996" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
+
+
 <nav class="nav">
+
 <div class="container">
+
 <a href="index" class="nav-logo"><div class="nav-logo-icon"><i class="fas fa-calculator"></i></div>ToolBoxHub</a>
+
 <div class="nav-links" id="navLinks">
+
 <a href="index">Home</a>
+
 <a href="about">About</a>
+
 <a href="contact">Contact</a>
+
 </div>
+
 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+
 <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
 </div>
+
 </nav>
 
+
+
 <div class="page-header">
-<div class="container">
-<div class="breadcrumb"><a href="index">Home</a> / Salary Calculator</div>
-<h1>Salary Calculator</h1>
-<p>Convert between hourly, weekly, monthly, and annual salary</p>
-</div>
-</div>
 
 <div class="container">
+
+<div class="breadcrumb"><a href="index">Home</a> / Salary Calculator</div>
+
+<h1>Salary Calculator</h1>
+
+<p>Convert between hourly, weekly, monthly, and annual salary</p>
+
+</div>
+
+</div>
+
+
+
+<div class="container">
+
 <div class="tool-layout">
+
 <div class="tool-card-interface">
+
 <h2>Salary Calculator</h2>
 
+
+
 <div class="guide-section">
+
 <h3 style="margin-top:0;font-size:1.05rem;">How to Use This Calculator</h3>
+
 <p style="color:var(--text-secondary);font-size:.9rem;margin-bottom:18px;">Enter your salary in any format (hourly, weekly, monthly, or annual) and the number of working hours per week and days per week. Click Calculate to see conversions to all other formats.</p>
+
 </div>
+
+
 
 <div class="tool-interface" id="toolInterface-salary-calculator">
+
   
+
 <div class="form-group">
+
 <label>Enter Salary</label>
+
 <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;">
+
 <label class="btn btn-secondary btn-sm" style="cursor:pointer"><input type="radio" name="salMode" value="hourly" checked style="display:none"> Hourly</label>
+
 <label class="btn btn-secondary btn-sm" style="cursor:pointer"><input type="radio" name="salMode" value="weekly" style="display:none"> Weekly</label>
+
 <label class="btn btn-secondary btn-sm" style="cursor:pointer"><input type="radio" name="salMode" value="monthly" style="display:none"> Monthly</label>
+
 <label class="btn btn-secondary btn-sm" style="cursor:pointer"><input type="radio" name="salMode" value="annual" style="display:none"> Annual</label>
-</div>
-</div>
-<div class="form-row-2">
-<div class="form-group"><label>Value ($)</label><input type="number" id="salValue" placeholder="e.g. 25" step="0.5"></div>
-<div class="form-group"><label>Hours per Week</label><input type="number" id="salHours" value="40" min="1" max="168"></div>
-<div class="form-group"><label>Days per Week</label><input type="number" id="salDays" value="5" min="1" max="7"></div>
-</div>
-<div class="result-actions"><button class="btn btn-primary" onclick="calcSalary()"><i class="fas fa-calculator"></i> Convert</button></div>
-<div class="mt-16" style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
-<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:12px;text-align:center;"><div style="font-weight:700;color:var(--primary)" id="salHourly">$0</div><div style="font-size:.75rem;color:var(--text-muted)">Hourly</div></div>
-<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:12px;text-align:center;"><div style="font-weight:700;color:var(--secondary)" id="salWeekly">$0</div><div style="font-size:.75rem;color:var(--text-muted)">Weekly</div></div>
-<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:12px;text-align:center;"><div style="font-weight:700;color:var(--accent)" id="salMonthly">$0</div><div style="font-size:.75rem;color:var(--text-muted)">Monthly</div></div>
-<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:12px;text-align:center;"><div style="font-weight:700;color:var(--icon-1)" id="salAnnual">$0</div><div style="font-size:.75rem;color:var(--text-muted)">Annual</div></div>
+
 </div>
 
 </div>
+
+<div class="form-row-2">
+
+<div class="form-group"><label>Value ($)</label><input type="number" id="salValue" placeholder="e.g. 25" step="0.5"></div>
+
+<div class="form-group"><label>Hours per Week</label><input type="number" id="salHours" value="40" min="1" max="168"></div>
+
+<div class="form-group"><label>Days per Week</label><input type="number" id="salDays" value="5" min="1" max="7"></div>
+
+</div>
+
+<div class="result-actions"><button class="btn btn-primary" onclick="calcSalary()"><i class="fas fa-calculator"></i> Convert</button></div>
+
+<div class="mt-16" style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
+
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:12px;text-align:center;"><div style="font-weight:700;color:var(--primary)" id="salHourly">$0</div><div style="font-size:.75rem;color:var(--text-muted)">Hourly</div></div>
+
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:12px;text-align:center;"><div style="font-weight:700;color:var(--secondary)" id="salWeekly">$0</div><div style="font-size:.75rem;color:var(--text-muted)">Weekly</div></div>
+
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:12px;text-align:center;"><div style="font-weight:700;color:var(--accent)" id="salMonthly">$0</div><div style="font-size:.75rem;color:var(--text-muted)">Monthly</div></div>
+
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:12px;text-align:center;"><div style="font-weight:700;color:var(--icon-1)" id="salAnnual">$0</div><div style="font-size:.75rem;color:var(--text-muted)">Annual</div></div>
+
+</div>
+
+
+
+</div>
+
+
 
 <div id="toolOutput" class="mt-16"></div>
+
 </div>
+
+
 
 <button class="copy-result-btn" onclick="copyResults()"><i class="fas fa-copy"></i> Copy Result</button>
 
+
+
 <script>
+
 function copyResults() {
+
   var fields = [["salaryHourly", "Hourly Wage"], ["salaryWeekly", "Weekly Pay"], ["salaryMonthly", "Monthly Pay"]];
+
   var lines = [];
+
   for (var i = 0; i < fields.length; i++) {
+
     var el = document.getElementById(fields[i][0]);
+
     if (el && el.textContent && el.textContent !== '$0.00' && el.textContent !== '$0' && el.textContent !== '0%' && el.textContent !== '-') {
+
       lines.push(fields[i][1] + ': ' + el.textContent);
+
     }
+
   }
+
   if (lines.length === 0) { showToast('Please calculate first'); return; }
+
   var text = lines.join('\n');
+
   if (window.copyToClipboard) {
+
     window.copyToClipboard(text, document.querySelector('.copy-result-btn'));
+
   } else {
+
     navigator.clipboard.writeText(text).then(function() {
+
       showToast('Copied');
+
     });
+
   }
+
 }
+
 </script>
+
+
 
 <div class="guide-section" style="margin-top:32px;padding:20px;background:var(--bg-secondary);border-radius:var(--radius);">
+
 <h3 style="margin-top:0;font-size:1.05rem;">How to Understand Your Results</h3>
+
 <p><strong>Key Output</strong> — This is the primary number the calculator returns. It represents the answer to the question you asked, calculated using standard financial formulas.</p>
+
 <p><strong>Breakdown Details</strong> — These supporting numbers show you how the result was reached. They help you understand what's driving the outcome and where you might adjust your inputs.</p>
+
 <p><strong>What to Look For</strong> — Pay attention to how small changes in inputs affect the outputs. The relationship between your inputs and results is where the real insight lives — that's what helps you make better decisions.</p>
+
 <p style="margin-bottom:0;color:var(--text-secondary);">Every calculation uses standard financial math — the same formulas banks, lenders, and investment platforms use. The inputs you provide determine the accuracy of the result.</p>
+
 </div>
 
+
+
 <div class="rec-section">
-  <div class="rec-title">馃搶 You May Also Need</div>
+
+  <div class="rec-title">🔥 You May Also Need</div>
+
   <div class="rec-grid">
+
     <a href="loan-calculator" class="rec-card"><i class="fas fa-hand-holding-usd"></i><span>Loan Calculator</span></a>
+
     <a href="compound-interest-calculator" class="rec-card"><i class="fas fa-chart-line"></i><span>Compound Interest</span></a>
+
     <a href="debt-payoff-calculator" class="rec-card"><i class="fas fa-credit-card"></i><span>Debt Payoff Plan</span></a>
+
   </div>
+
 </div>
+
+
+
 
 
 <script>
+
 document.addEventListener('DOMContentLoaded', function() {
+
   var rs = document.querySelector('#toolRecommendations');
+
   if (!rs) {
+
     rs = document.createElement('div');
+
     rs.id = 'toolRecommendations';
+
     // Find the copy target: all result elements inside the tool interface
+
     var iface = document.querySelector('.tool-card-interface');
+
     var out = document.querySelector('#toolOutput');
+
     if (out && out.parentNode) {
+
       out.parentNode.insertBefore(rs, out.nextSibling);
+
     } else if (iface) {
+
       iface.appendChild(rs);
+
     }
+
   }
+
   rs.style.marginTop = '16px';
+
 });
+
 </script>
+
+
 
 <div class="ad-placeholder ad-inline" id="ad-banner-bottom"></div>
 
+
+
 <div class="seo-content">
+
 <h2>Real-Life Scenarios: What Would You Do?</h2>
 
+
+
 <div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+
 <h3 style="margin-top:0;">Scenario 1: Maya, 24 — Freelance Graphic Designer</h3>
+
 <p>Maya just landed her first big client project quoted at $3,200. She's used to thinking in per-project terms but needs to know if her rate covers her monthly rent of $1,100 and other bills. She enters her project fee and estimated 80 hours of work into the calculator.</p>
+
 <ul>
+
 <li><strong>Input:</strong> Annual salary of $41,600 (based on $3,200/month for 13 months of work per year)</li>
+
 <li><strong>Result:</strong> Hourly rate of ~$20.00 based on a 40-hour week; monthly income of ~$3,200</li>
+
 <li><strong>Key insight:</strong> Freelancers often forget to divide annual income by 52 weeks — but the calculator shows that $3,200/month is actually less than a full-time salaried role at $20/hr, because freelancers don't get paid holidays or sick leave.</li>
+
 </ul>
+
 <p>"I thought $3,200 a month sounded solid, but seeing it as $20 an hour makes me realize I'm not charging enough to cover my slow months. I need to bump my rate."</p>
+
 <p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> Always convert project or monthly income to an hourly rate — it reveals if you're actually earning a living wage after unpaid time off.</p>
+
 </div>
 
+
+
 <div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+
 <h3 style="margin-top:0;">Scenario 2: David, 38 — Restaurant Manager (Salary + Tips)</h3>
+
 <p>David's W-2 shows a base salary of $48,000, but he also receives $12,000–$15,000 in reported tips annually. He's considering a new job that offers $55,000 salary with no tips, and wants to compare both scenarios side-by-side.</p>
+
 <ul>
+
 <li><strong>Input:</strong> Annual salary of $60,000 ($48,000 base + $12,000 low-end tips)</li>
+
 <li><strong>Result:</strong> Monthly take-home of ~$4,300 after estimated taxes (assuming 25% total withholding); weekly pay of ~$1,000</li>
+
 <li><strong>Key insight:</strong> The calculator shows that a $55,000 salary with no tips results in a monthly pay of ~$3,900 — lower than his current $60,000 total, even though the base salary is higher. But the new job has more stability and benefits.</li>
+
 </ul>
+
 <p>"I always thought 'more base salary' was automatically better. But when I ran the numbers, I realized my tips add up to more than I thought. It's not a simple yes or no."</p>
+
 <p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> Variable income like tips or commissions must be included — a higher base salary doesn't always mean higher total income.</p>
+
 </div>
 
+
+
 <div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+
 <h3 style="margin-top:0;">Scenario 3: Diane, 52 — Retired Teacher (Part-Time Consulting)</h3>
+
 <p>Diane is collecting a pension of $2,800/month and a small Social Security check of $1,100/month. She's considering consulting 15 hours per week at $45/hour, but needs to check if the extra income will push her into a higher tax bracket or affect her Social Security benefits.</p>
+
 <ul>
+
 <li><strong>Input:</strong> Annual consulting income of $35,100 (15 hrs × $45 × 52 weeks)</li>
+
 <li><strong>Result:</strong> Monthly consulting income of ~$2,925; total monthly income with pension and Social Security would be ~$6,825</li>
+
 <li><strong>Key insight:</strong> The calculator reveals that her consulting income alone would be $35,100/year — but combined with pension and Social Security ($46,800/year), her total annual income of $81,900 could push part of her Social Security benefits into being taxable.</li>
+
 </ul>
+
 <p>"I was focused on the hourly rate, not the total. Seeing it all added up — $81,900 — that's more than I made teaching. Now I need to check the tax rules, not just the gross numbers."</p>
+
 <p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> When layering multiple income streams, always check the total annual amount — thresholds for taxes and benefit reductions can change the net value of extra work.</p>
+
 </div>
+
+
 
 <div class="comparison-box" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;overflow-x:auto;">
+
 <h3 style="margin-top:0;">Quick Comparison: What Changes the Outcome</h3>
+
 <p style="font-size:.9rem;color:var(--text-secondary);margin-bottom:14px;">See how different inputs affect the result:</p>
+
 <table style="width:100%;border-collapse:collapse;font-size:.9rem;">
+
 <thead>
+
 <tr style="background:var(--primary);color:#fff;">
+
 <th style="padding:10px 12px;text-align:left;">Scenario</th>
+
 <th style="padding:10px 12px;text-align:left;">Key Input</th>
+
 <th style="padding:10px 12px;text-align:right;">Result A</th>
+
 <th style="padding:10px 12px;text-align:right;">Result B</th>
+
 </tr>
+
 </thead>
+
 <tbody>
+
 <tr style="border-bottom:1px solid var(--border);">
+
 <td style="padding:10px 12px;font-weight:600;">Maya — Wait vs. No Wait Between Projects</td>
+
 <td style="padding:10px 12px;">Working weeks per year</td>
+
 <td style="padding:10px 12px;text-align:right;">48 weeks: $20.00/hr</td>
+
 <td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">52 weeks: $18.46/hr</td>
+
 </tr>
+
 <tr style="border-bottom:1px solid var(--border);">
+
 <td style="padding:10px 12px;font-weight:600;">David — Including vs. Excluding Tips</td>
+
 <td style="padding:10px 12px;">Annual income total</td>
+
 <td style="padding:10px 12px;text-align:right;">Salary only: $48,000/yr</td>
+
 <td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">Salary + tips: $60,000/yr</td>
+
 </tr>
+
 <tr style="border-bottom:1px solid var(--border);">
+
 <td style="padding:10px 12px;font-weight:600;">Diane — Consulting Only vs. Total Retirement Income</td>
+
 <td style="padding:10px 12px;">Income sources included</td>
+
 <td style="padding:10px 12px;text-align:right;">Consulting alone: $35,100/yr</td>
+
 <td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">All three: $81,900/yr</td>
+
 </tr>
+
 </tbody>
+
 </table>
+
 <p style="font-size:.85rem;color:var(--text-secondary);margin-top:12px;margin-bottom:0;">The comparison shows that the same hourly or monthly figure can look very different depending on what you include — unpaid weeks, variable income, and other income streams all change the annual picture significantly.</p>
+
 </div>
 
+
+
 <div class="disclaimer" style="margin-top:24px;padding:14px;background:#fff3cd;border-radius:var(--radius);font-size:.82rem;color:#856404;">
+
 <p style="margin:0;"><strong>Disclaimer:</strong> All calculations and scenarios are hypothetical and for illustrative purposes only. They assume constant conditions — real-world results may vary. These calculators are educational tools, not financial advice. Consult a qualified professional before making financial decisions.</p>
+
 </div>
+
 </div>
+
 </div>
+
+
+
 
 
 <div style="max-width:780px;margin:0 auto 2rem;display:flex;flex-direction:column;gap:12px;">
 
+
+
 <div class="trust-badge testing">
+
   <i class="fas fa-flask"></i>
+
   <div><strong>Verified Math.</strong> Every formula is cross-checked against spreadsheet calculations using standard financial math. I don't invent formulas — I use the same ones banks and investment platforms use. <a href="/about" style="color:var(--primary);">Learn how I test →</a></div>
+
 </div>
+
+
 
 <div class="trust-badge privacy">
+
   <i class="fas fa-shield-alt"></i>
+
   <div><strong>Your Numbers Stay Private.</strong> This calculator runs entirely in your browser. Your loan amounts, savings goals, and investment figures never leave your device — not stored, not tracked, not seen by anyone. <a href="/privacy" style="color:var(--primary);">Privacy policy →</a></div>
+
 </div>
+
+
 
 <div class="trust-badge disclaimer">
+
   <i class="fas fa-info-circle"></i>
+
   <div><strong>Not Financial Advice.</strong> This tool is for educational purposes. Results are estimates based on the numbers you enter — they're not guarantees. Always consult a qualified professional before making major financial decisions.</div>
-</div>
 
 </div>
+
+
+
+</div>
+
+
 
 <footer class="footer">
+
 <div class="container">
+
 <div class="footer-grid">
+
 <div class="footer-col">
+
 <h4>ToolBoxHub</h4>
+
 <p style="color:var(--text-secondary);font-size:.88rem;">Free financial calculators for loans, investments, budgeting, and more. Make smarter money decisions.</p>
+
 </div>
+
 <div class="footer-col">
+
 <h4>Calculators</h4>
+
 <a href="loan-calculator">Loan Calculator</a>
+
 <a href="mortgage-calculator">Mortgage Calculator</a>
+
 <a href="compound-interest-calculator">Compound Interest</a>
+
 <a href="budget-calculator">Budget Calculator</a>
+
 <a href="index">View All (29)</a>
+
 </div>
+
 <div class="footer-col">
+
 <h4>Company</h4>
+
 <a href="about">About Us</a>
+
 <a href="contact">Contact</a>
+
 <a href="privacy-policy.html">Privacy Policy</a>
+
 <a href="terms">Terms of Service</a>
+
 </div>
+
 </div>
+
 <div class="footer-bottom">
+
 <span>&copy; 2026 ToolBoxHub. All rights reserved.</span>
+
 <span>Smart financial calculators for everyone.</span>
+
 </div>
+
 <div class="footer-bottom" style="border-top:1px solid var(--border);padding-top:12px;margin-top:12px;display:flex;flex-direction:column;gap:6px;">
+
 <span style="font-size:.78rem;color:var(--text-secondary);">As an Amazon Associate we earn from qualifying purchases. Prices and availability subject to change.</span>
+
 <span style="font-size:.75rem;color:var(--text-muted);line-height:1.5;"><strong>Disclaimer:</strong> All calculators are for educational and illustrative purposes only. They provide estimates, not guarantees. Nothing on this site constitutes financial advice. Always consult a qualified financial professional before making investment, tax, or borrowing decisions.</span>
+
 </div>
+
 </div>
+
 </footer>
 
 
+
+
+
 <script src="main.js"></script>
+
 <script>
-// === Salary Calculator 鈥?Tool Logic ===
+
+// === Salary Calculator —Tool Logic ===
+
+
 
 function calcSalary() {
+
   var mode=document.querySelector('input[name="salMode"]:checked').value;
+
   var val=parseFloat(document.getElementById('salValue').value);
+
   var hrs=parseFloat(document.getElementById('salHours').value)||40;
+
   var dys=parseFloat(document.getElementById('salDays').value)||5;
+
   if(isNaN(val)||val<=0){showToast('Please enter a salary value.');return;}
+
   var hourly,weekly,monthly,annual;
+
   if(mode==='hourly'){hourly=val;weekly=val*hrs;monthly=weekly*52/12;annual=weekly*52;}
+
   else if(mode==='weekly'){weekly=val;hourly=val/hrs;monthly=val*52/12;annual=val*52;}
+
   else if(mode==='monthly'){monthly=val;weekly=val*12/52;hourly=weekly/hrs;annual=val*12;}
+
   else{annual=val;weekly=val/52;hourly=weekly/hrs;monthly=val/12;}
+
   document.getElementById('salHourly').textContent='$'+hourly.toFixed(2);
+
   document.getElementById('salWeekly').textContent='$'+weekly.toFixed(2);
+
   document.getElementById('salMonthly').textContent='$'+monthly.toFixed(2);
+
   document.getElementById('salAnnual').textContent='$'+annual.toFixed(2);
+
 }
 
+
+
 </script>
+
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9cdb1d83529f44749dc930864bab3884"}'></script>
+
 <script src="affiliate.js"></script>\`n
+
 <div class="related-calculators" style="margin: 2em 0; padding: 1.5em; border: 1px solid #e0e0e0; border-radius: 8px; background: #f9f9f9;">
+
   <h2>Other Useful Calculators</h2>
+
   <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5em;">
+
     <li><a href="/refinance-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Refinance Calculator</a></li>\n    <li><a href="/compound-interest-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Compound Interest Calculator</a></li>\n    <li><a href="/bill-split-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Bill Split Calculator</a></li>\n    <li><a href="/crypto-profit-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Crypto Profit Calculator</a></li>\n  </ul>
+
 </div>
+
 \n</body>
+
 </html>
+
+
+
+
 
 
 

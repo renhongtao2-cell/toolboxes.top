@@ -1,343 +1,613 @@
 ﻿<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fraction Calculator - ToolBoxHub</title>
-<meta name="description" content="Free Fraction Calculator 鈥?add, subtract, multiply, and divide fractions. Get simplified results and decimal equivalents. Perfect for students and professionals.">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Fraction Calculator","description":"Free Fraction Calculator 鈥?add, subtract, multiply, and divide fractions. Get simplified results and decimal equivalents. Perfect for students and professionals.","applicationCategory":"Utilities","operatingSystem":"Any"}</script>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="icon" href="favicon.svg">
-<link rel="apple-touch-icon" href="apple-touch-icon.svg">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZY7VH3RXK"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-SZY7VH3RXK');
-</script>
-  <link rel="canonical" href="https://toolboxes.top/fraction-calculator">
 
-  <meta property="og:title" content="Fraction Calculator - ToolBoxHub">
-  <meta property="og:description" content="Free Fraction Calculator 鈥?add, subtract, multiply, and divide fractions. Get simplified results and decimal equivalents. Perfect for students and professionals.">
-  <meta property="og:url" content="https://toolboxes.top/fraction-calculator">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://toolboxes.top/favicon.svg">
-  <meta property="og:site_name" content="ToolBoxHub">
-\n<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Fraction Calculator - ToolBoxHub",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "Any",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.5",
-    "ratingCount": "128"
-  }
-}</script>\n<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9901133369141996" crossorigin="anonymous"></script>
+<html lang="en" data-theme="light">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fraction Calculator - ToolBoxHub</title>
+
+<meta name="description" content="Free Fraction Calculator —add, subtract, multiply, and divide fractions. Get simplified results and decimal equivalents. Perfect for students and professionals.">
+
+\n<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9901133369141996" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
+
+
 <nav class="nav">
+
 <div class="container">
+
 <a href="index" class="nav-logo"><div class="nav-logo-icon"><i class="fas fa-calculator"></i></div>ToolBoxHub</a>
+
 <div class="nav-links" id="navLinks">
+
 <a href="index">Home</a>
+
 <a href="about">About</a>
+
 <a href="contact">Contact</a>
+
 </div>
+
 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+
 <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
 </div>
+
 </nav>
 
+
+
 <div class="page-header">
-<div class="container">
-<div class="breadcrumb"><a href="index">Home</a> / Fraction Calculator</div>
-<h1>Fraction Calculator</h1>
-<p>Add, subtract, multiply, and divide fractions</p>
-</div>
-</div>
 
 <div class="container">
+
+<div class="breadcrumb"><a href="index">Home</a> / Fraction Calculator</div>
+
+<h1>Fraction Calculator</h1>
+
+<p>Add, subtract, multiply, and divide fractions</p>
+
+</div>
+
+</div>
+
+
+
+<div class="container">
+
 <div class="tool-layout">
+
 <div class="tool-card-interface">
+
 <h2>Fraction Calculator</h2>
 
+
+
 <div class="guide-section">
+
 <h3 style="margin-top:0;font-size:1.05rem;">How to Use This Calculator</h3>
+
 <p style="color:var(--text-secondary);font-size:.9rem;margin-bottom:18px;">Enter two fractions using the numerator and denominator fields. Choose an operation (add, subtract, multiply, divide). Click Calculate to see the result in simplified fraction form and as a decimal.</p>
+
 </div>
+
+
 
 <div class="tool-interface" id="toolInterface-fraction-calculator">
+
   
+
 <div class="form-group">
+
 <label>Operation</label>
+
 <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;">
+
 <label class="btn btn-secondary btn-sm" style="cursor:pointer"><input type="radio" name="fracOp" value="add" checked style="display:none"> +</label>
+
 <label class="btn btn-secondary btn-sm" style="cursor:pointer"><input type="radio" name="fracOp" value="sub" style="display:none"> -</label>
+
 <label class="btn btn-secondary btn-sm" style="cursor:pointer"><input type="radio" name="fracOp" value="mul" style="display:none"> x</label>
+
 <label class="btn btn-secondary btn-sm" style="cursor:pointer"><input type="radio" name="fracOp" value="div" style="display:none"> /</label>
-</div>
-</div>
-<div class="form-row-2">
-<div class="form-group"><label>First Fraction</label><div style="display:flex;gap:8px;align-items:center;"><input type="number" id="fracNum1" placeholder="Num" style="width:80px;padding:8px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-primary);color:var(--text-primary);"> <span style="font-size:1.2rem;">/</span> <input type="number" id="fracDen1" placeholder="Den" value="1" style="width:80px;padding:8px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-primary);color:var(--text-primary);"></div></div>
-<div class="form-group"><label>Second Fraction</label><div style="display:flex;gap:8px;align-items:center;"><input type="number" id="fracNum2" placeholder="Num" style="width:80px;padding:8px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-primary);color:var(--text-primary);"> <span style="font-size:1.2rem;">/</span> <input type="number" id="fracDen2" placeholder="Den" value="1" style="width:80px;padding:8px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-primary);color:var(--text-primary);"></div></div>
-</div>
-<div class="result-actions"><button class="btn btn-primary" onclick="calcFraction()"><i class="fas fa-calculator"></i> Calculate</button></div>
-<div class="mt-16" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
-<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.6rem;font-weight:700;color:var(--primary)" id="fracResult">-</div><div style="font-size:.8rem;color:var(--text-muted)">Result (simplified)</div></div>
-<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.2rem;font-weight:700;color:var(--secondary)" id="fracDecimal">-</div><div style="font-size:.8rem;color:var(--text-muted)">Decimal</div></div>
-<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.2rem;font-weight:700;color:var(--accent)" id="fracMixed">-</div><div style="font-size:.8rem;color:var(--text-muted)">Mixed Number</div></div>
+
 </div>
 
 </div>
+
+<div class="form-row-2">
+
+<div class="form-group"><label>First Fraction</label><div style="display:flex;gap:8px;align-items:center;"><input type="number" id="fracNum1" placeholder="Num" style="width:80px;padding:8px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-primary);color:var(--text-primary);"> <span style="font-size:1.2rem;">/</span> <input type="number" id="fracDen1" placeholder="Den" value="1" style="width:80px;padding:8px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-primary);color:var(--text-primary);"></div></div>
+
+<div class="form-group"><label>Second Fraction</label><div style="display:flex;gap:8px;align-items:center;"><input type="number" id="fracNum2" placeholder="Num" style="width:80px;padding:8px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-primary);color:var(--text-primary);"> <span style="font-size:1.2rem;">/</span> <input type="number" id="fracDen2" placeholder="Den" value="1" style="width:80px;padding:8px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-primary);color:var(--text-primary);"></div></div>
+
+</div>
+
+<div class="result-actions"><button class="btn btn-primary" onclick="calcFraction()"><i class="fas fa-calculator"></i> Calculate</button></div>
+
+<div class="mt-16" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.6rem;font-weight:700;color:var(--primary)" id="fracResult">-</div><div style="font-size:.8rem;color:var(--text-muted)">Result (simplified)</div></div>
+
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.2rem;font-weight:700;color:var(--secondary)" id="fracDecimal">-</div><div style="font-size:.8rem;color:var(--text-muted)">Decimal</div></div>
+
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.2rem;font-weight:700;color:var(--accent)" id="fracMixed">-</div><div style="font-size:.8rem;color:var(--text-muted)">Mixed Number</div></div>
+
+</div>
+
+
+
+</div>
+
+
 
 <div id="toolOutput" class="mt-16"></div>
+
 </div>
+
+
 
 <button class="copy-result-btn" onclick="copyResults()"><i class="fas fa-copy"></i> Copy Result</button>
 
+
+
 <script>
+
 function copyResults() {
+
   var fields = [["fracResult", "Result"]];
+
   var lines = [];
+
   for (var i = 0; i < fields.length; i++) {
+
     var el = document.getElementById(fields[i][0]);
+
     if (el && el.textContent && el.textContent !== '$0.00' && el.textContent !== '$0' && el.textContent !== '0%' && el.textContent !== '-') {
+
       lines.push(fields[i][1] + ': ' + el.textContent);
+
     }
+
   }
+
   if (lines.length === 0) { showToast('Please calculate first'); return; }
+
   var text = lines.join('\n');
+
   if (window.copyToClipboard) {
+
     window.copyToClipboard(text, document.querySelector('.copy-result-btn'));
+
   } else {
+
     navigator.clipboard.writeText(text).then(function() {
+
       showToast('Copied');
+
     });
+
   }
+
 }
+
 </script>
+
+
 
 <div class="guide-section" style="margin-top:32px;padding:20px;background:var(--bg-secondary);border-radius:var(--radius);">
+
 <h3 style="margin-top:0;font-size:1.05rem;">How to Understand Your Results</h3>
+
 <p><strong>Key Output</strong> — This is the primary number the calculator returns. It represents the answer to the question you asked, calculated using standard financial formulas.</p>
+
 <p><strong>Breakdown Details</strong> — These supporting numbers show you how the result was reached. They help you understand what's driving the outcome and where you might adjust your inputs.</p>
+
 <p><strong>What to Look For</strong> — Pay attention to how small changes in inputs affect the outputs. The relationship between your inputs and results is where the real insight lives — that's what helps you make better decisions.</p>
+
 <p style="margin-bottom:0;color:var(--text-secondary);">Every calculation uses standard financial math — the same formulas banks, lenders, and investment platforms use. The inputs you provide determine the accuracy of the result.</p>
+
 </div>
 
+
+
 <div class="rec-section">
-  <div class="rec-title">馃搶 You May Also Need</div>
+
+  <div class="rec-title">🔥 You May Also Need</div>
+
   <div class="rec-grid">
+
     <a href="loan-calculator" class="rec-card"><i class="fas fa-hand-holding-usd"></i><span>Loan Calculator</span></a>
+
     <a href="compound-interest-calculator" class="rec-card"><i class="fas fa-chart-line"></i><span>Compound Interest</span></a>
+
     <a href="debt-payoff-calculator" class="rec-card"><i class="fas fa-credit-card"></i><span>Debt Payoff Plan</span></a>
+
   </div>
+
 </div>
+
+
+
 
 
 <script>
+
 document.addEventListener('DOMContentLoaded', function() {
+
   var rs = document.querySelector('#toolRecommendations');
+
   if (!rs) {
+
     rs = document.createElement('div');
+
     rs.id = 'toolRecommendations';
+
     // Find the copy target: all result elements inside the tool interface
+
     var iface = document.querySelector('.tool-card-interface');
+
     var out = document.querySelector('#toolOutput');
+
     if (out && out.parentNode) {
+
       out.parentNode.insertBefore(rs, out.nextSibling);
+
     } else if (iface) {
+
       iface.appendChild(rs);
+
     }
+
   }
+
   rs.style.marginTop = '16px';
+
 });
+
 </script>
+
+
 
 <div class="ad-placeholder ad-inline" id="ad-banner-bottom"></div>
 
+
+
 <div class="seo-content">
+
 <h2>Real-Life Scenarios: What Would You Do?</h2>
 
+
+
 <div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+
 <h3 style="margin-top:0;">Scenario 1: Ana, 28 — Splitting a Shared Dinner Bill</h3>
+
 <p>Ana and three friends ordered takeout and need to split the cost evenly. The total bill is $57, but one friend only had a small appetizer worth 1/4 of the total. Ana needs to figure out how much the appetizer costs, then subtract it from the total before splitting the remainder three ways.</p>
+
 <ul>
+
 <li><strong>Input:</strong> 57/1 × 1/4 to find the appetizer cost; then (57 – 57/4) ÷ 3/1 for the split</li>
+
 <li><strong>Result:</strong> Appetizer ~$14.25; each of the other three pays ~$14.25</li>
+
 <li><strong>Key insight:</strong> Using fractions to separate a portion before dividing the remainder shows how a calculator handles mixed steps with whole numbers.</li>
+
 </ul>
+
 <p>"I thought I'd have to guess at the tip and the split. Punching in 57/1 times 1/4 gave me the appetizer cost in seconds, and then subtracting and dividing was just a few more taps. No more awkward math at the table."</p>
+
 <p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> Breaking a real-world problem into two fraction operations (multiply then subtract-then-divide) is faster than manual guesswork.</p>
+
 </div>
 
+
+
 <div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+
 <h3 style="margin-top:0;">Scenario 2: Marcus, 42 — Resizing a Woodworking Project Plan</h3>
+
 <p>Marcus is building a bookshelf from a plan that calls for 3/8-inch thick shelves. He found a beautiful board that is 5/16-inch thick instead. He needs to compare the two fractions to see if the difference is acceptable, and then adjust the total board length—originally 7 1/2 feet—by the ratio of the new thickness to the old.</p>
+
 <ul>
+
 <li><strong>Input:</strong> Compare 3/8 and 5/16 using subtraction; then (15/2) × (5/16 ÷ 3/8) for the new length</li>
+
 <li><strong>Result:</strong> Difference of 1/16 inch; new length ≈ 6.25 feet</li>
+
 <li><strong>Key insight:</strong> Comparing fractions by subtracting reveals a small gap that might be filled with a shim, while multiplying the length by the thickness ratio shows the exact material change.</li>
+
 </ul>
+
 <p>"I was ready to scrap the whole design because the board was slightly thinner. But subtracting 5/16 from 3/8 showed it's only 1/16 inch off—easy to fix with a thin shim. Then I calculated the new length and saved $40 on buying different wood."</p>
+
 <p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> Fraction subtraction and proportional multiplication let you adapt a plan to available materials without starting over.</p>
+
 </div>
 
+
+
 <div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+
 <h3 style="margin-top:0;">Scenario 3: Elena, 55 — Adjusting a Medication Dosage for a Pet</h3>
+
 <p>Elena’s dog needs 2/3 of a tablet of a certain medication twice daily, but she only has 1/4-tablet scored pills. She needs to figure out how many quarter-tablets to give per dose, and then how many total tablets she needs for a 10-day course (20 doses). She also wants to verify that 20 doses of 2/3 tablet each equals the total number of whole tablets.</p>
+
 <ul>
+
 <li><strong>Input:</strong> (2/3) ÷ (1/4) for tablets per dose = 8/3 = 2 2/3 quarter-tablets; then (8/3) × 20/1 for total quarter-tablets; then convert to whole tablets</li>
+
 <li><strong>Result:</strong> 2.67 quarter-tablets per dose (so 3 pieces); total = 53.33 quarter-tablets = 13.33 whole tablets</li>
+
 <li><strong>Key insight:</strong> Dividing by a fraction (2/3 ÷ 1/4) reveals you need more than 2 pieces of the smaller dosage form per dose, and multiplying across 20 doses shows the total—critical for avoiding overdosing or underdosing.</li>
+
 </ul>
+
 <p>"I thought I could just give two quarter-tablets per dose, but dividing 2/3 by 1/4 showed I actually need 2 and 2/3 of a quarter-tablet. That extra fraction per dose adds up to over 13 whole tablets for the full course. Without the calculator, I would have underdosed my dog for days."</p>
+
 <p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> Dividing fractions to convert between dosage forms and then multiplying over many doses reveals cumulative fractions that can significantly change total medication needs.</p>
+
 </div>
+
+
 
 <div class="comparison-box" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;overflow-x:auto;">
+
 <h3 style="margin-top:0;">Quick Comparison: What Changes the Outcome</h3>
+
 <p style="font-size:.9rem;color:var(--text-secondary);margin-bottom:14px;">See how different inputs affect the result:</p>
+
 <table style="width:100%;border-collapse:collapse;font-size:.9rem;">
+
 <thead>
+
 <tr style="background:var(--primary);color:#fff;">
+
 <th style="padding:10px 12px;text-align:left;">Scenario</th>
+
 <th style="padding:10px 12px;text-align:left;">Key Input</th>
+
 <th style="padding:10px 12px;text-align:right;">Result A</th>
+
 <th style="padding:10px 12px;text-align:right;">Result B</th>
+
 </tr>
+
 </thead>
+
 <tbody>
+
 <tr style="border-bottom:1px solid var(--border);">
+
 <td style="padding:10px 12px;font-weight:600;">Dinner split</td>
+
 <td style="padding:10px 12px;">Total $57 vs. $73</td>
+
 <td style="padding:10px 12px;text-align:right;">~$14.25 each</td>
+
 <td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">~$18.25 each</td>
+
 </tr>
+
 <tr style="border-bottom:1px solid var(--border);">
+
 <td style="padding:10px 12px;font-weight:600;">Wood thickness diff</td>
+
 <td style="padding:10px 12px;">3/8 vs. 11/32 inch</td>
+
 <td style="padding:10px 12px;text-align:right;">1/16 inch diff</td>
+
 <td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">1/32 inch diff</td>
+
 </tr>
+
 <tr style="border-bottom:1px solid var(--border);">
+
 <td style="padding:10px 12px;font-weight:600;">Pet dosage per dose</td>
+
 <td style="padding:10px 12px;">Need 2/3, have 1/4 tabs</td>
+
 <td style="padding:10px 12px;text-align:right;">2.67 quarter-tabs</td>
+
 <td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">2.67 quarter-tabs</td>
+
 </tr>
+
 <tr style="border-bottom:1px solid var(--border);">
+
 <td style="padding:10px 12px;font-weight:600;">Pet total tablets</td>
+
 <td style="padding:10px 12px;">10-day vs. 7-day course</td>
+
 <td style="padding:10px 12px;text-align:right;">13.33 whole tabs</td>
+
 <td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">9.33 whole tabs</td>
+
 </tr>
+
 </tbody>
+
 </table>
+
 <p style="font-size:.85rem;color:var(--text-secondary);margin-top:12px;margin-bottom:0;">The most dramatic swing is in the medication scenario: changing the course length by just 3 days alters the total tablets needed by 4 whole tablets—a 43% difference that could mean running out mid-treatment.</p>
+
 </div>
 
+
+
 <div class="disclaimer" style="margin-top:24px;padding:14px;background:#fff3cd;border-radius:var(--radius);font-size:.82rem;color:#856404;">
+
 <p style="margin:0;"><strong>Disclaimer:</strong> All calculations and scenarios are hypothetical and for illustrative purposes only. They assume constant conditions—real-world results may vary. These calculators are educational tools, not financial advice. Consult a qualified professional before making financial decisions.</p>
+
 </div>
+
 </div>
+
 </div>
+
+
+
 
 
 <div style="max-width:780px;margin:0 auto 2rem;display:flex;flex-direction:column;gap:12px;">
 
+
+
 <div class="trust-badge testing">
+
   <i class="fas fa-flask"></i>
+
   <div><strong>Verified Math.</strong> Every formula is cross-checked against spreadsheet calculations using standard financial math. I don't invent formulas — I use the same ones banks and investment platforms use. <a href="/about" style="color:var(--primary);">Learn how I test →</a></div>
+
 </div>
+
+
 
 <div class="trust-badge privacy">
+
   <i class="fas fa-shield-alt"></i>
+
   <div><strong>Your Numbers Stay Private.</strong> This calculator runs entirely in your browser. Your loan amounts, savings goals, and investment figures never leave your device — not stored, not tracked, not seen by anyone. <a href="/privacy" style="color:var(--primary);">Privacy policy →</a></div>
+
 </div>
+
+
 
 <div class="trust-badge disclaimer">
+
   <i class="fas fa-info-circle"></i>
+
   <div><strong>Not Financial Advice.</strong> This tool is for educational purposes. Results are estimates based on the numbers you enter — they're not guarantees. Always consult a qualified professional before making major financial decisions.</div>
-</div>
 
 </div>
+
+
+
+</div>
+
+
 
 <footer class="footer">
+
 <div class="container">
+
 <div class="footer-grid">
+
 <div class="footer-col">
+
 <h4>ToolBoxHub</h4>
+
 <p style="color:var(--text-secondary);font-size:.88rem;">Free financial calculators for loans, investments, budgeting, and more. Make smarter money decisions.</p>
+
 </div>
+
 <div class="footer-col">
+
 <h4>Calculators</h4>
+
 <a href="loan-calculator">Loan Calculator</a>
+
 <a href="mortgage-calculator">Mortgage Calculator</a>
+
 <a href="compound-interest-calculator">Compound Interest</a>
+
 <a href="budget-calculator">Budget Calculator</a>
+
 <a href="index">View All (29)</a>
+
 </div>
+
 <div class="footer-col">
+
 <h4>Company</h4>
+
 <a href="about">About Us</a>
+
 <a href="contact">Contact</a>
+
 <a href="privacy-policy.html">Privacy Policy</a>
+
 <a href="terms">Terms of Service</a>
+
 </div>
+
 </div>
+
 <div class="footer-bottom">
+
 <span>&copy; 2026 ToolBoxHub. All rights reserved.</span>
+
 <span>Smart financial calculators for everyone.</span>
+
 </div>
+
 <div class="footer-bottom" style="border-top:1px solid var(--border);padding-top:12px;margin-top:12px;display:flex;flex-direction:column;gap:6px;">
+
 <span style="font-size:.78rem;color:var(--text-secondary);">As an Amazon Associate we earn from qualifying purchases. Prices and availability subject to change.</span>
+
 <span style="font-size:.75rem;color:var(--text-muted);line-height:1.5;"><strong>Disclaimer:</strong> All calculators are for educational and illustrative purposes only. They provide estimates, not guarantees. Nothing on this site constitutes financial advice. Always consult a qualified financial professional before making investment, tax, or borrowing decisions.</span>
+
 </div>
+
 </div>
+
 </footer>
 
 
+
+
+
 <script src="main.js"></script>
+
 <script>
-// === Fraction Calculator 鈥?Tool Logic ===
+
+// === Fraction Calculator —Tool Logic ===
+
+
 
 function gcd(a,b){a=Math.abs(a);b=Math.abs(b);while(b){var t=b;b=a%b;a=t;}return a;}
+
 function calcFraction(){var n1=parseInt(document.getElementById('fracNum1').value),d1=parseInt(document.getElementById('fracDen1').value);
+
   var n2=parseInt(document.getElementById('fracNum2').value),d2=parseInt(document.getElementById('fracDen2').value);
+
   var op=document.querySelector('input[name="fracOp"]:checked').value;
+
   if(isNaN(n1)||isNaN(d1)||isNaN(n2)||isNaN(d2)||d1===0||d2===0){showToast('Enter valid fractions (denominator cannot be 0).');return;}
+
   var num,den;if(op==='add'){num=n1*d2+n2*d1;den=d1*d2;}
+
   else if(op==='sub'){num=n1*d2-n2*d1;den=d1*d2;}
+
   else if(op==='mul'){num=n1*n2;den=d1*d2;}
+
   else{num=n1*d2;den=d1*n2;}
+
   if(den<0){num=-num;den=-den;}
+
   var g=gcd(num,den),simpNum=num/g,simpDen=den/g,dec=simpNum/simpDen;
+
   document.getElementById('fracResult').textContent=simpNum+'/'+simpDen;
+
   document.getElementById('fracDecimal').textContent=dec.toFixed(4);
+
   document.getElementById('fracMixed').textContent=simpDen!==1?Math.floor(simpNum/simpDen)+' '+Math.abs(simpNum%simpDen)+'/'+simpDen:simpNum;
+
 }
 
+
+
 </script>
+
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9cdb1d83529f44749dc930864bab3884"}'></script>
+
 <script src="affiliate.js"></script>\`n
+
 <div class="related-calculators" style="margin: 2em 0; padding: 1.5em; border: 1px solid #e0e0e0; border-radius: 8px; background: #f9f9f9;">
+
   <h2>Other Useful Calculators</h2>
+
   <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5em;">
+
     <li><a href="/roi-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Roi Calculator</a></li>\n    <li><a href="/tip-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Tip Calculator</a></li>\n    <li><a href="/mortgage-calculator-guide" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Mortgage Calculator Guide</a></li>\n    <li><a href="/college-savings-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">College Savings Calculator</a></li>\n  </ul>
+
 </div>
+
 \n</body>
+
 </html>
+
+
+
+
 
 
 

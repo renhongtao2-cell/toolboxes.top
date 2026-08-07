@@ -1,342 +1,611 @@
 ﻿<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Income Tax Calculator - ToolBoxHub</title>
-<meta name="description" content="Free Income Tax Calculator 鈥?estimate your federal income tax liability. Uses current tax brackets and standard deductions. Quick, accurate, and free.">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Income Tax Calculator","description":"Free Income Tax Calculator 鈥?estimate your federal income tax liability. Uses current tax brackets and standard deductions. Quick, accurate, and free.","applicationCategory":"Utilities","operatingSystem":"Any"}</script>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="icon" href="favicon.svg">
-<link rel="apple-touch-icon" href="apple-touch-icon.svg">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZY7VH3RXK"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-SZY7VH3RXK');
-</script>
-  <link rel="canonical" href="https://toolboxes.top/income-tax-calculator">
 
-  <meta property="og:title" content="Income Tax Calculator - ToolBoxHub">
-  <meta property="og:description" content="Free Income Tax Calculator 鈥?estimate your federal income tax liability. Uses current tax brackets and standard deductions. Quick, accurate, and free.">
-  <meta property="og:url" content="https://toolboxes.top/income-tax-calculator">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://toolboxes.top/favicon.svg">
-  <meta property="og:site_name" content="ToolBoxHub">
-\n<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Income Tax Calculator - ToolBoxHub",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "Any",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.5",
-    "ratingCount": "128"
-  }
-}</script>\n<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9901133369141996" crossorigin="anonymous"></script>
+<html lang="en" data-theme="light">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Income Tax Calculator - ToolBoxHub</title>
+
+<meta name="description" content="Free Income Tax Calculator —estimate your federal income tax liability. Uses current tax brackets and standard deductions. Quick, accurate, and free.">
+
+\n<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9901133369141996" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
+
+
 <nav class="nav">
+
 <div class="container">
+
 <a href="index" class="nav-logo"><div class="nav-logo-icon"><i class="fas fa-calculator"></i></div>ToolBoxHub</a>
+
 <div class="nav-links" id="navLinks">
+
 <a href="index">Home</a>
+
 <a href="about">About</a>
+
 <a href="contact">Contact</a>
+
 </div>
+
 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+
 <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
 </div>
+
 </nav>
 
+
+
 <div class="page-header">
-<div class="container">
-<div class="breadcrumb"><a href="index">Home</a> / Income Tax Calculator</div>
-<h1>Income Tax Calculator</h1>
-<p>Estimate your federal income tax liability and refund</p>
-</div>
-</div>
 
 <div class="container">
+
+<div class="breadcrumb"><a href="index">Home</a> / Income Tax Calculator</div>
+
+<h1>Income Tax Calculator</h1>
+
+<p>Estimate your federal income tax liability and refund</p>
+
+</div>
+
+</div>
+
+
+
+<div class="container">
+
 <div class="tool-layout">
+
 <div class="tool-card-interface">
+
 <h2>Income Tax Calculator</h2>
 
+
+
 <div class="guide-section">
+
 <h3 style="margin-top:0;font-size:1.05rem;">How to Use This Calculator</h3>
+
 <p style="color:var(--text-secondary);font-size:.9rem;margin-bottom:18px;">Enter your annual income, filing status, and any deductions. The calculator estimates your federal income tax using standard deductions and marginal tax brackets. Click Calculate to see your estimated tax and effective tax rate.</p>
+
 </div>
+
+
 
 <div class="tool-interface" id="toolInterface-income-tax-calculator">
+
   
+
 <div class="form-row-2">
+
 <div class="form-group"><label>Annual Income ($)</label><input type="number" id="taxIncome" placeholder="e.g. 75000" step="1000"></div>
+
 <div class="form-group"><label>Filing Status</label><select id="taxStatus" style="padding:8px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-primary);color:var(--text-primary);width:100%;">
+
 <option value="single">Single</option><option value="married">Married Filing Jointly</option><option value="head">Head of Household</option></select></div>
+
 <div class="form-group"><label>Total Deductions ($, 0 = use standard)</label><input type="number" id="taxDed" placeholder="e.g. 0" step="100"></div>
-</div>
-<div class="result-actions"><button class="btn btn-primary" onclick="calcIncomeTax()"><i class="fas fa-calculator"></i> Calculate Tax</button></div>
-<div class="mt-16" style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;">
-<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:10px;text-align:center;"><div style="font-weight:700;color:var(--primary)" id="taxGross">$0</div><div style="font-size:.7rem;color:var(--text-muted)">Gross Income</div></div>
-<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:10px;text-align:center;"><div style="font-weight:700;color:var(--secondary)" id="taxDeduction">$0</div><div style="font-size:.7rem;color:var(--text-muted)">Deductions</div></div>
-<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:10px;text-align:center;"><div style="font-weight:700;color:var(--accent)" id="taxTaxable">$0</div><div style="font-size:.7rem;color:var(--text-muted)">Taxable Income</div></div>
-<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:10px;text-align:center;"><div style="font-weight:700;color:var(--icon-1)" id="taxTotal">$0</div><div style="font-size:.7rem;color:var(--text-muted)">Estimated Tax</div></div>
-<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:10px;text-align:center;"><div style="font-weight:700;color:var(--icon-4)" id="taxRate">0%</div><div style="font-size:.7rem;color:var(--text-muted)">Effective Rate</div></div>
-</div>
 
 </div>
+
+<div class="result-actions"><button class="btn btn-primary" onclick="calcIncomeTax()"><i class="fas fa-calculator"></i> Calculate Tax</button></div>
+
+<div class="mt-16" style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;">
+
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:10px;text-align:center;"><div style="font-weight:700;color:var(--primary)" id="taxGross">$0</div><div style="font-size:.7rem;color:var(--text-muted)">Gross Income</div></div>
+
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:10px;text-align:center;"><div style="font-weight:700;color:var(--secondary)" id="taxDeduction">$0</div><div style="font-size:.7rem;color:var(--text-muted)">Deductions</div></div>
+
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:10px;text-align:center;"><div style="font-weight:700;color:var(--accent)" id="taxTaxable">$0</div><div style="font-size:.7rem;color:var(--text-muted)">Taxable Income</div></div>
+
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:10px;text-align:center;"><div style="font-weight:700;color:var(--icon-1)" id="taxTotal">$0</div><div style="font-size:.7rem;color:var(--text-muted)">Estimated Tax</div></div>
+
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:10px;text-align:center;"><div style="font-weight:700;color:var(--icon-4)" id="taxRate">0%</div><div style="font-size:.7rem;color:var(--text-muted)">Effective Rate</div></div>
+
+</div>
+
+
+
+</div>
+
+
 
 <div id="toolOutput" class="mt-16"></div>
+
 </div>
+
+
 
 <button class="copy-result-btn" onclick="copyResults()"><i class="fas fa-copy"></i> Copy Result</button>
 
+
+
 <script>
+
 function copyResults() {
+
   var fields = [["taxTotal", "Estimated Tax"], ["taxRate", "Effective Rate"], ["taxTaxable", "Taxable Income"]];
+
   var lines = [];
+
   for (var i = 0; i < fields.length; i++) {
+
     var el = document.getElementById(fields[i][0]);
+
     if (el && el.textContent && el.textContent !== '$0.00' && el.textContent !== '$0' && el.textContent !== '0%' && el.textContent !== '-') {
+
       lines.push(fields[i][1] + ': ' + el.textContent);
+
     }
+
   }
+
   if (lines.length === 0) { showToast('Please calculate first'); return; }
+
   var text = lines.join('\n');
+
   if (window.copyToClipboard) {
+
     window.copyToClipboard(text, document.querySelector('.copy-result-btn'));
+
   } else {
+
     navigator.clipboard.writeText(text).then(function() {
+
       showToast('Copied');
+
     });
+
   }
+
 }
+
 </script>
+
+
 
 <div class="guide-section" style="margin-top:32px;padding:20px;background:var(--bg-secondary);border-radius:var(--radius);">
+
 <h3 style="margin-top:0;font-size:1.05rem;">How to Understand Your Results</h3>
+
 <p><strong>Key Output</strong> — This is the primary number the calculator returns. It represents the answer to the question you asked, calculated using standard financial formulas.</p>
+
 <p><strong>Breakdown Details</strong> — These supporting numbers show you how the result was reached. They help you understand what's driving the outcome and where you might adjust your inputs.</p>
+
 <p><strong>What to Look For</strong> — Pay attention to how small changes in inputs affect the outputs. The relationship between your inputs and results is where the real insight lives — that's what helps you make better decisions.</p>
+
 <p style="margin-bottom:0;color:var(--text-secondary);">Every calculation uses standard financial math — the same formulas banks, lenders, and investment platforms use. The inputs you provide determine the accuracy of the result.</p>
+
 </div>
 
+
+
 <div class="rec-section">
-  <div class="rec-title">馃搶 You May Also Need</div>
+
+  <div class="rec-title">🔥 You May Also Need</div>
+
   <div class="rec-grid">
+
     <a href="salary-calculator" class="rec-card"><i class="fas fa-money-check"></i><span>Salary Calculator</span></a>
+
     <a href="loan-calculator" class="rec-card"><i class="fas fa-hand-holding-usd"></i><span>Loan Calculator</span></a>
+
     <a href="compound-interest-calculator" class="rec-card"><i class="fas fa-chart-line"></i><span>Compound Interest</span></a>
+
   </div>
+
 </div>
+
+
+
 
 
 <script>
+
 document.addEventListener('DOMContentLoaded', function() {
+
   var rs = document.querySelector('#toolRecommendations');
+
   if (!rs) {
+
     rs = document.createElement('div');
+
     rs.id = 'toolRecommendations';
+
     // Find the copy target: all result elements inside the tool interface
+
     var iface = document.querySelector('.tool-card-interface');
+
     var out = document.querySelector('#toolOutput');
+
     if (out && out.parentNode) {
+
       out.parentNode.insertBefore(rs, out.nextSibling);
+
     } else if (iface) {
+
       iface.appendChild(rs);
+
     }
+
   }
+
   rs.style.marginTop = '16px';
+
 });
+
 </script>
+
+
 
 <div class="ad-placeholder ad-inline" id="ad-banner-bottom"></div>
 
+
+
 <div class="seo-content">
+
 <h2>Real-Life Scenarios: What Would You Do?</h2>
 
+
+
 <div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+
 <h3 style="margin-top:0;">Scenario 1: Ethan, 27 — First-Year Freelancer</h3>
+
 <p>Ethan left his full-time job in March to start freelancing. He earned $48,000 in freelance income and had $0 in federal withholding. He paid $2,100 in self-employment tax via estimated payments and has no other income or deductions besides the standard deduction.</p>
+
 <ul>
+
 <li><strong>Input:</strong> $48,000 self-employment income; filing single; standard deduction; $2,100 estimated tax payments</li>
+
 <li><strong>Result:</strong> Estimated tax due of ~$1,450, plus $317 self-employment tax owed, for a total payment of ~$1,767</li>
+
 <li><strong>Key insight:</strong> Even with estimated quarterly payments, many freelancers underpay because they forget the self-employment tax on top of income tax.</li>
+
 </ul>
+
 <p>"I thought I had it covered with my estimated payments, but looks like I still owe. Guess I should have set aside a bit more for Medicare and Social Security."</p>
+
 <p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> Self-employed people must budget for both income tax and self-employment tax — typically 15.3% of net earnings.</p>
+
 </div>
 
+
+
 <div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+
 <h3 style="margin-top:0;">Scenario 2: Maya, 41 — Dual-Income Homeowner with Side Hustle</h3>
+
 <p>Maya works as a manager ($95,000 salary) and rents out a condo she owns ($22,000 annual rental income after expenses). Her husband earns $72,000. They file jointly, have $28,000 in mortgage interest and property taxes, and made a $5,500 charitable donation. They also have $6,200 withheld extra from paychecks.</p>
+
 <ul>
+
 <li><strong>Input:</strong> $189,000 total income; filing jointly; itemized deductions ($33,500); $6,200 additional withholding</li>
+
 <li><strong>Result:</strong> Refund of ~$1,850 after itemizing deductions and factoring in extra withholding</li>
+
 <li><strong>Key insight:</strong> Itemizing only beats the standard deduction ($29,200 for MFJ) if combined deductions exceed that threshold — and many people over-withhold without realizing it.</li>
+
 </ul>
+
 <p>"I always assumed itemizing saves us money, but after plugging in the numbers, it's barely worth it. At least we're getting a refund, but I'd rather have that cash during the year."</p>
+
 <p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> Compare itemized deductions to the standard deduction every year — the Tax Cuts and Jobs Act made the standard deduction much larger.</p>
+
 </div>
 
+
+
 <div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+
 <h3 style="margin-top:0;">Scenario 3: Diane, 58 — Pre-Retiree with Tax-Loss Harvesting</h3>
+
 <p>Diane sold a rental property this year for a $68,000 long-term capital gain. She also sold losing stocks, realizing $42,000 in capital losses. She earns $115,000 as a consultant (W-2) and has $26,000 in dividends. She files single and contributes $8,000 to a traditional IRA.</p>
+
 <ul>
+
 <li><strong>Input:</strong> $115,000 salary; $26,000 dividends; $68,000 capital gain; $42,000 capital loss; $8,000 IRA contribution; single</li>
+
 <li><strong>Result:</strong> Net capital gain of $26,000 (after $3,000 loss carryforward applied to ordinary income); total tax of ~$27,300; she saves roughly $10,500 compared to not realizing the losses</li>
+
 <li><strong>Key insight:</strong> Tax-loss harvesting can offset capital gains dollar-for-dollar, plus up to $3,000 of ordinary income, but it requires selling positions at a loss before year-end.</li>
+
 </ul>
+
 <p>"I was dreading the tax bill from selling the rental, but the losses from those tech stocks I dumped back in October ended up cutting the gain in half. Still hurts to see the stocks down, but at least the tax code softens the blow."</p>
+
 <p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> Capital losses offset capital gains first, then up to $3,000 of ordinary income — unused losses carry forward indefinitely.</p>
+
 </div>
+
+
 
 <div class="comparison-box" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;overflow-x:auto;">
+
 <h3 style="margin-top:0;">Quick Comparison: What Changes the Outcome</h3>
+
 <p style="font-size:.9rem;color:var(--text-secondary);margin-bottom:14px;">See how different inputs affect the result:</p>
+
 <table style="width:100%;border-collapse:collapse;font-size:.9rem;">
+
 <thead>
+
 <tr style="background:var(--primary);color:#fff;">
+
 <th style="padding:10px 12px;text-align:left;">Scenario</th>
+
 <th style="padding:10px 12px;text-align:left;">Key Input</th>
+
 <th style="padding:10px 12px;text-align:right;">Result A</th>
+
 <th style="padding:10px 12px;text-align:right;">Result B</th>
+
 </tr>
+
 </thead>
+
 <tbody>
+
 <tr style="border-bottom:1px solid var(--border);">
+
 <td style="padding:10px 12px;font-weight:600;">Ethan: No estimated payments vs. payments made</td>
+
 <td style="padding:10px 12px;">Estimated tax paid</td>
+
 <td style="padding:10px 12px;text-align:right;">$0 = $3,867 owed</td>
+
 <td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">$2,100 paid = $1,767 owed</td>
+
 </tr>
+
 <tr style="border-bottom:1px solid var(--border);">
+
 <td style="padding:10px 12px;font-weight:600;">Maya: Standard vs. itemized deductions</td>
+
 <td style="padding:10px 12px;">Deduction method</td>
+
 <td style="padding:10px 12px;text-align:right;">Standard: $2,090 refund</td>
+
 <td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">Itemized: $1,850 refund</td>
+
 </tr>
+
 <tr style="border-bottom:1px solid var(--border);">
+
 <td style="padding:10px 12px;font-weight:600;">Diane: Without vs. with loss harvesting</td>
+
 <td style="padding:10px 12px;">Capital loss applied</td>
+
 <td style="padding:10px 12px;text-align:right;">No losses: $37,800 tax</td>
+
 <td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">With losses: $27,300 tax</td>
+
 </tr>
+
 <tr style="border-bottom:1px solid var(--border);">
+
 <td style="padding:10px 12px;font-weight:600;">Ethan: With vs. without retirement contribution</td>
+
 <td style="padding:10px 12px;">SEP IRA contribution</td>
+
 <td style="padding:10px 12px;text-align:right;">$0: $1,767 owed</td>
+
 <td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">$6,000: $1,020 owed</td>
+
 </tr>
+
 </tbody>
+
 </table>
+
 <p style="font-size:.85rem;color:var(--text-secondary);margin-top:12px;margin-bottom:0;">The comparison shows that small changes — like making estimated payments, choosing the right deduction method, or harvesting losses — can shift your outcome by hundreds or even thousands of dollars.</p>
+
 </div>
 
+
+
 <div class="disclaimer" style="margin-top:24px;padding:14px;background:#fff3cd;border-radius:var(--radius);font-size:.82rem;color:#856404;">
+
 <p style="margin:0;"><strong>Disclaimer:</strong> All calculations and scenarios are hypothetical and for illustrative purposes only. They assume constant conditions — real-world results may vary. These calculators are educational tools, not financial advice. Consult a qualified professional before making financial decisions.</p>
+
 </div>
+
 </div>
+
 </div>
+
+
+
 
 
 <div style="max-width:780px;margin:0 auto 2rem;display:flex;flex-direction:column;gap:12px;">
 
+
+
 <div class="trust-badge testing">
+
   <i class="fas fa-flask"></i>
+
   <div><strong>Verified Math.</strong> Every formula is cross-checked against spreadsheet calculations using standard financial math. I don't invent formulas — I use the same ones banks and investment platforms use. <a href="/about" style="color:var(--primary);">Learn how I test →</a></div>
+
 </div>
+
+
 
 <div class="trust-badge privacy">
+
   <i class="fas fa-shield-alt"></i>
+
   <div><strong>Your Numbers Stay Private.</strong> This calculator runs entirely in your browser. Your loan amounts, savings goals, and investment figures never leave your device — not stored, not tracked, not seen by anyone. <a href="/privacy" style="color:var(--primary);">Privacy policy →</a></div>
+
 </div>
+
+
 
 <div class="trust-badge disclaimer">
+
   <i class="fas fa-info-circle"></i>
+
   <div><strong>Not Financial Advice.</strong> This tool is for educational purposes. Results are estimates based on the numbers you enter — they're not guarantees. Always consult a qualified professional before making major financial decisions.</div>
-</div>
 
 </div>
+
+
+
+</div>
+
+
 
 <footer class="footer">
+
 <div class="container">
+
 <div class="footer-grid">
+
 <div class="footer-col">
+
 <h4>ToolBoxHub</h4>
+
 <p style="color:var(--text-secondary);font-size:.88rem;">Free financial calculators for loans, investments, budgeting, and more. Make smarter money decisions.</p>
+
 </div>
+
 <div class="footer-col">
+
 <h4>Calculators</h4>
+
 <a href="loan-calculator">Loan Calculator</a>
+
 <a href="mortgage-calculator">Mortgage Calculator</a>
+
 <a href="compound-interest-calculator">Compound Interest</a>
+
 <a href="budget-calculator">Budget Calculator</a>
+
 <a href="index">View All (29)</a>
+
 </div>
+
 <div class="footer-col">
+
 <h4>Company</h4>
+
 <a href="about">About Us</a>
+
 <a href="contact">Contact</a>
+
 <a href="privacy-policy.html">Privacy Policy</a>
+
 <a href="terms">Terms of Service</a>
+
 </div>
+
 </div>
+
 <div class="footer-bottom">
+
 <span>&copy; 2026 ToolBoxHub. All rights reserved.</span>
+
 <span>Smart financial calculators for everyone.</span>
+
 </div>
+
 <div class="footer-bottom" style="border-top:1px solid var(--border);padding-top:12px;margin-top:12px;display:flex;flex-direction:column;gap:6px;">
+
 <span style="font-size:.78rem;color:var(--text-secondary);">As an Amazon Associate we earn from qualifying purchases. Prices and availability subject to change.</span>
+
 <span style="font-size:.75rem;color:var(--text-muted);line-height:1.5;"><strong>Disclaimer:</strong> All calculators are for educational and illustrative purposes only. They provide estimates, not guarantees. Nothing on this site constitutes financial advice. Always consult a qualified financial professional before making investment, tax, or borrowing decisions.</span>
+
 </div>
+
 </div>
+
 </footer>
 
 
+
+
+
 <script src="main.js"></script>
+
 <script>
-// === Income Tax Calculator 鈥?Tool Logic ===
+
+// === Income Tax Calculator —Tool Logic ===
+
+
 
 function calcIncomeTax() {
+
   var inc=parseFloat(document.getElementById('taxIncome').value);
+
   var status=document.getElementById('taxStatus').value;
+
   var ded=parseFloat(document.getElementById('taxDed').value)||0;
+
   if(isNaN(inc)||inc<=0){showToast('Please enter valid income.');return;}
+
   var stdDed=status==='single'?14600:status==='married'?29200:21900;
+
   var totalDed=Math.max(stdDed,ded);
+
   var taxable=Math.max(0,inc-totalDed);
+
   var brackets=status==='single'?[[11600,.1],[47150,.12],[100525,.22],[191950,.24],[243725,.32],[609350,.35],[Infinity,.37]]
+
     :status==='married'?[[23200,.1],[94300,.12],[201050,.22],[383900,.24],[487450,.32],[731200,.35],[Infinity,.37]]
+
     :[[16550,.1],[63100,.12],[100525,.22],[191950,.24],[243725,.32],[609350,.35],[Infinity,.37]];
+
   var tax=0,prev=0;
+
   for(var i=0;i<brackets.length;i++){var br=brackets[i];if(taxable>prev){var incInBracket=Math.min(taxable,br[0])-prev;if(incInBracket>0)tax+=incInBracket*br[1];}prev=br[0];}
+
   document.getElementById('taxGross').textContent='$'+inc.toFixed(2);
+
   document.getElementById('taxDeduction').textContent='$'+totalDed.toFixed(2);
+
   document.getElementById('taxTaxable').textContent='$'+taxable.toFixed(2);
+
   document.getElementById('taxTotal').textContent='$'+tax.toFixed(2);
+
   document.getElementById('taxRate').textContent=(tax/inc*100).toFixed(1)+'%';
+
 }
 
+
+
 </script>
+
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9cdb1d83529f44749dc930864bab3884"}'></script>
+
 <script src="affiliate.js"></script>\`n
+
 <div class="related-calculators" style="margin: 2em 0; padding: 1.5em; border: 1px solid #e0e0e0; border-radius: 8px; background: #f9f9f9;">
+
   <h2>Other Useful Calculators</h2>
+
   <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5em;">
+
     <li><a href="/sales-tax-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Sales Tax Calculator</a></li>\n    <li><a href="/stock-profit-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Stock Profit Calculator</a></li>\n    <li><a href="/debt-payoff-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Debt Payoff Calculator</a></li>\n    <li><a href="/mortgage-calculator-guide" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Mortgage Calculator Guide</a></li>\n  </ul>
+
 </div>
+
 \n</body>
+
 </html>
+
+
+
+
 
 
 

@@ -1,333 +1,593 @@
 ﻿<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Crypto Profit Calculator - ToolBoxHub</title>
-<meta name="description" content="Free Crypto Profit Calculator 鈥?calculate gains and losses on cryptocurrency trades. Works for Bitcoin, Ethereum, and any crypto. Quick, accurate, and fee-aware.">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Crypto Profit Calculator","description":"Free Crypto Profit Calculator 鈥?calculate gains and losses on cryptocurrency trades. Works for Bitcoin, Ethereum, and any crypto. Quick, accurate, and fee-aware.","applicationCategory":"Utilities","operatingSystem":"Any"}</script>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="icon" href="favicon.svg">
-<link rel="apple-touch-icon" href="apple-touch-icon.svg">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZY7VH3RXK"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-SZY7VH3RXK');
-</script>
-  <link rel="canonical" href="https://toolboxes.top/crypto-profit-calculator">
 
-  <meta property="og:title" content="Crypto Profit Calculator - ToolBoxHub">
-  <meta property="og:description" content="Free Crypto Profit Calculator 鈥?calculate gains and losses on cryptocurrency trades. Works for Bitcoin, Ethereum, and any crypto. Quick, accurate, and fee-aware.">
-  <meta property="og:url" content="https://toolboxes.top/crypto-profit-calculator">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://toolboxes.top/favicon.svg">
-  <meta property="og:site_name" content="ToolBoxHub">
-\n<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Crypto Profit Calculator - ToolBoxHub",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "Any",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.5",
-    "ratingCount": "128"
-  }
-}</script>\n<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9901133369141996" crossorigin="anonymous"></script>
+<html lang="en" data-theme="light">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Crypto Profit Calculator - ToolBoxHub</title>
+
+<meta name="description" content="Free Crypto Profit Calculator —calculate gains and losses on cryptocurrency trades. Works for Bitcoin, Ethereum, and any crypto. Quick, accurate, and fee-aware.">
+
+\n<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9901133369141996" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
+
+
 <nav class="nav">
+
 <div class="container">
+
 <a href="index" class="nav-logo"><div class="nav-logo-icon"><i class="fas fa-calculator"></i></div>ToolBoxHub</a>
+
 <div class="nav-links" id="navLinks">
+
 <a href="index">Home</a>
+
 <a href="about">About</a>
+
 <a href="contact">Contact</a>
+
 </div>
+
 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+
 <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+
 </div>
+
 </nav>
 
+
+
 <div class="page-header">
-<div class="container">
-<div class="breadcrumb"><a href="index">Home</a> / Crypto Profit Calculator</div>
-<h1>Crypto Profit Calculator</h1>
-<p>Calculate cryptocurrency profit, loss, and ROI</p>
-</div>
-</div>
 
 <div class="container">
+
+<div class="breadcrumb"><a href="index">Home</a> / Crypto Profit Calculator</div>
+
+<h1>Crypto Profit Calculator</h1>
+
+<p>Calculate cryptocurrency profit, loss, and ROI</p>
+
+</div>
+
+</div>
+
+
+
+<div class="container">
+
 <div class="tool-layout">
+
 <div class="tool-card-interface">
+
 <h2>Crypto Profit Calculator</h2>
 
+
+
 <div class="guide-section">
+
 <h3 style="margin-top:0;font-size:1.05rem;">How to Use This Calculator</h3>
+
 <p style="color:var(--text-secondary);font-size:.9rem;margin-bottom:18px;">Enter your buy price, sell price, and quantity of cryptocurrency. Include any trading fees. Click Calculate to see your total profit/loss, ROI percentage, and net proceeds after fees.</p>
+
 </div>
+
+
 
 <div class="tool-interface" id="toolInterface-crypto-profit-calculator">
+
   
+
 <div class="form-row-2">
+
 <div class="form-group"><label>Buy Price Per Coin ($)</label><input type="number" id="cryptoBuy" placeholder="e.g. 30000" step="100"></div>
+
 <div class="form-group"><label>Sell Price Per Coin ($)</label><input type="number" id="cryptoSell" placeholder="e.g. 45000" step="100"></div>
+
 <div class="form-group"><label>Quantity (coins)</label><input type="number" id="cryptoQty" placeholder="e.g. 0.5" step="0.01"></div>
+
 <div class="form-group"><label>Total Trading Fee ($)</label><input type="number" id="cryptoFee" placeholder="e.g. 50" step="1"></div>
-</div>
-<div class="result-actions"><button class="btn btn-primary" onclick="calcCryptoProfit()"><i class="fas fa-calculator"></i> Calculate</button></div>
-<div class="mt-16" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
-<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.6rem;font-weight:700;color:var(--primary)" id="cryptoProfit">$0</div><div style="font-size:.8rem;color:var(--text-muted)">Profit/Loss</div></div>
-<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.4rem;font-weight:700;color:var(--secondary)" id="cryptoROI">0%</div><div style="font-size:.8rem;color:var(--text-muted)">ROI</div></div>
-<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.4rem;font-weight:700;color:var(--accent)" id="cryptoNet">$0</div><div style="font-size:.8rem;color:var(--text-muted)">Net Proceeds</div></div>
-</div>
 
 </div>
+
+<div class="result-actions"><button class="btn btn-primary" onclick="calcCryptoProfit()"><i class="fas fa-calculator"></i> Calculate</button></div>
+
+<div class="mt-16" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.6rem;font-weight:700;color:var(--primary)" id="cryptoProfit">$0</div><div style="font-size:.8rem;color:var(--text-muted)">Profit/Loss</div></div>
+
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.4rem;font-weight:700;color:var(--secondary)" id="cryptoROI">0%</div><div style="font-size:.8rem;color:var(--text-muted)">ROI</div></div>
+
+<div style="background:var(--bg-secondary);border-radius:var(--radius);padding:14px;text-align:center;"><div style="font-size:1.4rem;font-weight:700;color:var(--accent)" id="cryptoNet">$0</div><div style="font-size:.8rem;color:var(--text-muted)">Net Proceeds</div></div>
+
+</div>
+
+
+
+</div>
+
+
 
 <div id="toolOutput" class="mt-16"></div>
+
 </div>
+
+
 
 <button class="copy-result-btn" onclick="copyResults()"><i class="fas fa-copy"></i> Copy Result</button>
 
+
+
 <script>
+
 function copyResults() {
+
   var fields = [["cryptoProfit", "Profit"], ["cryptoReturn", "Return"]];
+
   var lines = [];
+
   for (var i = 0; i < fields.length; i++) {
+
     var el = document.getElementById(fields[i][0]);
+
     if (el && el.textContent && el.textContent !== '$0.00' && el.textContent !== '$0' && el.textContent !== '0%' && el.textContent !== '-') {
+
       lines.push(fields[i][1] + ': ' + el.textContent);
+
     }
+
   }
+
   if (lines.length === 0) { showToast('Please calculate first'); return; }
+
   var text = lines.join('\n');
+
   if (window.copyToClipboard) {
+
     window.copyToClipboard(text, document.querySelector('.copy-result-btn'));
+
   } else {
+
     navigator.clipboard.writeText(text).then(function() {
+
       showToast('Copied');
+
     });
+
   }
+
 }
+
 </script>
+
+
 
 <div class="guide-section" style="margin-top:32px;padding:20px;background:var(--bg-secondary);border-radius:var(--radius);">
+
 <h3 style="margin-top:0;font-size:1.05rem;">How to Understand Your Results</h3>
+
 <p><strong>Key Output</strong> — This is the primary number the calculator returns. It represents the answer to the question you asked, calculated using standard financial formulas.</p>
+
 <p><strong>Breakdown Details</strong> — These supporting numbers show you how the result was reached. They help you understand what's driving the outcome and where you might adjust your inputs.</p>
+
 <p><strong>What to Look For</strong> — Pay attention to how small changes in inputs affect the outputs. The relationship between your inputs and results is where the real insight lives — that's what helps you make better decisions.</p>
+
 <p style="margin-bottom:0;color:var(--text-secondary);">Every calculation uses standard financial math — the same formulas banks, lenders, and investment platforms use. The inputs you provide determine the accuracy of the result.</p>
+
 </div>
 
+
+
 <div class="rec-section">
-  <div class="rec-title">馃搶 You May Also Need</div>
+
+  <div class="rec-title">🔥 You May Also Need</div>
+
   <div class="rec-grid">
+
     <a href="loan-calculator" class="rec-card"><i class="fas fa-hand-holding-usd"></i><span>Loan Calculator</span></a>
+
     <a href="income-tax-calculator" class="rec-card"><i class="fas fa-file-invoice-dollar"></i><span>Tax Estimator</span></a>
+
     <a href="retirement-calculator" class="rec-card"><i class="fas fa-piggy-bank"></i><span>Retirement Planning</span></a>
+
   </div>
+
 </div>
+
+
+
 
 
 <script>
+
 document.addEventListener('DOMContentLoaded', function() {
+
   var rs = document.querySelector('#toolRecommendations');
+
   if (!rs) {
+
     rs = document.createElement('div');
+
     rs.id = 'toolRecommendations';
+
     // Find the copy target: all result elements inside the tool interface
+
     var iface = document.querySelector('.tool-card-interface');
+
     var out = document.querySelector('#toolOutput');
+
     if (out && out.parentNode) {
+
       out.parentNode.insertBefore(rs, out.nextSibling);
+
     } else if (iface) {
+
       iface.appendChild(rs);
+
     }
+
   }
+
   rs.style.marginTop = '16px';
+
 });
+
 </script>
+
+
 
 <div class="ad-placeholder ad-inline" id="ad-banner-bottom"></div>
 
+
+
 <div class="seo-content">
+
 <h2>Real-Life Scenarios: What Would You Do?</h2>
 
+
+
 <div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+
 <h3 style="margin-top:0;">Scenario 1: Marcus, 29 — First-Time Investor Testing the Waters</h3>
+
 <p>Marcus has been curious about crypto for a year but never invested. After receiving a $500 birthday gift from his grandmother, he decides to buy Ethereum at $1,800 per coin. He wants to see what happens if the price hits $2,400 in 6 months — and what his profit would look like after his exchange's 0.5% fee.</p>
+
 <ul>
+
 <li><strong>Input:</strong> Buy price $1,800, sell price $2,400, amount $500, fee 0.5%</li>
+
 <li><strong>Result:</strong> ~$163 profit after fees, 32.6% return on investment</li>
+
 <li><strong>Key insight:</strong> Small fees compound noticeably on smaller investments — Marcus loses $2.50 on the round trip, which is 0.5% of his total.</li>
+
 </ul>
+
 <p>"I thought I'd need thousands to see real returns. $163 feels meaningful — it's almost a month of gas. But I'm glad I checked the fee calc. That 0.5% doesn't sound like much until you see it eat into a small buy."</p>
+
 <p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> Even small fees matter. Always include them in your calculation — a 32% return can shrink to 31% or less depending on the platform.</p>
+
 </div>
 
+
+
 <div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+
 <h3 style="margin-top:0;">Scenario 2: Priya, 41 — Portfolio Rebalancer with Tax Consequences</h3>
+
 <p>Priya bought 2 Bitcoin three years ago at an average of $16,000 each. Now at $45,000 per coin, she wants to sell 0.5 Bitcoin to fund a down payment on a rental property. She's taxed at 15% long-term capital gains rate and wants to know her net profit and remaining position value.</p>
+
 <ul>
+
 <li><strong>Input:</strong> Buy price $16,000, sell price $45,000, quantity 0.5 BTC, fee 0.1%, tax rate 15%</li>
+
 <li><strong>Result:</strong> Gross profit $14,500, net after fees and taxes ~$12,290, remaining portfolio value ~$67,500</li>
+
 <li><strong>Key insight:</strong> Selling even a fraction of a position can trigger a significant tax liability — Priya pays $2,175 in taxes on this partial sale, not including her state tax.</li>
+
 </ul>
+
 <p>"I was mentally spending the full $22,500 from that sale. After fees and taxes, I only get about $12,300 in my bank. The calculator showed me I need to sell 0.65 BTC to actually hit my $16k down payment goal. That's a harder decision — do I sell more or adjust my target?"</p>
+
 <p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> Tax rates decouple the "sell price" from your actual cash. Always run the after-tax number before making spending plans with crypto profits.</p>
+
 </div>
 
+
+
 <div class="scenario-card" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+
 <h3 style="margin-top:0;">Scenario 3: Diego, 35 — Staking vs. Trading: Hidden Opportunity Costs</h3>
+
 <p>Diego has 10 Solana staked at 7% APY for 18 months. He's considering unstaking it to trade during a volatile period. He enters his cost basis of $22 per SOL, current price $145, and two possible outcomes: hold stake and earn rewards, or sell now and try to buy back at a lower price. He uses the calculator to compare the "do nothing" profit vs. a hypothetical trade.</p>
+
 <ul>
+
 <li><strong>Input:</strong> Buy price $22, current price $145, quantity 10 SOL, staking rewards 7% APY over 1.5 years, trade scenario with exit at $160 and re-entry at $130</li>
+
 <li><strong>Result:</strong> Holding with staking yields ~$1,230 in profit plus ~$160 in rewards ($1,390 total); trading yields ~$150 short-term profit but loses $160 in missed staking rewards — net loss of $10</li>
+
 <li><strong>Key insight:</strong> The "perfect" trade Diego envisioned actually leaves him $10 worse off than doing nothing, because he forfeits 18 months of compounding rewards.</li>
+
 </ul>
+
 <p>"I thought I was being smart by timing the market. But the calculator showed that even if my trade goes perfectly — buy low, sell high — the staking rewards I gave up wiped out any edge. I'd have to make a 12% gain on the trade just to break even with sitting still. That changed my plan completely."</p>
+
 <p class="scenario-takeaway" style="color:var(--text-secondary);font-size:.9rem;border-left:3px solid var(--primary);padding-left:12px;margin-top:12px;"><strong>Takeaway:</strong> When you earn yield, the cost of exiting is not just fees — it's the lost compounding. Run the "do nothing" scenario first to see what your baseline really is.</p>
+
 </div>
+
+
 
 <div class="comparison-box" style="background:var(--bg-secondary);border-radius:var(--radius);padding:20px;margin-bottom:20px;overflow-x:auto;">
+
 <h3 style="margin-top:0;">Quick Comparison: What Changes the Outcome</h3>
+
 <p style="font-size:.9rem;color:var(--text-secondary);margin-bottom:14px;">See how different inputs affect the result:</p>
+
 <table style="width:100%;border-collapse:collapse;font-size:.9rem;">
+
 <thead>
+
 <tr style="background:var(--primary);color:#fff;">
+
 <th style="padding:10px 12px;text-align:left;">Scenario</th>
+
 <th style="padding:10px 12px;text-align:left;">Key Input</th>
+
 <th style="padding:10px 12px;text-align:right;">Result A</th>
+
 <th style="padding:10px 12px;text-align:right;">Result B</th>
+
 </tr>
+
 </thead>
+
 <tbody>
+
 <tr style="border-bottom:1px solid var(--border);">
+
 <td style="padding:10px 12px;font-weight:600;">Marcus (beginner)</td>
+
 <td style="padding:10px 12px;">Fee rate (0.5% vs 0.1%)</td>
+
 <td style="padding:10px 12px;text-align:right;">$162.50 profit</td>
+
 <td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">$164.90 profit</td>
+
 </tr>
+
 <tr style="border-bottom:1px solid var(--border);">
+
 <td style="padding:10px 12px;font-weight:600;">Priya (intermediate)</td>
+
 <td style="padding:10px 12px;">Tax rate (15% vs 25%)</td>
+
 <td style="padding:10px 12px;text-align:right;">$12,290 net</td>
+
 <td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">$10,863 net</td>
+
 </tr>
+
 <tr style="border-bottom:1px solid var(--border);">
+
 <td style="padding:10px 12px;font-weight:600;">Diego (advanced)</td>
+
 <td style="padding:10px 12px;">Staking APY (7% vs 0%)</td>
+
 <td style="padding:10px 12px;text-align:right;">$1,390 total</td>
+
 <td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">$1,230 total</td>
+
 </tr>
+
 <tr style="border-bottom:1px solid var(--border);">
+
 <td style="padding:10px 12px;font-weight:600;">All three</td>
+
 <td style="padding:10px 12px;">Holding period (+1 year)</td>
+
 <td style="padding:10px 12px;text-align:right;">Short-term gains</td>
+
 <td style="padding:10px 12px;text-align:right;color:var(--primary);font-weight:600;">Lower tax rate</td>
+
 </tr>
+
 </tbody>
+
 </table>
+
 <p style="font-size:.85rem;color:var(--text-secondary);margin-top:12px;margin-bottom:0;">What matters most? For small amounts, fees dominate. For large amounts, taxes dominate. For yield-bearing assets, opportunity cost of lost rewards matters as much as the price movement itself. Adjust your inputs to your actual situation — not your ideal one.</p>
+
 </div>
 
+
+
 <div class="disclaimer" style="margin-top:24px;padding:14px;background:#fff3cd;border-radius:var(--radius);font-size:.82rem;color:#856404;">
+
 <p style="margin:0;"><strong>Disclaimer:</strong> All calculations and scenarios are hypothetical and for illustrative purposes only. They assume constant conditions — real-world results may vary. These calculators are educational tools, not financial advice. Consult a qualified professional before making financial decisions.</p>
+
 </div>
+
 </div>
+
 </div>
+
+
+
 
 
 <div style="max-width:780px;margin:0 auto 2rem;display:flex;flex-direction:column;gap:12px;">
 
+
+
 <div class="trust-badge testing">
+
   <i class="fas fa-flask"></i>
+
   <div><strong>Verified Math.</strong> Every formula is cross-checked against spreadsheet calculations using standard financial math. I don't invent formulas — I use the same ones banks and investment platforms use. <a href="/about" style="color:var(--primary);">Learn how I test →</a></div>
+
 </div>
+
+
 
 <div class="trust-badge privacy">
+
   <i class="fas fa-shield-alt"></i>
+
   <div><strong>Your Numbers Stay Private.</strong> This calculator runs entirely in your browser. Your loan amounts, savings goals, and investment figures never leave your device — not stored, not tracked, not seen by anyone. <a href="/privacy" style="color:var(--primary);">Privacy policy →</a></div>
+
 </div>
+
+
 
 <div class="trust-badge disclaimer">
+
   <i class="fas fa-info-circle"></i>
+
   <div><strong>Not Financial Advice.</strong> This tool is for educational purposes. Results are estimates based on the numbers you enter — they're not guarantees. Always consult a qualified professional before making major financial decisions.</div>
-</div>
 
 </div>
+
+
+
+</div>
+
+
 
 <footer class="footer">
+
 <div class="container">
+
 <div class="footer-grid">
+
 <div class="footer-col">
+
 <h4>ToolBoxHub</h4>
+
 <p style="color:var(--text-secondary);font-size:.88rem;">Free financial calculators for loans, investments, budgeting, and more. Make smarter money decisions.</p>
+
 </div>
+
 <div class="footer-col">
+
 <h4>Calculators</h4>
+
 <a href="loan-calculator">Loan Calculator</a>
+
 <a href="mortgage-calculator">Mortgage Calculator</a>
+
 <a href="compound-interest-calculator">Compound Interest</a>
+
 <a href="budget-calculator">Budget Calculator</a>
+
 <a href="index">View All (29)</a>
+
 </div>
+
 <div class="footer-col">
+
 <h4>Company</h4>
+
 <a href="about">About Us</a>
+
 <a href="contact">Contact</a>
+
 <a href="privacy-policy.html">Privacy Policy</a>
+
 <a href="terms">Terms of Service</a>
+
 </div>
+
 </div>
+
 <div class="footer-bottom">
+
 <span>&copy; 2026 ToolBoxHub. All rights reserved.</span>
+
 <span>Smart financial calculators for everyone.</span>
+
 </div>
+
 <div class="footer-bottom" style="border-top:1px solid var(--border);padding-top:12px;margin-top:12px;display:flex;flex-direction:column;gap:6px;">
+
 <span style="font-size:.78rem;color:var(--text-secondary);">As an Amazon Associate we earn from qualifying purchases. Prices and availability subject to change.</span>
+
 <span style="font-size:.75rem;color:var(--text-muted);line-height:1.5;"><strong>Disclaimer:</strong> All calculators are for educational and illustrative purposes only. They provide estimates, not guarantees. Nothing on this site constitutes financial advice. Always consult a qualified financial professional before making investment, tax, or borrowing decisions.</span>
+
 </div>
+
 </div>
+
 </footer>
 
 
+
+
+
 <script src="main.js"></script>
+
 <script>
-// === Crypto Profit Calculator 鈥?Tool Logic ===
+
+// === Crypto Profit Calculator —Tool Logic ===
+
+
 
 function calcCryptoProfit() {
+
   var bp=parseFloat(document.getElementById('cryptoBuy').value);
+
   var sp=parseFloat(document.getElementById('cryptoSell').value);
+
   var qty=parseFloat(document.getElementById('cryptoQty').value);
+
   var fee=parseFloat(document.getElementById('cryptoFee').value)||0;
+
   if(isNaN(bp)||isNaN(sp)||isNaN(qty)||bp<=0||qty<=0){showToast('Please enter valid values.');return;}
+
   var totalCost=bp*qty+fee,totalProceeds=sp*qty-fee;
+
   var profit=totalProceeds-totalCost,roi=(profit/totalCost)*100;
+
   document.getElementById('cryptoProfit').textContent='$'+profit.toFixed(2);
+
   document.getElementById('cryptoROI').textContent=roi.toFixed(2)+'%';
+
   document.getElementById('cryptoNet').textContent='$'+totalProceeds.toFixed(2);
+
 }
 
+
+
 </script>
+
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9cdb1d83529f44749dc930864bab3884"}'></script>
+
 <script src="affiliate.js"></script>\`n
+
 <div class="related-calculators" style="margin: 2em 0; padding: 1.5em; border: 1px solid #e0e0e0; border-radius: 8px; background: #f9f9f9;">
+
   <h2>Other Useful Calculators</h2>
+
   <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5em;">
+
     <li><a href="/dividend-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Dividend Calculator</a></li>\n    <li><a href="/capital-gains-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Capital Gains Calculator</a></li>\n    <li><a href="/inflation-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Inflation Calculator</a></li>\n    <li><a href="/fraction-calculator" style="color: #1a73e8; text-decoration: none; padding: 0.3em 0.5em; display: block; border-radius: 4px;">Fraction Calculator</a></li>\n  </ul>
+
 </div>
+
 \n</body>
+
 </html>
+
+
+
+
 
 
 
